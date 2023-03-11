@@ -1,0 +1,78 @@
+:root {
+
+    /* Colors: */
+    --unnamed-color-f0856b: #F0856B;
+    --unnamed-color-ebdfcd: #EBDFCD;
+    --unnamed-color-4e7496: #4E7496;
+    --unnamed-color-f8f8f8: #F8F8F8;
+    --unnamed-color-d8d8d9: #D8D8D9;
+    --unnamed-color-b2b3b4: #B2B3B4;
+    --unnamed-color-2b2d2f: #2B2D2F;
+
+    /* Font/text values */
+    --unnamed-font-family-merriweather: Merriweather;
+    --unnamed-font-style-normal: normal;
+    --unnamed-font-style-italic: italic;
+    --unnamed-font-weight-900: 900px;
+    --unnamed-font-weight-normal: normal;
+    --unnamed-font-size-14: 14px;
+    --unnamed-font-size-16: 16px;
+    --unnamed-font-size-18: 18px;
+    --unnamed-font-size-24: 24px;
+    --unnamed-font-size-32: 32px;
+    --unnamed-character-spacing-0: 0px;
+    --unnamed-line-spacing-18: 18px;
+    --unnamed-line-spacing-20: 20px;
+    --unnamed-line-spacing-27: 27px;
+    --unnamed-line-spacing-31: 31px;
+    --unnamed-line-spacing-40: 40px;
+}
+
+/* Character Styles */
+.h1-merriweather-—-32pt {
+    font-family: var(--unnamed-font-family-merriweather);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-900);
+    font-size: var(--unnamed-font-size-32);
+    line-height: var(--unnamed-line-spacing-40);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+}
+.h2-merriweather-—-24pt {
+    font-family: var(--unnamed-font-family-merriweather);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-900);
+    font-size: var(--unnamed-font-size-24);
+    line-height: var(--unnamed-line-spacing-31);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+}
+.p-merriweather-—-18pt {
+    font-family: var(--unnamed-font-family-merriweather);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-18);
+    line-height: var(--unnamed-line-spacing-27);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+}
+.p2-merriweather-—-16pt {
+    font-family: var(--unnamed-font-family-merriweather);
+    font-style: var(--unnamed-font-style-normal);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-16);
+    line-height: var(--unnamed-line-spacing-20);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+}
+.p3-merriweather-—-14pt {
+    font-family: var(--unnamed-font-family-merriweather);
+    font-style: var(--unnamed-font-style-italic);
+    font-weight: var(--unnamed-font-weight-normal);
+    font-size: var(--unnamed-font-size-14);
+    line-height: var(--unnamed-line-spacing-18);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f)
+
+}
+
