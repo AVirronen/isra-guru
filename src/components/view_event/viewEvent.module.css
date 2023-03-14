@@ -9,9 +9,11 @@
     background: var(--unnamed-color-f8f8f8) 0% 0% no-repeat padding-box;
     background: #F8F8F8 0% 0% no-repeat padding-box;
     opacity: 1;
+    position: absolute;
+    display: flex;
 }
 
-.path1 {
+.sidebar {
     /* Layout Properties */
     top: 0px;
     left: 0px;
@@ -24,21 +26,18 @@
     opacity: 1;
 }
 
-.ellipse1 {
+.guideIcon {
     /* Layout Properties */
     top: 55px;
     left: 268px;
     width: 50px;
     height: 50px;
+    border-radius: 50%;
     /* UI Properties */
-    background: transparent url('../img/Ellipse1.png') 0% 0% no-repeat padding-box;
     /*background-image: url("../img/Ellipse1.png");*/
     opacity: 1;
-
-}
-
-.user {
-
+    display: flex;
+    position: absolute;
 }
 
 .yourGuide {
@@ -56,6 +55,8 @@
     letter-spacing: 0px;
     color: #2B2D2F;
     opacity: 1;
+    position: absolute;
+    display: flex;
 }
 
 .guideName {
@@ -73,345 +74,38 @@
     letter-spacing: 0px;
     color: #2B2D2F;
     opacity: 1;
-}
-
-.rectangle12 {
-    /* Layout Properties */
-    top: 136px;
-    left: 152px;
-    width: 350px;
-    height: 350px;
-    /* UI Properties */
-    background: transparent url('../img/Rectangle12.png') 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-}
-
-.rectangle20 {
-    /* Layout Properties */
-    top: 496px;
-    left: 212px;
-    width: 55px;
-    height: 55px;
-    /* UI Properties */
-    background: transparent url('../img/Rectangle20.png') 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-}
-
-.rectangle19 {
-    /* Layout Properties */
-    top: 496px;
-    left: 290px;
-    width: 55px;
-    height: 55px;
-    /* UI Properties */
-    background: transparent url('../img/Rectangle19.png') 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-
-}
-
-.rectangle18 {
-    /* Layout Properties */
-    top: 496px;
-    left: 369px;
-    width: 55px;
-    height: 55px;
-    /* UI Properties */
-    background: transparent url('../img/Rectangle18.png') 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-}
-
-rectangle17 {
-    /* Layout Properties */
-    top: 496px;
-    left: 447px;
-    width: 55px;
-    height: 55px;
-    /* UI Properties */
-    background: transparent url('../img/Rectangle17.png') 0% 0% no-repeat padding-box;
-    box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-}
-
-.t {
-    /* Layout Properties */
-    top: 105px;
-    left: 557px;
-    width: 116px;
-    height: 145px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 98px/145px Stalinist One;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    font: normal normal normal 98px/145px Stalinist One;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.group7 {
-    /* Layout Properties */
-    top: 105px;
-    left: 557px;
-    width: 651px;
-    height: 145px;
-    /* UI Properties */
-    opacity: 1;
+    position: absolute;
+    display: flex;
 }
 
 button {
-    /* Layout Properties */
+    border: none;
+    color: #f3f3f3;
+    height: 50px;
+    width: 220px;
+    background-color: #2B2D2F;
+    border-radius: 25px;
+    font-size: 18px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.btnPosition1{
+    margin: 0;
+    padding: 0;
     top: 55px;
     left: 1063px;
-    width: 220px;
-    height: 50px;
-    /* UI Properties */
-    background: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
-    background: #2B2D2F 0% 0% no-repeat padding-box;
-    border-radius: 25px;
     opacity: 1;
+    position: absolute;
 }
 
-/*button text{*/
-/*    !* Layout Properties *!*/
-/*    top: 70px;*/
-/*    left: 1146px;*/
-/*    width: 54px;*/
-/*    height: 20px;*/
-/*    !* UI Properties *!*/
-/*    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) Ubuntu;*/
-/*    letter-spacing: var(--unnamed-character-spacing-0);*/
-/*    color: var(--unnamed-color-f8f8f8);*/
-/*    text-align: center;*/
-/*    font: normal normal normal 18px/27px Ubuntu;*/
-/*    letter-spacing: 0px;*/
-/*    color: #F8F8F8;*/
-/*    opacity: 1;*/
-/*}*/
-
-.invite {
-    /* Layout Properties */
-    top: 279px;
-    left: 635px;
-    width: 630px;
-    height: 79px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-900) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    font: italic normal 900 18px/27px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-
+.galleryView{
+    position: absolute;
+    display: flex;
 }
 
-.rectangle21 {
-    /* Layout Properties */
-    top: 384px;
-    left: 635px;
-    width: 109px;
-    height: 109px;
-    /* UI Properties */
-    background: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
-    background: #2B2D2F 0% 0% no-repeat padding-box;
-    opacity: 1;
-}
-
-.data {
-    /* Layout Properties */
-    top: 384px;
-    left: 663px;
-    width: 54px;
-    height: 58px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-900) 46px/58px var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-f8f8f8);
-    text-align: center;
-    font: italic normal 900 46px/58px Merriweather;
-    letter-spacing: 0px;
-    color: #F8F8F8;
-    opacity: 1;
-}
-
-.month {
-    /* Layout Properties */
-    top: 436px;
-    left: 647px;
-    width: 88px;
-    height: 23px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/23px var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-f8f8f8);
-    text-align: center;
-    font: normal normal normal 18px/23px Merriweather;
-    letter-spacing: 0px;
-    color: #F8F8F8;
-    opacity: 1;
-}
-
-.day {
-    /* Layout Properties */
-    top: 466px;
-    left: 680px;
-    width: 20px;
-    height: 23px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/23px var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-f8f8f8);
-    text-align: center;
-    font: normal normal normal 18px/23px Merriweather;
-    letter-spacing: 0px;
-    color: #F8F8F8;
-    text-transform: lowercase;
-}
-
-.placeSymbol {
-    top: 413px;
-    left: 768px;
-    width: 14px;
-    height: 18px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/22px Font Awesome 5 Pro;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: center;
-    font: normal normal normal 18px/22px Font Awesome 5 Pro;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.placeText {
-    top: 445px;
-    left: 1046px;
-    width: 137px;
-    height: 20px;
-    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    font: normal normal bold 16px/20px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.price {
-    /* Layout Properties */
-    top: 413px;
-    left: 1019px;
-    width: 16px;
-    height: 18px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/22px Font Awesome 5 Pro;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: center;
-    font: normal normal normal 18px/22px Font Awesome 5 Pro;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.priceText {
-    /* Layout Properties */
-    top: 412px;
-    left: 1046px;
-    width: 86px;
-    height: 20px;
-    /* UI Properties */
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.timeSymbol{
-    /* Layout Properties */
-    top: 446px;
-    left: 768px;
-    width: 18px;
-    height: 18px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/22px Font Awesome 5 Pro;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: center;
-    font: normal normal normal 18px/22px Font Awesome 5 Pro;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-.timeText{
-    /* Layout Properties */
-    top: 445px;
-    left: 794px;
-    width: 176px;
-    height: 20px;
-    /* UI Properties */
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.howMuchSymbol{
-    top: 446px;
-    left: 1018px;
-    width: 22px;
-    height: 18px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/22px Font Awesome 5 Pro;
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: center;
-    font: normal normal normal 18px/22px Font Awesome 5 Pro;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.howMuchText{
-    /* Layout Properties */
-    top: 445px;
-    left: 1046px;
-    width: 137px;
-    height: 20px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    font: normal normal bold 16px/20px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
-}
-
-.textContent{
-    /* Layout Properties */
-    top: 524px;
-    left: 635px;
-    width: 630px;
-    height: 628px;
-    /* UI Properties */
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    font: normal normal normal 18px/27px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
-    opacity: 1;
+.btnPosition2{
+    top: 1584px;
+    left: 1063px;
+    position: absolute;
 }

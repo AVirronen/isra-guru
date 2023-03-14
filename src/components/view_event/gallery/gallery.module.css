@@ -1,0 +1,72 @@
+.allgallery {
+    position: absolute;
+    top: 160px;
+    left: 160px;
+    display: flex;
+    width: 350px;
+    /*height: 410px;*/
+}
+
+.mainPhoto {
+    top: 136px;
+    left: 152px;
+    width: 350px;
+    height: 350px;
+    background: transparent url('#') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+}
+
+.smallPhoto1 {
+    top: 496px;
+    left: 212px;
+    width: 55px;
+    height: 55px;
+    background: transparent url('#') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.smallPhoto2 {
+    top: 496px;
+    left: 290px;
+    width: 55px;
+    height: 55px;
+    background: transparent url('#') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.smallPhoto3 {
+    top: 496px;
+    left: 369px;
+    width: 55px;
+    height: 55px;
+    background: transparent url('#') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.smallPhoto4 {
+    top: 496px;
+    left: 447px;
+    width: 55px;
+    height: 55px;
+    background: transparent url('#') 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+}
+

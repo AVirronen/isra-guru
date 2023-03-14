@@ -1,42 +1,26 @@
 import React from 'react';
-import style from "./viewEvent.module.css"
+import style from './contentView.module.css'
+import HatIcon from "../../icons/HatIcon";
+import CardInfo from "../cardInfo/CardInfo";
 
 const ContentView = () => {
     return (
         <div>
-            <div>
-                <section>
-                <div className={style.contentPath1}>
-                    <p className={style.t}>T</p>
-                    <p className={style.contentTitle}>ель-Авив. С чего все начиналось и кто во всем виноват?</p>
-                </div>
-
+                <section className={style.allContext}>
+                    <p className={style.contentTitle__T}>T</p>
+                    <div className={style.title}>
+                        <p className={style.contentTitle}>ель-Авив. С чего все начиналось и кто во всем виноват?</p>
+                    </div>
                     <p className={style.invite}>Друзья, приглашаю Вас прогуляться по вечернему Яффо со всеми его мифами
                         и
                         легендами, с царями и
                         богами,
                         крестоносцами и мусульманами, с египтянами, евреями, греками и даже русскими.</p>
                 </section>
-                <div className={style.rectangle21}>
-                    <p className={style.data}>03</p>
-                    <p className={style.month}>сентября</p>
-                    <p className={style.day}>ВС</p>
-                </div>
-                <section className={style.group10}>
-                    <div className={style.containerSymbolls}>
-                        <p className={style.placeSymbol}></p>
-                        <p className={style.placeText}>Тель Авив Яффо</p>
-                        <p className={style.price}></p>
-                        <p className={style.priceText}><b>150</b> (≈$36)</p>
-                    </div>
-                    <div>
-                        <p className={style.timeSymbol}></p>
-                        <p className={style.timeText}><b>16.00 - 20.00</b> (4 часа)</p>
-                        <p className={style.howMuchSymbol}></p>
-                        <p className={style.howMuchText}><b>Осталось 5 мест</b></p>
-                    </div>
-                </section>
-                <section className={style.textContent}>
+            <div className={style.cardInfo__Var1}>
+                <CardInfo/>
+            </div>
+                <section className={style.content}>
                     <p>В субботу 29-го февраля в 10 часов утра, состоится экскурсия «Побазарим» - прогулка по территории
                         рынка Кармель (рынок не работает) и кварталу «Керем Тайманим». Не секрет, что евреи любят
                         покушать.
@@ -57,7 +41,30 @@ const ContentView = () => {
                         йеменских
                         евреев Керем Тайманим. Экскурсия редкая, экспериментальная, провожу ее не часто.</p>
                 </section>
-            </div>
+            <p className={style.line}></p>
+                <h2>Где встречаемся?</h2>
+                <p className={style.content__place}>Часовая башня в Яффо. На перекрестке у фалафельной. На левой стороне
+                    от причала в пятницу в 19.00.
+                    Будем рады видеть вас и ваших детей (от 4 лет) и собак (от года).</p>
+                <div className={style.content__Block}>
+                    <div className={style.content__place___infoBlock}>
+                        <i><HatIcon/></i>
+                        <p>Участникам программ Маса и репатриантам до 1 года — 50% скидка</p>
+                    </div>
+                    <div className={style.content__place___complexity}>
+                        <i><HatIcon/></i>
+                        <p>Уровень сложности материала: турист
+                            (обзорная).</p>
+                    </div>
+                    <img className={style.mapCard}
+                         src="https://i.ebayimg.com/images/g/j9wAAOSw2rNhHlJx/s-l1600.jpg"
+                         alt="Map"/>
+                    <p className={style.lineEnd}></p>
+
+                </div>
+                <div className={style.cardInfo__Var2}>
+                    <CardInfo/>
+                </div>
         </div>
 
     )
