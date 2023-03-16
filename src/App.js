@@ -1,6 +1,10 @@
 import './App.css';
 import {Component} from "react";
-import ViewEvent from "./components/view_event/ViewEvent";
+import {Route, Routes} from "react-router-dom";
+import Layout from "./components/layout/Layout";
+import SignUp from "./components/singup_event/SignUp";
+import ThankYou from "./components/thank_you_page/ThankYou";
+import ListEvents from "./components/list_events/ListEvents";
 
 class App extends Component {
   // constructor(props) {
@@ -13,8 +17,16 @@ class App extends Component {
   render() {
     return (
         <div>
-          <ViewEvent/>
+            <ListEvents/>
         </div>
+        // <>
+        //     <Routes>
+        //         <Route path={'/'} element={<Layout />}>
+        //             <Route index element={<SignUp />} />
+        //             <Route path={'/thankyou'} element={<ThankYou />} />
+        //         </Route>
+        //     </Routes>
+        // </>
     );
   }
 }

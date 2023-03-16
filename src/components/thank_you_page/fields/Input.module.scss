@@ -1,0 +1,27 @@
+.field__container {
+  height: 25.5px;
+  width: 358px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-bottom: 2px solid black;
+  position: relative;
+}
+
+.label {
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+}
+
+.input {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  &:focus-within {
+    outline: none;
+    border: none;
+  }
+  border: none;
+}

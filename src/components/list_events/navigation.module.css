@@ -1,0 +1,158 @@
+.blackBlack {
+    height: 100px;
+    padding: 0 3% 0 3%;
+    background: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-around;
+}
+
+.blackBlack > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.blackBlack p {
+    text-align: center;
+    font: italic normal normal 14px/18px Merriweather;
+    letter-spacing: 0px;
+    color: #EBDFCD;
+    margin: 0;
+}
+
+.blackBlack .commonFilter{
+    width: 30%;
+}
+
+.blackBlack input, .blackBlack button{
+    background-color: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
+    border: 0px solid;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.commonFilter .inpSearch {
+    width: 100%;
+    display: flex;
+    /*flex-direction: row;*/
+    border-bottom: 1px solid #F8F8F8;
+}
+
+.commonFilter .iconSearch {
+    margin-top: 10px;
+}
+
+/*изменить цвет крестика*/
+.commonFilter input {
+    width: 100%;
+
+    /*height: 18px;*/
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-b2b3b4);
+    text-align: left;
+
+    background-color: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
+    border: 0px solid;
+
+}
+
+.dateFilter{
+    width: 17%;
+}
+
+.dateFilter .dates {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.dateFilter input {
+    width: 45%;
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-ebdfcd);
+    text-align: left;
+    opacity: 1;
+
+    border-bottom: 1px solid #F8F8F8;
+    /*margin-right: 17px;*/
+}
+
+.dateFilter input :first-child {
+    border-right: 16px;
+}
+
+.placeFilter, .levelFilter{
+    display: flex;
+    flex-direction: column;
+
+    width: 13.5%;
+}
+
+/*.placeFilter input {*/
+/*    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;*/
+/*    letter-spacing: var(--unnamed-character-spacing-0);*/
+/*    color: var(--unnamed-color-b2b3b4);*/
+/*    text-align: left;*/
+/*    opacity: 1;*/
+
+/*    border-bottom: 1px solid #F8F8F8;*/
+/*}*/
+
+.placeFilter button, .levelFilter button{
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid #F8F8F8;
+}
+.placeFilter button{
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-b2b3b4);
+}
+
+
+.levelFilter input {
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-f8f8f8);
+    text-align: left;
+    opacity: 1;
+
+    /*border-bottom: 1px solid #F8F8F8;*/
+}
+
+.levelFilter button{
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-f8f8f8);
+}
+
+
+.langFilter {
+    /*width: 10%;*/
+}
+
+.langFilter .lang {
+    display: flex;
+    flex-direction: row;
+
+    border-bottom: 1px solid #F8F8F8;
+    /*margin: 10px 10px 0 0;*/
+}
+
+.langFilter .lang button{
+    /*height: 18px;*/
+    width: 25%;
+    color: #B2B3B4;
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+}
+
+.langFilter .lang button:hover{
+    background-color: #EBDFCD;
+    color: #2B2D2F;
+}

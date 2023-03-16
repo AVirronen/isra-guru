@@ -1,0 +1,15 @@
+.payment{
+    top: 84px;
+    left: 288px;
+    width: 125px;
+    height: 40px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-900) var(--unnamed-font-size-32)/var(--unnamed-line-spacing-40) var(--unnamed-font-family-merriweather);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+    font: normal normal 900 32px/40px Merriweather;
+    letter-spacing: 0px;
+    color: #2B2D2F;
+    position: absolute;
+
+}

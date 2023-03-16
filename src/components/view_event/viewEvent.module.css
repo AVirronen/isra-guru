@@ -1,11 +1,14 @@
+body {
+    width: 100%;
+    height: auto;
+
+}
 
 .viewEventBackground {
-    /* Layout Properties */
     top: 0px;
     left: 0px;
     width: 1366px;
-    height: 1767px;
-    /* UI Properties */
+    height: auto;
     background: var(--unnamed-color-f8f8f8) 0% 0% no-repeat padding-box;
     background: #F8F8F8 0% 0% no-repeat padding-box;
     opacity: 1;
@@ -14,12 +17,9 @@
 }
 
 .sidebar {
-    /* Layout Properties */
     top: 0px;
     left: 0px;
     width: 239px;
-    height: 1767px;
-    /* UI Properties */
     background: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
     background: #2B2D2F 0% 0% no-repeat padding-box;
     border: 1px solid #707070;
@@ -27,26 +27,21 @@
 }
 
 .guideIcon {
-    /* Layout Properties */
     top: 55px;
     left: 268px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    /* UI Properties */
-    /*background-image: url("../img/Ellipse1.png");*/
     opacity: 1;
     display: flex;
     position: absolute;
 }
 
 .yourGuide {
-    /* Layout Properties */
     top: 65px;
     left: 330px;
     width: 47px;
     height: 13px;
-    /* UI Properties */
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 10px/13px var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
     color: var(--unnamed-color-2b2d2f);
@@ -60,12 +55,10 @@
 }
 
 .guideName {
-    /* Layout Properties */
     top: 78px;
     left: 330px;
     width: 72px;
     height: 18px;
-    /* UI Properties */
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-18) var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
     color: var(--unnamed-color-2b2d2f);
@@ -90,7 +83,7 @@ button {
     cursor: pointer;
 }
 
-.btnPosition1{
+.btnPosition1 {
     margin: 0;
     padding: 0;
     top: 55px;
@@ -99,13 +92,24 @@ button {
     position: absolute;
 }
 
-.galleryView{
+.galleryView {
     position: absolute;
     display: flex;
 }
 
-.btnPosition2{
+.btnPosition2 {
     top: 1584px;
     left: 1063px;
     position: absolute;
+}
+
+.guideIcon__forGuideInfo{
+    border-radius: 50%;
+    opacity: 1;
+    position: fixed;
+
+    top: 136px;
+    left: 152px;
+    width: 350px;
+    height: 350px;
 }

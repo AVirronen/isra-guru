@@ -1,5 +1,5 @@
 import React from 'react';
-import Navigation from "../list_events/navigation/Navigation";
+import Navigation from "../list_events/Navigation";
 import Data from "./Data";
 import ListEvents from "../list_events/ListEvents";
 import Level from "./Level";
@@ -8,7 +8,7 @@ import Place from "./Place";
 const Search = () => {
     return (
         <div>
-            <Navigation/>
+            {/*<Navigation/>*/}
             <Data/>
             <Level/>
             <Place/>
