@@ -8,7 +8,6 @@ const ViewEvent = () => {
     return (
         <div className={style.viewEventBackground}>
             <div className={style.sidebar}>
-            </div>
             <section>
                 <div>
                     <img className={style.guideIcon}
@@ -22,7 +21,7 @@ const ViewEvent = () => {
             <Gallery/>
             <ContentView/>
             <button className={style.btnPosition2}>Пойду</button>
-
+            </div>
         </div>
     )
 };

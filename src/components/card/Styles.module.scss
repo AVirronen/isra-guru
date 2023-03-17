@@ -117,6 +117,8 @@
   margin-top: 0;
   //display: grid;
   height: 80px;
+  display: flex;
+  flex-direction: column;
 
   &_item {
     display: flex;
@@ -133,7 +135,6 @@
   &_item:nth-child(1) {
     margin-top: 0;
   }
-  ////новое к btn
 
   &_btn{
     border: none;

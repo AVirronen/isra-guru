@@ -1,7 +1,6 @@
 import React from 'react';
 import ContentGuide from "./ContentGuide";
-import style from "../view_event/viewEvent.module.css";
-
+import style from "./guideInfo.module.css"
 const GuideInfo = () => {
     return (<div className={style.viewEventBackground}>
             <div className={style.sidebar}>

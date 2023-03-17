@@ -4,7 +4,7 @@
     width: 109px;
     height: 109px;
     background: var(--unnamed-color-2b2d2f) 0% 0% no-repeat padding-box;
-    background: #2B2D2F 0% 0% no-repeat padding-box;
+    /*background: #2B2D2F 0% 0% no-repeat padding-box;*/
     opacity: 1;
     /*position: absolute;*/
     display: flex;
@@ -19,9 +19,6 @@
     left: 663px;
     width: 54px;
     height: 58px;
-    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-900) 46px/58px var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-f8f8f8);
     text-align: center;
     font: italic normal 900 46px/58px Merriweather;
     letter-spacing: 0px;
@@ -39,10 +36,7 @@
     height: 23px;
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/23px var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-f8f8f8);
     text-align: center;
-    font: normal normal normal 18px/23px Merriweather;
-    letter-spacing: 0px;
     color: #F8F8F8;
     opacity: 1;
     display: flex;
@@ -57,10 +51,7 @@
     width: 20px;
     height: 23px;
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/23px var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-f8f8f8);
     text-align: center;
-    font: normal normal normal 18px/23px Merriweather;
     letter-spacing: 0px;
     color: #F8F8F8;
     text-transform: lowercase;
@@ -81,18 +72,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-top: 25px;
     padding: 0;
     align-items: center;
+    margin: 0;
+
 }
 
 ul {
     display: flex;
+
 }
 
 li {
     list-style: none;
     display: inline-flex;
+    margin-bottom: 20px;
+    margin-top: 7px;
+}
+
+.infoCard p {
+    margin: 0;
+    padding-left: 10px;
 }
 
 
@@ -102,12 +102,9 @@ li {
     width: 143px;
     height: 20px;
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: normal normal bold 16px/20px Merriweather;
-    letter-spacing: 0px;
     color: #2B2D2F;
-    opacity: 1;
 }
 
 .infoCard__timeText {
@@ -116,11 +113,8 @@ li {
     width: 176px;
     height: 20px;
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
-    letter-spacing: 0px;
     color: #2B2D2F;
-    opacity: 1;
 }
 
 .infoCard__priceText {
@@ -129,11 +123,8 @@ li {
     width: 86px;
     height: 20px;
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
-    letter-spacing: 0px;
     color: #2B2D2F;
-    opacity: 1;
 }
 
 .allBlock {

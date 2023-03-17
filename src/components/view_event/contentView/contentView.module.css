@@ -10,99 +10,87 @@
 }
 
 .title {
-    top: 105px;
-    left: 557px;
+
     width: 651px;
     height: 145px;
     opacity: 1;
     position: absolute;
-    display: flex;
-    flex-direction: row;
 }
 
 .contentTitle {
-    top: 50px;
+    top: 105px;
+    left: 1px;
+    margin: 0;
+    padding: 0;
+    /*top: 50px;*/
     right: 562px;
     width: 573px;
     height: 80px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-900) var(--unnamed-font-size-32)/var(--unnamed-line-spacing-40) var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
     color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: normal normal 900 32px/40px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
     opacity: 1;
     position: relative;
 }
 
 .contentTitle__T {
+    margin: 0;
+    padding: 0;
     top: 81px;
     right: 50px;
     width: 116px;
     height: 145px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) 98px/145px Stalinist One;
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: normal normal normal 98px/145px Stalinist One;
-    letter-spacing: 0px;
     color: #2B2D2F;
     opacity: 1;
     position: relative;
 }
 
 .invite {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
     top: 100px;
     width: 630px;
     height: 79px;
-    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-900) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: italic normal 900 18px/27px Merriweather;
-    letter-spacing: 0px;
     color: #2B2D2F;
     opacity: 1;
     position: relative;
+    /*display: flex;*/
+    /*flex-direction: column;*/
 
 
 }
 
 .content {
+    /*display: flex;*/
+    /*flex-direction: column;*/
     top: 524px;
     left: 635px;
     width: 630px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: normal normal normal 18px/27px Merriweather;
-    letter-spacing: 0px;
     color: #2B2D2F;
-    opacity: 1;
-    position: absolute;
-    display: flex;
+    position: relative;
     padding-bottom: 25px;
-    /*border-bottom: #707070 solid 2px;*/
-
 }
 
-.line h2 {
-    top: 1150px;
+.whereWeMeet {
+    top: 600px;
     left: 635px;
-    width: 230px;
-    height: 31px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-900) var(--unnamed-font-size-24)/var(--unnamed-line-spacing-31) var(--unnamed-font-family-merriweather);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
-    text-align: left;
-    font: normal normal 900 24px/31px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
+    width: 630px;
+    /*border: 1px solid #2B2D2F;*/
     opacity: 1;
-    display: flex;
-    position: absolute;
+    position: relative;
+    /*display: flex;*/
+    /*flex-direction: column;*/
 }
 
 .content__place {
@@ -110,15 +98,11 @@
     left: 635px;
     width: 630px;
     height: 90px;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
+    /*margin: 10px;*/
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: normal normal normal 18px/27px Merriweather;
-    letter-spacing: 0px;
     color: #2B2D2F;
-    opacity: 1;
-    position: absolute;
 }
 
 .content__place___infoBlock {
@@ -126,16 +110,26 @@
     left: 400px;
     width: 489px;
     height: 18px;
-    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-18) var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
     color: var(--unnamed-color-2b2d2f);
     text-align: left;
     font: italic normal normal 14px/18px Merriweather;
-    letter-spacing: 0px;
-    color: #2B2D2F;
     opacity: 1;
-    position: relative;
-    display: flex;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.infoBlock {
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    /*padding: 0;*/
+}
+
+.infoBlock p {
+    margin: 0;
+    padding-left: 10px;
+
 }
 
 .content__place___complexity {
@@ -145,55 +139,52 @@
     height: 18px;
     font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-18) var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-2b2d2f);
     text-align: left;
-    letter-spacing: 0px;
     color: #2B2D2F;
-    opacity: 1;
-    position: relative;
-    display: flex;
     padding-bottom: 50px;
     /*border-bottom: solid #707070 2px;*/
+    display: inline-flex;
 }
 
 .mapCard {
-    top: 1100px;
-    right: 80px;
+    top: 0px;
+    right: 760px;
+    /*left: 152px;*/
     width: 350px;
     height: 250px;
     box-shadow: 0px 3px 6px #00000029;
-    opacity: 1;
-    position: relative;
-    display: flex;
+    position: absolute;
+    margin-bottom: 0;
 }
 
-.cardInfo__Var1{
+.cardInfo__Var1 {
     top: 384px;
     left: 635px;
     position: absolute;
 }
-.cardInfo__Var2{
+
+.cardInfo__Var2 {
     top: 1610px;
     left: 269px;
     position: absolute;
 }
 
-.line{
-    top: 1100px;
-    left: 269px;
-    width: 1030px;
+
+.lineEnd {
+    width: 961px;
     height: 0px;
+    right: 30px;
     border: 1px solid var(--unnamed-color-2b2d2f);
     border: 1px solid #2B2D2F;
     opacity: 1;
     position: absolute;
 }
 
-.lineEnd{
-    top: 1530px;
-    left: 269px;
-    width: 1030px;
+.limeMiddle{
+    top: 1085px;
+    width: 961px;
     height: 0px;
+    right: 130px;
     border: 1px solid var(--unnamed-color-2b2d2f);
     border: 1px solid #2B2D2F;
     opacity: 1;
