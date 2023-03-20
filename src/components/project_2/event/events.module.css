@@ -1,0 +1,39 @@
+
+.events{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border-bottom: 1px solid var(--unnamed-color-d8d8d9);
+
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+}
+.events .dateEvents{
+    width: 10%
+}
+
+.events .dateDesc{
+    width: 50%;
+}
+
+.events .datePeople{
+    margin-right: 80px;
+}
+
+.iconsEvents{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.iconsEvents>div{
+    width: 18px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+
+

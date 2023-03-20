@@ -1,0 +1,62 @@
+button{
+    cursor: pointer;
+}
+
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.navInp{
+    display: flex;
+    flex-direction: row;
+    width: 65%;
+    justify-content: space-between;
+}
+
+.navInp input{
+    height: 50px;
+
+    border: 0.5px solid #D8D8D9;
+    text-align: left;
+    font: var(--unnamed-font-style-normal) normal medium var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: 0px;
+    color: #B2B3B4;
+
+    padding-left: 2%;
+    padding-right: 2px;
+}
+
+.navInp .wrapSearch{
+    width: 50%;
+    margin-bottom: 10px;
+}
+.navInp .iconSearch2{
+    position: absolute;
+    padding: 13px 6px 10px 6px;
+}
+
+.navInp .search{
+    width: 100%;
+    padding-left: 38px;
+}
+
+.navInp input[type="date"]{
+    width: 20%;
+    height: 49px;
+}
+
+.nav button{
+    background: #F0856B 0% 0% no-repeat padding-box;
+    border-radius: 25px;
+    text-align: center;
+    font: normal normal normal 18px/27px Ubuntu;
+    letter-spacing: 0px;
+    color: #F8F8F8;
+
+    width: 20%;
+    border: 0;
+}
+
