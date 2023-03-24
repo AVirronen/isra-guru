@@ -12,7 +12,6 @@ const Navigation = () => {
     const [place, setPlace] = React.useState('Тель Авив Яффо')
     const [level, setLevel] = React.useState('Местный')
 
-    // второй раз == закрыть
     const [countP, setCountP] = React.useState(1)
     const [countL, setCountL] = React.useState(1)
 

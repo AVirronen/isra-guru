@@ -37,6 +37,8 @@
   opacity: 1;
   position: absolute;
   display: flex;
+
+  height: 100vh;
 }
 
 .sidebarSU {
@@ -46,7 +48,11 @@
   background: #2B2D2F 0% 0% no-repeat padding-box;
   border: 1px solid #707070;
   opacity: 1;
-  height: 110vh;
+
+
+  height: 100%;
+
+  padding-bottom: 127px;
 
 }
 

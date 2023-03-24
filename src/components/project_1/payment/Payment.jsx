@@ -1,12 +1,20 @@
 import React from 'react';
 import style from './payment.module.css'
+import {thankYou} from "../../../utils/constants";
+import {Link} from "react-router-dom";
 
 const Payment = () => {
     return (
-        <div className={style.viewEventBackground}>
+        <div>
+            <div className={style.viewEventBackground}>
             <span className={style.sidebar}>
-            <h1 className={style.payment}>Оплата</h1>
+                <div>
+                    <h1 className={style.payment}>Оплата</h1>
+                    <Link to={`/${thankYou}`} className={style.next}>Successful payment</Link>
+                </div>
+
             </span>
+            </div>
         </div>
     );
 };

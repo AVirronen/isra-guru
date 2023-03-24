@@ -1,16 +1,29 @@
 import React from 'react';
 import styles from './ThankYou.module.scss'
+import styleB from './button/Buttton.module.scss';
+
 // import TicketIcon from "../../../assets/icons/TicketIcon";
 import GeoIcon from "../../../icons/GeoIcon";
 import WatchIcon from "../../../icons//WatchIcon";
 import UsersIcon from "../../../icons/UsersIcon";
 import QrCodeIcon from "../../../icons/QrCodeIcon";
 import Button from "./button/Button";
-import Layout from "../layout/Layout";
 import Sidebar from "../layout/Sidebar";
-import {Outlet} from "react-router-dom";
 
 const ThankYou = () => {
+    const download = () => {
+        // в texts должен быть контент!!!
+        const texts = ["line 1", "line 2", "line 3"]
+        const file = new Blob(texts, {type: 'text/plain'});
+        const element = document.createElement("a");
+        element.href = URL.createObjectURL(file);
+        element.download = "Ticket.txt";
+        document.body.appendChild(element);
+        element.click();
+    }
+
+
+
     return (
         <div style={{width: '100%', display: 'flex', flexDirection:'row', height: '100vh'}}>
             <div style={{height: '100vh', display: 'flex'}}>
@@ -70,7 +83,13 @@ const ThankYou = () => {
                         </section>
                     </div>
                     <div className={styles.buttons_block}>
-                        <Button bg={'dark'}>Сохранить</Button>
+                        <button className={styleB.dark_button} onClick={()=> {download()}}>
+                            Сохранить
+                        </button>
+                        {/*<Button bg={'dark'} onClick={()=>{*/}
+                        {/*    endDownload("ticket.txt","This is the content of my file :)");*/}
+                        {/*}}*/}
+                        {/*>Сохранить</Button>*/}
                         <Button bg={'light'}>Поделиться в FB</Button>
                     </div>
                 </div>

@@ -1,8 +1,12 @@
 import React from 'react';
 import style from './navElementList.module.css'
-import SearchGrey from "../../../icons/SearchGrey";
+import SearchGrey from "../../../../icons/SearchGrey";
+import {useNavigate} from "react-router-dom";
+import {eventCreate} from "../../../../utils/constants";
 
 const NavEventList = () => {
+    const navigate = useNavigate()
+
     return (
         <div className={style.nav}>
             <div className={style.navInp}>
@@ -14,7 +18,7 @@ const NavEventList = () => {
                 {/*placeholder={`${value}`} value={'Июнь 23'}/>*/}
                 <input type={"date"} id={"endDate2"}/>
             </div>
-            <button>Создать</button>
+            <button onClick={()=>{navigate(`/${eventCreate}`)}}>Создать</button>
         </div>
     );
 };

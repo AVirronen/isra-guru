@@ -22,6 +22,9 @@ export const thankYou = 'thankYou'
 export const guideInfo = 'guideInfo'
 
 
+export const eventList = 'eventList'
+export const eventCreate = 'eventCreate'
+
 export const deleting = 'filterLevel'
 export const dublicating  = 'dublicating'
 export const saving = 'saving'

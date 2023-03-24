@@ -1,0 +1,52 @@
+
+.button__orange {
+    top: 25px;
+    right: 0;
+    width: 220px;
+    height: 50px;
+    background: #F0856B 0 0 no-repeat padding-box;
+    border-radius: 25px;
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) Ubuntu;
+    text-align: center;
+    letter-spacing: 0;
+    color: #F8F8F8;
+    position: absolute;
+    margin: 0;
+}
+
+.preview_info_all {
+    margin: 0;
+    top: 15px;
+    left: 550px;
+    width: 127px;
+    height: 20px;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: right;
+    font: normal normal bold 16px/18px Ubuntu;
+}
+
+.preview_info_allDescription {
+    top: 15px;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.preview_info_allDescription i{
+    width: 20px;
+    height: 20px;
+}
+.preview_info_allDescription p {
+    margin: 0;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+section{
+    margin: 0;
+}
