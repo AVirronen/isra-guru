@@ -11,7 +11,7 @@ const ContentGuide = () => {
 
     const displayName = ()=> {
         onValue(guideNameRef, snapshot => {
-            setName(snapshot.val())
+            console.log(snapshot.val())
         })
     }
 
@@ -19,7 +19,7 @@ const ContentGuide = () => {
         <div>
             <section className={style.titlebg}>
                 <div className={style.title}>
-                    <h1 onClick={()=>displayName()}>{name}</h1>
+                    <h1>{displayName()}</h1>
                     {/*<h1>{onValue(guideNameRef, snapshot => {snapshot.val()})}</h1>*/}
                     <p className={style.description}>Лицензированный гид (верифицирован israguru.com)</p>
                 </div>
