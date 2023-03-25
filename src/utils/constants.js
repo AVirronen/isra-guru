@@ -26,6 +26,11 @@ export const eventList = 'eventList'
 export const eventCreate = 'eventCreate'
 
 export const deleting = 'filterLevel'
-export const dublicating  = 'dublicating'
+export const dublicating = 'dublicating'
 export const saving = 'saving'
 export const pop_UP = 'popUP'
+
+
+export const authorization = 'authorization'
+export const error = 'error'
+export const register = 'register'

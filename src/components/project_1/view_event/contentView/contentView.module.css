@@ -72,7 +72,7 @@
     /*display: flex;*/
     /*flex-direction: column;*/
     top: 524px;
-    left: 635px;
+    left: 270px;
     width: 630px;
     letter-spacing: var(--unnamed-character-spacing-0);
     text-align: left;
@@ -84,9 +84,8 @@
 
 .whereWeMeet {
     top: 600px;
-    left: 635px;
+    left: 270px;
     width: 630px;
-    /*border: 1px solid #2B2D2F;*/
     opacity: 1;
     position: relative;
     /*display: flex;*/
@@ -147,12 +146,12 @@
 }
 
 .mapCard {
-    top: 0px;
+    top: 0;
     right: 760px;
     /*left: 152px;*/
     width: 350px;
     height: 250px;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0 3px 6px #00000029;
     position: absolute;
     margin-bottom: 0;
 }
@@ -171,22 +170,22 @@
 
 
 .lineEnd {
-    width: 961px;
-    height: 0px;
-    right: 30px;
-    border: 1px solid var(--unnamed-color-2b2d2f);
-    border: 1px solid #2B2D2F;
+    width: 1000px;
+    height: 0;
+    border: 1px solid #00000029;
     opacity: 1;
+    right: -10px;
     position: absolute;
 }
 
 .limeMiddle{
+    left: 260px;
     top: 1085px;
-    width: 961px;
-    height: 0px;
+    width: 1000px;
+    height: 0;
     right: 130px;
-    border: 1px solid var(--unnamed-color-2b2d2f);
-    border: 1px solid #2B2D2F;
+    border: 1px solid #00000029;
     opacity: 1;
     position: absolute;
 }
+

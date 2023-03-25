@@ -1,12 +1,20 @@
 import React from 'react';
-import {gallery} from "../../../../utils/constants";
 
-const Picture = () => {
+
+const Picture = (props) => {
     return (
-        <section>
-            <img src={gallery} alt={'gallery photo'}/>
-        </section>
+        // <div>
+        //     <div>
+        //         <img className={props.style} alt={'main photo'} srs={props.picture}/>
+        //     </div>
+        <div>
+            <img className={props.style} alt={'gallery photo'} srs={`${props.picture}`}
+            />
+        </div>
+        // </div>
     );
 };
 
 export default Picture;
+
+// src={require(`${props.picture}`)}

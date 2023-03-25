@@ -49,6 +49,7 @@ button{
 }
 
 .nav button{
+/*.btnCreate{*/
     background: #F0856B 0% 0% no-repeat padding-box;
     border-radius: 25px;
     text-align: center;

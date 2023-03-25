@@ -1,13 +1,13 @@
 import './App.css';
 import React, {Component} from "react";
-import {Link, Route, Routes} from "react-router-dom";
+import {Route, Routes} from "react-router-dom";
 import {
-    eventCreate,
+    authorization, error, eventCreate,
     eventList,
     filterLevel,
     filterPlace,
     guideInfo,
-    payment,
+    payment, register,
     singUp,
     thankYou,
     viewEvent
@@ -19,10 +19,13 @@ import ThankYou from "./components/project_1/thank_you_page/ThankYou";
 import GuideInfo from "./components/project_1/guide_info/GuideInfo";
 import style from "./components/project_1/list_events/listEvents.module.css";
 import Navigation from "./components/project_1/list_events/navigation/Navigation";
-import Card from "./components/project_1/card/Card";
 import Level from "./components/project_1/search/Level";
 import Place from "./components/project_1/search/Place";
 import EventList from "./components/project_2/event_list/EventList";
+import Authorization from "./components/authorization/Authorization";
+import ListEvents from "./components/project_1/list_events/ListEvents";
+import ErrorPage from "./components/authorization/ErrorPage";
+import Register from "./components/authorization/Register";
 import EventCreat from "./components/project_2/event_creat/EventCreat";
 
 class App extends Component {
@@ -30,51 +33,42 @@ class App extends Component {
         return (
             <div>
                 <Routes>
-                    <Route path={`/`} element=
-                        {<div className={style.mainListEvents}>
-                            <div className={style.navigation}>
-                                <Navigation/>
-                            </div>
-                            <div className={style.filters}>
-                                <div className={style.cards}>
-                                    <Card/>
-                                    <Card/>
-                                    <Card/>
-                                    <h2>
-                                        <Link to={`/${eventList}`}>Авторизация гида</Link>
-                                    </h2>
+                    <Route path={`/`} element=<ListEvents/>/>
+
+                        <Route path={`${filterLevel}`} element={
+                            <div className={style.mainListEvents}>
+                                <div className={style.navigation}>
+                                    <Navigation/>
                                 </div>
-                            </div>
-                        </div>}/>
-                    <Route path={`${filterLevel}`} element={
-                        <div className={style.mainListEvents}>
-                            <div className={style.navigation}>
-                                <Navigation/>
-                            </div>
-                            <div className={style.filters}>
-                                <Level/>
-                            </div>
-                        </div>}/>
-                    <Route path={`${filterPlace}`} element={
-                        <div className={style.mainListEvents}>
-                            <div className={style.navigation}>
-                                <Navigation/>
-                            </div>
-                            <div className={style.filters}>
-                                <Place/>
-                            </div>
-                        </div>}/>
-                    <Route path={`${viewEvent}`} element={<ViewEvent/>}/>
-                    <Route path={`${singUp}`} element={<SignUp/>}/>
-                    <Route path={`${payment}`} element={<Payment/>}/>
-                    <Route path={`${thankYou}`} element={<ThankYou/>}/>
-                    <Route path={`${guideInfo}`} element={<GuideInfo/>}/>
-                    <Route path={`${eventList}`} element={<EventList/>}/>
-                    <Route path={`${eventCreate}`} element={<EventCreat/>}/>
+                                <div className={style.filters}>
+                                    <Level/>
+                                </div>
+                            </div>}/>
+                        <Route path={`${filterPlace}`} element={
+                            <div className={style.mainListEvents}>
+                                <div className={style.navigation}>
+                                    <Navigation/>
+                                </div>
+                                <div className={style.filters}>
+                                    <Place/>
+                                </div>
+                            </div>}/>
+
+                        <Route path={`${viewEvent}`} element={<ViewEvent/>}/>
+                        <Route path={`${singUp}`} element={<SignUp/>}/>
+                        <Route path={`${payment}`} element={<Payment/>}/>
+                        <Route path={`${thankYou}`} element={<ThankYou/>}/>
+                        <Route path={`${guideInfo}`} element={<GuideInfo/>}/>
+                        <Route path={`${eventList}`} element={<EventList/>}/>
+                        <Route path={`${eventCreate}`} element={<EventCreat/>}/>
+
+                        <Route path={`${authorization}`} element={<Authorization/>}/>
+                        <Route path={`${error}`} element={<ErrorPage/>}/>
+                        <Route path={`${register}`} element={<Register/>}/>
                 </Routes>
             </div>
-        );
+    );
     }
-}
+    }
 
-export default App;
+    export default App;

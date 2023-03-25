@@ -15,12 +15,12 @@ const NavEventList = () => {
                     <input className={style.search} type={"search"} placeholder={"Поиск"}/>
                 </div>
                 <input type={"date"} id={"startDate2"}/>
-                {/*placeholder={`${value}`} value={'Июнь 23'}/>*/}
+                {/*placeholder={${value}} value={'Июнь 23'}/>*/}
                 <input type={"date"} id={"endDate2"}/>
             </div>
             <button onClick={()=>{navigate(`/${eventCreate}`)}}>Создать</button>
-        </div>
-    );
+            </div>
+            );
 };
 
 export default NavEventList;
