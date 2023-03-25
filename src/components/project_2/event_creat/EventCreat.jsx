@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './EventCreat.module.scss'
 // import {useNavigate} from "react-router-dom";
 import CardPost from "./CardPost";
+import {writeEventData} from "../../../firebase/dataBase";
 
 
 const EventCreat = () => {
@@ -18,15 +19,15 @@ const EventCreat = () => {
                 <div className={styles.content}>
                     <div className={styles.formBlockPart1}>
                         <label>
-                            Дата: <input type="date" id="start" name="trip-start"
+                            Дата: <input type="date" id="date" name="trip-start"
                                          value="2023-05-24"
                                          min="2023-01-01" max="2023-12-31"/>
                         </label>
 
                         <label htmlFor="appt">Время:
-                            <input type="time" id="appt" name="appt"
+                            <input type="time" id="timeFrom" name="appt"
                                    min="09:00" max="23:00" required/>
-                            <input type="time" id="appt" name="appt"
+                            <input type="time" id="timeTo" name="appt"
                                    min="09:00" max="23:00" required/>
                         </label>
                     </div>
@@ -34,39 +35,42 @@ const EventCreat = () => {
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Название:
                             <textarea className={styles.formCont} name="comment" cols="50" rows="3"
-                                      maxLength="64"></textarea></p>
+                                      maxLength="64" id={"title"}></textarea></p>
                     </div>
 
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Короткое описание:
-                            <textarea className={styles.formCont} name="comment" cols="50" rows="5"
+                            <textarea className={styles.formCont} id={"smallDescription"} name="comment" cols="50"
+                                      rows="5"
                                       maxLength="180"></textarea></p>
                     </div>
 
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Полное описание:
-                            <textarea className={styles.formCont} name="comment" cols="50" rows="20"
+                            <textarea className={styles.formCont} id={"bigDescription"} name="comment" cols="50"
+                                      rows="20"
                                       maxLength="1300"></textarea></p>
                     </div>
 
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Где встречаемся:
-                            <textarea className={styles.formCont} name="comment" cols="50" rows="4"
+                            <textarea className={styles.formCont} id={"whereMeet"} name="comment" cols="50" rows="4"
                                       maxLength="180"></textarea></p>
                     </div>
 
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Дополнительно:
-                            <textarea className={styles.formCont} name="comment" cols="50" rows="3"
+                            <textarea className={styles.formCont} id={"additionallyText"} name="comment" cols="50"
+                                      rows="3"
                                       maxLength="64"></textarea></p>
 
                         <div className={styles.blockCityEct}>
                             <label htmlFor="uname">Город:
-                                <input type="text" id="uname" name="name"/>
+                                <input type="text" id="city" name="name"/>
                             </label>
 
                             <label htmlFor="uname">Сложность:
-                                <select name="complexity">
+                                <select name="complexity" id={"complexity"}>
                                     <option value="Tourist" selected>Турист(Обзорная)</option>
                                     <option value="Local">Местный(Тематическая)</option>
                                     <option value="Guru">Гуру(Специальная)</option>
@@ -76,10 +80,10 @@ const EventCreat = () => {
                     </div>
                     <div className={styles.blockPriceEct}>
                         <label htmlFor="uname">Кол-во участников:
-                            <input type="text" id="uname" name="name"/>
+                            <input type="text" id="count" name="name"/>
                         </label>
                         <label htmlFor="uname">Стоимость:
-                            <input className={styles.smallInput} type="text" id="uname" name="name"/>
+                            <input className={styles.smallInput} type="text" id="amount" name="name"/>
                             <select className={styles.smallInput} name="day">
                                 <option value="Dollar" selected>USD</option>
                                 <option value="Euro">EUR</option>
@@ -88,7 +92,7 @@ const EventCreat = () => {
                         </label>
                     </div>
                     <div className={styles.formBlock}>
-                        <label className={styles.formName} htmlFor="uname">Место встречи:</label>
+                        <label className={styles.formName} htmlFor="uname" id={"place"}>Место встречи:</label>
                         <img
                             width={200}
                             height={200}
@@ -102,15 +106,15 @@ const EventCreat = () => {
 
 
                         <section className={styles.inputPictures}>
-                            <span className={styles.bigBox}>+</span>
-                            <span className={styles.box} onClick={() => {
+                            <span className={styles.bigBox} id={"picture1"}>+</span>
+                            <span className={styles.box} id={"picture2"} onClick={() => {
                             }}
                             >+</span>
-                            <span className={styles.box} onClick={() => {
+                            <span className={styles.box} id={"picture3"} onClick={() => {
                             }}>+</span>
-                            <span className={styles.box} onClick={() => {
+                            <span className={styles.box} id={"picture4"} onClick={() => {
                             }}>+</span>
-                            <span className={styles.box} onClick={() => {
+                            <span className={styles.box} id={"picture5"} onClick={() => {
                             }}>+</span>
                         </section>
                     </div>
@@ -119,6 +123,19 @@ const EventCreat = () => {
             <section className={styles.preview_item_var2}>
                 <CardPost/>
             </section>
+            <button onClick={() => {
+                writeEventData(1, 12, document.getElementById("date").value,
+                    document.getElementById("timeFrom").value, document.getElementById("timeNo").value,
+                    document.getElementById("title").value, document.getElementById("smallDescription").value,
+                    document.getElementById("bigDescription").value, document.getElementById("whereMeet").value,
+                    document.getElementById("additionallyText").value, document.getElementById("city").value,
+                    document.getElementById("complexity").value, document.getElementById("count").value,
+                    document.getElementById("amount").value, "USD", document.getElementById("place").value,
+                    document.getElementById("picture1").value, document.getElementById("picture2").value,
+                    document.getElementById("picture3").value, document.getElementById("picture4").value,
+                    document.getElementById("picture5").value)
+            }}>Test
+            </button>
         </div>
 
     )

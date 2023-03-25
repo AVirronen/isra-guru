@@ -9,17 +9,19 @@ export function writeGuideData(guideId, name, aboutMe, iCan, contact) {
         name: name,
         aboutMe: aboutMe,
         iCan: iCan,
-        contact: contact
+        contact: contact,
+        countEvents: 0
     });
 }
 
 writeGuideData(guideId, name,  aboutMe, iCan, contact)
-export function writeEventData(guideId, eventId, data, timeFrom, timeTo, title, smallDescription,
+export function writeEventData(guideId, countEvents, data, timeFrom, timeTo, title, smallDescription,
                                bigDescription, whereMeet, additionallyText, city,
                                complexity, counts, amount, currency, place, picture1, picture2,
                                picture3, picture4, picture5) {
-    set(ref(db, 'guide/' + guideId + '/event/' + eventId), {
-        eventId: eventId,
+    set(ref(db, 'guide/' + guideId + '/event/' + countEvents), {
+        eventId: countEvents,
+        // eventId: eventId,
         data: data,
         timeFrom: timeFrom,
         timeTo: timeTo,

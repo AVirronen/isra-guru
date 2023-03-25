@@ -2,14 +2,27 @@ import React from 'react';
 import style from './contentView.module.css'
 import HatIcon from "../../../../icons/HatIcon";
 import CardInfo from "../cardInfo/CardInfo";
+import {db} from "../../../../firebase/firebase-config";
+import {guideId} from "../../../../utils/constants";
+import {onValue} from "firebase/database";
 
 const ContentView = () => {
+
+    const fillContent = (ref) =>{
+        const contenEventFill = ref(db, 'guide/' + guideId + '/event/' + 12 + `/${ref}`);
+        onValue(contenEventFill, (snapshot) => {
+            const data = snapshot.val();
+            // updateStarCount(postElement, data);
+        })
+    }
+
     return (
         <div>
             <section className={style.allContext}>
-                <p className={style.contentTitle__T}>T</p>
+                {/*<p className={style.contentTitle__T}>T</p>*/}
                 <div className={style.title}>
-                    <p className={style.contentTitle}>ель-Авив. С чего все начиналось и кто во всем виноват?</p>
+                    {/*<p className={style.contentTitle}>Тель-Авив. С чего все начиналось и кто во всем виноват?</p>*/}
+                    <p className={style.contentTitle}>{`${fillContent('title')}`}</p>
                 </div>
                 <p className={style.invite}>Друзья, приглашаю Вас прогуляться по вечернему Яффо со всеми его мифами
                     и

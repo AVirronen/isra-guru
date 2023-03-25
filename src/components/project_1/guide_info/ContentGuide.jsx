@@ -2,25 +2,29 @@ import React, {useContext} from 'react';
 import style from "./guideInfo.module.css"
 import Card from "../card/Card";
 import {fb, guideNameRef, wu} from "../../../utils/constants";
-import { getDatabase, ref, onValue} from "firebase/database";
+import {getDatabase, ref, onValue} from "firebase/database";
 
 
 const ContentGuide = () => {
 
-    const [name, setName] = useContext('')
+    // const [name, setName] = useContext('')
 
-    const displayName = ()=> {
-        onValue(guideNameRef, snapshot => {
-            console.log(snapshot.val())
-        })
+    const displayName = () => {
+
     }
+
+    onValue(guideNameRef, snapshot => {
+        snapshot.val()
+    displayName()})
 
     return (
         <div>
             <section className={style.titlebg}>
                 <div className={style.title}>
                     <h1>{displayName()}</h1>
-                    {/*<h1>{onValue(guideNameRef, snapshot => {snapshot.val()})}</h1>*/}
+                    {/*<h1>{onValue(guideNameRef, (snapshot) => {*/}
+                    {/*    return snapshot.val()*/}
+                    {/*})}</h1>*/}
                     <p className={style.description}>Лицензированный гид (верифицирован israguru.com)</p>
                 </div>
             </section>
@@ -63,8 +67,8 @@ const ContentGuide = () => {
                             <p>Телефон: 972 55 555 55 55</p>
                             <p>Соцсети и мессенджеры</p>
                             <span className={style.messegers}>
-                            <img className={style.messegerIMG} src={fb}/>
-                            <img className={style.messegerIMG} src={wu}/>
+                            <img className={style.messegerIMG} src={fb} alt={'messenger photo'}/>
+                            <img className={style.messegerIMG} src={wu}  alt={'messenger photo'}/>
                         </span>
                         </div>
                     </div>

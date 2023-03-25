@@ -46,6 +46,7 @@ export const iCan = "Также в индивидуальном порядке �
 export const contact = "972 55 555 55 55"
 
 export const guideNameRef = ref(db, 'guide/' + guideId + '/name');
+
 export const aboutMeRef = ref(db, 'guide/' + guideId + '/aboutMe');
 export const iCanRef = ref(db, 'guide/' + guideId + '/iCan');
 export const contactRef = ref(db, 'guide/' + guideId + '/contact');
