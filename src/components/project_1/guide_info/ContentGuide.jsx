@@ -1,14 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import style from "./guideInfo.module.css"
 import Card from "../card/Card";
-import {fb, wu} from "../../../utils/constants";
+import {fb, guideNameRef, wu} from "../../../utils/constants";
+import { getDatabase, ref, onValue} from "firebase/database";
+
 
 const ContentGuide = () => {
+
+    const [name, setName] = useContext('')
+
+    const displayName = ()=> {
+        onValue(guideNameRef, snapshot => {
+            setName(snapshot.val())
+        })
+    }
+
     return (
         <div>
             <section className={style.titlebg}>
                 <div className={style.title}>
-                    <h1>Святослав Брестовицкий</h1>
+                    <h1 onClick={()=>displayName()}>{name}</h1>
+                    {/*<h1>{onValue(guideNameRef, snapshot => {snapshot.val()})}</h1>*/}
                     <p className={style.description}>Лицензированный гид (верифицирован israguru.com)</p>
                 </div>
             </section>

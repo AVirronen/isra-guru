@@ -5,6 +5,8 @@ import Rectangle19 from '../img/Rectangle12.png'
 import Rectangle20 from '../img/Rectangle12.png'
 import Whatsapp from '../img/Whatsapp.svg'
 import Facebok from '../img/Facebook.svg'
+import {db} from "../firebase/firebase-config";
+import {ref} from "firebase/database";
 
 export const gallery = [Rectangle12, Rectangle17, Rectangle18, Rectangle19, Rectangle20]
 
@@ -34,3 +36,21 @@ export const pop_UP = 'popUP'
 export const authorization = 'authorization'
 export const error = 'error'
 export const register = 'register'
+
+
+//=============About Guide=====================
+export const guideId = '1'
+export const name = "Святослав Брестовицкий"
+export const aboutMe = "Одессит по рождению и тель-авивец по велению души, он двадцать лет живет в Израиле. Тернистый путь Алии 90-х знает не понаслышке, а опыт своей эмиграции превратил в удачный образовательный «проект». Учился в иешиве, служил в израильской армии. Учился в иешиве, служил в израильской армии. Учился в иешиве, служил в израильской армии. Учился в иешиве, служил в израильской армии. Гид по призванию, Зеев Волк знает Тель-Авив как свои пять пальцев. Его экскурсии это всегда часть драматического действия, где есть захватывающая история , где город – это сцена, а герои мы с вами и люди из прошлого."
+export const iCan = "Также в индивидуальном порядке могу провести экскурсии по следующим городам:"
+export const contact = "972 55 555 55 55"
+
+export const guideNameRef = ref(db, 'guide/' + guideId + '/name');
+export const aboutMeRef = ref(db, 'guide/' + guideId + '/aboutMe');
+export const iCanRef = ref(db, 'guide/' + guideId + '/iCan');
+export const contactRef = ref(db, 'guide/' + guideId + '/contact');
+
+
+
+
+
