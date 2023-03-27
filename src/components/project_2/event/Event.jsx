@@ -14,7 +14,6 @@ const Event = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-
     return (
         <div>
             <div className={style.events}>

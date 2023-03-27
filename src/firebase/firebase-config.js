@@ -12,8 +12,6 @@ const firebaseConfig = {
     appId: "1:818980000270:web:f36cb59ee396d5eac5625f",
     measurementId: "G-CS0G9335VN",
     databaseURL: "https://israguru-masa2023-default-rtdb.asia-southeast1.firebasedatabase.app/"
-
-
 };
 
 // Initialize Firebase
@@ -21,6 +19,22 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app)
 export const db = getDatabase(app);
+
+
+// вторая попытка
+// export var database = firebase.database()
+// const ref = database.ref('guide/' + guideId + '/name');
+// ref.on('value', function (snapshot) {
+//     console.log(snapshot.val())
+// })
+// ref.set({
+//         name: 'TestSet'
+//     }
+// )
+// ref.update({
+//         name: 'TestUpdate'
+//     }
+// )
 
 
 export const createUser = async (email, password) => {

@@ -45,12 +45,26 @@ export const aboutMe = "Одессит по рождению и тель-ави�
 export const iCan = "Также в индивидуальном порядке могу провести экскурсии по следующим городам:"
 export const contact = "972 55 555 55 55"
 
-export const guideNameRef = ref(db, 'guide/' + guideId + '/name');
 
-export const aboutMeRef = ref(db, 'guide/' + guideId + '/aboutMe');
-export const iCanRef = ref(db, 'guide/' + guideId + '/iCan');
-export const contactRef = ref(db, 'guide/' + guideId + '/contact');
+// export const guideCollection = [guideNameRef, aboutMeRef, iCanRef, contactRef]
+// export const idsContentGuide = ["nameGuide", "aboutMe", "iCan", "contact"]
+// export const guideNameRef = ref(db, '/guide/' + guideId + '/name');
 
+// export const guideNameRef = ref(db, 'guide/1/name');
+// export const aboutMeRef = ref(db, 'guide/1/aboutMe');
+// export const iCanRef = ref(db, 'guide/1/iCan');
+// export const contactRef = ref(db, 'guide/1/contact');
+
+
+// export const guideNameRef = ref(db, '/guide/' + guideId + '/name');
+// export const aboutMeRef = ref(db, '/guide/' + guideId + '/aboutMe');
+// export const iCanRef = ref(db, '/guide/' + guideId + '/iCan');
+// export const contactRef = ref(db, '/guide/' + guideId + '/contact');
+
+
+export const idsContentView = ["data", "timeFrom", "timeTo", "title", "smallDescription", "bigDescription",
+    "whereMeet", "additionallyText", "city", "complexity", "counts", "price/amount", "price/currency",
+    "place", "photo/picture1", "photo/picture2","photo/picture3","photo/picture4","photo/picture5",]
 
 
 

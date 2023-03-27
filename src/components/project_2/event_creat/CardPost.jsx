@@ -5,7 +5,7 @@ import {useNavigate} from "react-router-dom";
 import Copy from "../../../icons/Copy";
 import Eye from "../../../icons/Eye";
 
-const CardPost = () => {
+const CardPost = (props) => {
     const navigate = useNavigate()
     return (
             <section>
@@ -22,6 +22,7 @@ const CardPost = () => {
                 <div>
                     <button className={styles.button__orange} type={"submit"}
                             onClick={() => {
+                                props.handleWrite()
                                 navigate(`/${eventList}`)
                             }}
                     >Опубликовать

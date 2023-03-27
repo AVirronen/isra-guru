@@ -1,20 +1,39 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './contentView.module.css'
 import HatIcon from "../../../../icons/HatIcon";
 import CardInfo from "../cardInfo/CardInfo";
 import {db} from "../../../../firebase/firebase-config";
-import {guideId} from "../../../../utils/constants";
-import {onValue} from "firebase/database";
+import {guideId, idsContentView} from "../../../../utils/constants";
+import {onValue, set} from "firebase/database";
+import {ref} from "firebase/database";
+
 
 const ContentView = () => {
 
-    const fillContent = (ref) =>{
-        const contenEventFill = ref(db, 'guide/' + guideId + '/event/' + 12 + `/${ref}`);
-        onValue(contenEventFill, (snapshot) => {
-            const data = snapshot.val();
-            // updateStarCount(postElement, data);
-        })
-    }
+    useEffect(() => {
+        // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
+        async function add() {
+            idsContentView.forEach((item)=>{
+                onValue(ref(db, `/guide/1/event/12/title`), (snapshot) => {
+                    document.getElementById(`title`).innerHTML = snapshot.val()
+                })
+            })
+        }
+        add()
+    })
+
+    // const fillContent = (link) =>{
+    //     // let data=0
+    //     const contentEventFill = ref(db, 'guide/' + guideId + '/event/' + 12 + `/${link}`);
+    //     return onValue(contentEventFill, (snapshot) => {
+    //         const data = snapshot.val()
+    //         // set(contentEventFill,{
+    //         // })
+    //         // updateDate(postElement, data)
+    //     })
+    // }
+
+
 
     return (
         <div>
@@ -22,7 +41,8 @@ const ContentView = () => {
                 {/*<p className={style.contentTitle__T}>T</p>*/}
                 <div className={style.title}>
                     {/*<p className={style.contentTitle}>Тель-Авив. С чего все начиналось и кто во всем виноват?</p>*/}
-                    <p className={style.contentTitle}>{`${fillContent('title')}`}</p>
+                    {/*<p className={style.contentTitle}>{`${fillContent('title')}`}</p>*/}
+                    <p className={style.contentTitle} id={"title"}></p>
                 </div>
                 <p className={style.invite}>Друзья, приглашаю Вас прогуляться по вечернему Яффо со всеми его мифами
                     и

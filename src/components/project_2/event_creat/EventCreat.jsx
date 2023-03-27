@@ -1,11 +1,42 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './EventCreat.module.scss'
-// import {useNavigate} from "react-router-dom";
 import CardPost from "./CardPost";
 import {writeEventData} from "../../../firebase/dataBase";
-
+import {onValue, ref} from "firebase/database";
+import {db} from "../../../firebase/firebase-config";
 
 const EventCreat = () => {
+
+    useEffect(() => {
+        async function add() {
+            // const idsContentGuide = ["name", "aboutMe", "iCan", "contact"]
+            // idsContentGuide.forEach((item) => {
+                onValue(ref(db, `/guide/1/event/`), (snapshot) => {
+                    document.getElementById(``).innerHTML = snapshot.val()
+                })
+            // })
+        }
+        add()
+    })
+
+    const handleWrite = () =>{
+        writeEventData(1, 12, document.getElementById("date").value,
+            document.getElementById("timeFrom").value, document.getElementById("timeTo").value,
+            document.getElementById("title").value, document.getElementById("smallDescription").value,
+            document.getElementById("bigDescription").value, document.getElementById("whereMeet").value,
+            document.getElementById("additionallyText").value, document.getElementById("city").value,
+            'Местный(Тематическая)',
+            document.getElementById("count").value,
+            document.getElementById("amount").value, "USD",
+            'place', 'pic1', 'pic2', 'pic3', 'pic4', 'pic5'
+            // document.getElementById("place").value,
+            // document.getElementById("picture1").value, document.getElementById("picture2").value,
+            // document.getElementById("picture3").value, document.getElementById("picture4").value,
+            // document.getElementById("picture5").value
+        )
+        console.log('Success')
+    }
+
     // const navigate = useNavigate()
     return (
         <div className={styles.container_all}>
@@ -121,21 +152,10 @@ const EventCreat = () => {
                 </div>
             </form>
             <section className={styles.preview_item_var2}>
-                <CardPost/>
+                <CardPost handleWrite={handleWrite}/>
             </section>
-            <button onClick={() => {
-                writeEventData(1, 12, document.getElementById("date").value,
-                    document.getElementById("timeFrom").value, document.getElementById("timeNo").value,
-                    document.getElementById("title").value, document.getElementById("smallDescription").value,
-                    document.getElementById("bigDescription").value, document.getElementById("whereMeet").value,
-                    document.getElementById("additionallyText").value, document.getElementById("city").value,
-                    document.getElementById("complexity").value, document.getElementById("count").value,
-                    document.getElementById("amount").value, "USD", document.getElementById("place").value,
-                    document.getElementById("picture1").value, document.getElementById("picture2").value,
-                    document.getElementById("picture3").value, document.getElementById("picture4").value,
-                    document.getElementById("picture5").value)
-            }}>Test
-            </button>
+            {/*<button onClick={() => {handleWrite()}}>Test*/}
+            {/*</button>*/}
         </div>
 
     )
