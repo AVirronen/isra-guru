@@ -6,7 +6,8 @@ import Rectangle20 from '../img/Rectangle12.png'
 import Whatsapp from '../img/Whatsapp.svg'
 import Facebok from '../img/Facebook.svg'
 import {db} from "../firebase/firebase-config";
-import {ref} from "firebase/database";
+import {onValue, ref} from "firebase/database";
+import {useEffect} from "react";
 
 export const gallery = [Rectangle12, Rectangle17, Rectangle18, Rectangle19, Rectangle20]
 
@@ -68,4 +69,13 @@ export const idsContentView = ["data", "timeFrom", "timeTo", "title", "smallDesc
 
 
 
-
+// useEffect(() => {
+//     // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
+//     async function add() {
+//         idsContentView.forEach((item)=>{
+//         onValue(ref(db, `/guide/1/event/12/${item}`), (snapshot) => {
+//             document.getElementById(`${item}`).innerHTML = snapshot.val()
+//         })
+//         })
+//     }
+//     add()

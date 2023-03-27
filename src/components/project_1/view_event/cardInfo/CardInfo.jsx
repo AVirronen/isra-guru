@@ -5,12 +5,27 @@ import ShekelIcon from "../../../../icons/ShekelIcon";
 import UsersIcon from "../../../../icons/UsersIcon";
 
 
-import React from 'react';
+import React, {useEffect} from 'react';
+import {idsContentView} from "../../../../utils/constants";
+import {onValue, ref} from "firebase/database";
+import {db} from "../../../../firebase/firebase-config";
 
 const CardInfo = () => {
+
+    useEffect(() => {
+        // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
+        async function add() {
+            idsContentView.forEach((item)=>{
+                onValue(ref(db, `/guide/1/event/12/${item}`), (snapshot) => {
+                    document.getElementById(`${item}`).innerHTML = snapshot.val()
+                })
+            })
+        }
+        add()
+    })
     return (
         <div className={style.allBlock}>
-            <ul className={style.dataSquare}>
+            <ul className={style.dataSquare} id={"data"}>
                 <li className={style.dataSquare__data}>03</li>
                 <li className={style.dataSquare__day}>сентября</li>
                 <li className={style.dataSquare__dayNumber}>ВС</li>
@@ -20,17 +35,17 @@ const CardInfo = () => {
                     <div>
                         <li>
                             <i><GeoIcon/></i>
-                            <p className={style.infoCard__placeText}>Тель Авив Яффо</p>
+                            <p className={style.infoCard__placeText} id={"city"}></p>
                         </li>
                         <li>
                             <i><WatchIcon/></i>
-                            <p className={style.infoCard__timeText}>16.00 - 20.00 (4 часа)</p>
+                            <p className={style.infoCard__timeText} id={"timeFrom"}> <span id={"timeTo"}></span></p>
                         </li>
                     </div>
                     <div>
                         <li>
                             <i><ShekelIcon/></i>
-                            <p>150 (≈$36)</p>
+                            <p id={"amount"}></p>
                         </li>
                         <li>
                             <i><UsersIcon/></i>

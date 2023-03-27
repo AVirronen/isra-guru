@@ -8,7 +8,7 @@ const Picture = (props) => {
         //         <img className={props.style} alt={'main photo'} srs={props.picture}/>
         //     </div>
         <div>
-            <img className={props.style} alt={'gallery photo'} srs={`${props.picture}`}
+            <img className={props.style} alt={'gallery photo'} src={`${props.picture}`}
             />
         </div>
         // </div>
