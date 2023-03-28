@@ -15,20 +15,22 @@ const CardInfo = () => {
     useEffect(() => {
         // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
         async function add() {
-            idsContentView.forEach((item)=>{
-                onValue(ref(db, `/guide/1/event/12/${item}`), (snapshot) => {
+            idsContentView.forEach((item) => {
+                onValue(ref(db, `/guide/1/event/1/${item}`), (snapshot) => {
                     document.getElementById(`${item}`).innerHTML = snapshot.val()
                 })
             })
         }
+
         add()
     })
+
     return (
         <div className={style.allBlock}>
-            <ul className={style.dataSquare} id={"data"}>
-                <li className={style.dataSquare__data}>03</li>
-                <li className={style.dataSquare__day}>сентября</li>
-                <li className={style.dataSquare__dayNumber}>ВС</li>
+            <ul className={style.dataSquare}>
+                <li className={style.dataSquare__data} id={"data/number"}></li>
+                <li className={style.dataSquare__day} id={"data/month"}></li>
+                <li className={style.dataSquare__dayNumber} id={"data/weekDay"}></li>
             </ul>
             <section className={style.infoCard}>
                 <ul>
@@ -39,13 +41,13 @@ const CardInfo = () => {
                         </li>
                         <li>
                             <i><WatchIcon/></i>
-                            <p className={style.infoCard__timeText} id={"timeFrom"}> <span id={"timeTo"}></span></p>
+                            <p className={style.infoCard__timeText} id={"timeFrom"}><span id={"timeTo"}></span></p>
                         </li>
                     </div>
                     <div>
                         <li>
                             <i><ShekelIcon/></i>
-                            <p id={"amount"}></p>
+                            <p id={"currency"}></p>
                         </li>
                         <li>
                             <i><UsersIcon/></i>

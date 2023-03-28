@@ -1,10 +1,10 @@
 import {db} from "./firebase-config";
-import {ref, set} from "firebase/database";
+import {ref, update} from "firebase/database";
 import {aboutMe, name, contact, guideId, iCan} from "../utils/constants";
 
 
 export function writeGuideData(guideId, name, aboutMe, iCan, contact) {
-    set(ref(db, 'guide/' + guideId), {
+    update(ref(db, 'guide/' + guideId), {
         guideId: guideId,
         name: name,
         aboutMe: aboutMe,
@@ -21,15 +21,20 @@ export function writeGuideData(guideId, name, aboutMe, iCan, contact) {
 
 writeGuideData(guideId, name,  aboutMe, iCan, contact)
 
-export function writeEventData(guideId, countEvents, data, timeFrom, timeTo, title, smallDescription,
+export function writeEventData(guideId, countEvents, status, number,month, weekDay,
+                               timeFrom, timeTo, title, smallDescription,
                                bigDescription, whereMeet, additionallyText, city,
                                complexity, counts, amount, currency, place, picture1, picture2,
                                picture3, picture4, picture5) {
-    set(ref(db, 'guide/' + guideId + '/event/' + countEvents), {
-        // guideId: guideId,
+    update(ref(db, 'guide/' + guideId + '/event/' + countEvents), {
+        // set(ref(db, 'guide/' + guideId + '/event/' + countEvents), {
         eventId: countEvents,
-        // eventId: eventId,
-        data: data,
+        status: status,
+        data: {
+            number: number,
+            month: month,
+            weekDay: weekDay
+        },
         timeFrom: timeFrom,
         timeTo: timeTo,
         title: title,
@@ -53,8 +58,7 @@ export function writeEventData(guideId, countEvents, data, timeFrom, timeTo, tit
             picture5: picture5
         }
     })
-        .then((e)=>console.log('Success' + e))
+        .then((e)=>console.log('Success ' + e))
         .catch((error)=>console.log(error.message))
 }
-
 

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styles from './cardPost.module.css';
 import {eventList} from "../../../utils/constants";
 import {useNavigate} from "react-router-dom";
@@ -6,6 +6,8 @@ import Copy from "../../../icons/Copy";
 import Eye from "../../../icons/Eye";
 
 const CardPost = (props) => {
+    // const [count, setCount] = useState(0)
+
     const navigate = useNavigate()
     return (
             <section>

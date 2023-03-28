@@ -6,10 +6,10 @@ import {gallery} from "../../../../utils/constants";
 
 const Gallery = () => {
     return (
-        <div className={style.mainPhoto}>
+        <div className={style.allgallery}>
             {gallery.map((item, index) => {
                 if (index === 0)
-                    return <Picture className={style.mainPhoto} picture={item} key={index}/>
+                    return <Picture style={style.mainPhoto} picture={item} key={index}/>
                 else if (index === 1)
                     return <Picture picture={item} key={index} style={style.smallPhoto}/>
                 else if (index === 2)

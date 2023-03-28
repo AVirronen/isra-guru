@@ -174,9 +174,13 @@ textarea {
   border: #D8D8D9 solid 2px;
   color: #D8D8D9;
   text-align: center;
+  justify-items: center;
   margin: 5px;
   cursor: pointer;
+
+  //margin-right: 10px;
 }
+
 
 .box {
   height: 55px;
@@ -213,4 +217,36 @@ textarea {
   border-top: #D8D8D9 solid 1px;
   border-bottom: #D8D8D9 solid 1px;
   margin: 0;
+}
+
+
+
+input[type="file"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.bigBoxSpan{
+  height: 155px;
+  width: 165px;
+  border: 0;
+  color: #D8D8D9;
+  text-align: center;
+  //margin: 5px;
+  cursor: pointer;
+  //padding-right: 5px;
+
+}
+
+.boxSpan{
+  height: 55px;
+  width: 65px;
+  //padding-left: -10px;
+  border: 0;
+  color: #D8D8D9;
+  text-align: center;
+  justify-self: center;
+  //margin: 5px;
+  cursor: pointer;
 }

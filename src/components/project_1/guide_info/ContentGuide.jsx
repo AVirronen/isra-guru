@@ -6,6 +6,7 @@ import {
 } from "../../../utils/constants";
 import {onValue, ref} from "firebase/database";
 import {db} from "../../../firebase/firebase-config";
+import CardGuide from "./cardGuide/CardGuide";
 
 
 const ContentGuide = () => {
@@ -54,10 +55,9 @@ const ContentGuide = () => {
                     <div className={style.contentPart2}>
                         <h2 className={style.tour}>Ближайшие экскурсии</h2>
                         <div className={style.cardList}>
-                            {/*<Card/>*/}
-                            {/*<Card/>*/}
-                            {/*<Card/>*/}
-                            {/*<Card/>*/}
+                            <CardGuide/>
+                            <CardGuide/>
+                            <CardGuide/>
                         </div>
                     </div>
                     <div className={style.content}>

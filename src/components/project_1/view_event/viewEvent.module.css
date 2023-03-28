@@ -12,6 +12,7 @@ body {
     left: 0px;
     width: 1366px;
     height: auto;
+    /*height: 100%;*/
     background: #F8F8F8 0% 0% no-repeat padding-box;
     opacity: 1;
     position: absolute;
@@ -96,7 +97,7 @@ body {
     justify-content: center;
     align-items: center;
     opacity: 1;
-    position: absolute;
+    position: relative;
     display: flex;
     cursor: pointer;
     z-index: 50;
@@ -108,11 +109,32 @@ body {
 }
 
 .btnPosition2 {
-    top: 1584px;
-    left: 1063px;
-    position: absolute;
+    top: 1480px;
+    left: 440px;
+    /*right: 200px;*/
+    /*bottom: 200px;*/
+    position: relative;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    display: flex;
+    cursor: pointer;
+    z-index: 50;
+
+}
+.btnPosition2 button{
+    position: relative;
 }
 
+
+.footer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 200px;
+}
 /*.guideIcon__forGuideInfo{*/
 /*    border-radius: 50%;*/
 /*    opacity: 1;*/

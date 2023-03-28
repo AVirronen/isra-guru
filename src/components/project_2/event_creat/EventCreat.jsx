@@ -1,43 +1,76 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './EventCreat.module.scss'
 import CardPost from "./CardPost";
 import {writeEventData} from "../../../firebase/dataBase";
-import {onValue, ref} from "firebase/database";
+import {ref, set, onValue, off} from "firebase/database";
 import {db} from "../../../firebase/firebase-config";
+import PicAdd from "./PicAdd/PicAdd";
+
 
 const EventCreat = () => {
+    const [count, setCount] = useState(1)
+    const [complexity, setComplexity] = useState('')
+    const [currency, setCurrency] = useState('')
 
     useEffect(() => {
-        async function add() {
-            // const idsContentGuide = ["name", "aboutMe", "iCan", "contact"]
-            // idsContentGuide.forEach((item) => {
-                onValue(ref(db, `/guide/1/event/`), (snapshot) => {
-                    document.getElementById(``).innerHTML = snapshot.val()
-                })
-            // })
-        }
-        add()
-    })
+        const countRef = ref(db, '/guide/1/countEvents');
+        onValue(countRef, (snapshot) => {
+            const countValue = snapshot.val();
+            setCount(countValue);
+        });
+        return () => {
+            off(countRef);
+        };
+    }, [db]);
 
-    const handleWrite = () =>{
-        writeEventData(1, 12, document.getElementById("date").value,
+    function dateMonthRussian() {
+        const dateValue = document.getElementById("date").value;
+        const date = new Date(dateValue);
+        const monthNames = [
+            "Январь", "Февраль", "Март", "Апрель",
+            "Май", "Июнь", "Июль", "Август",
+            "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+        ];
+        const monthIndex = date.getMonth();
+        return monthNames[monthIndex];
+    }
+    function dateWeekDayRussian() {
+        const dateValue = document.getElementById("date").value; // Получение значения элемента input
+        const date = new Date(dateValue); // Создание объекта Date из полученного значения
+        const dayNames = [
+            "Воскресенье", "Понедельник", "Вторник", "Среда",
+            "Четверг", "Пятница", "Суббота"
+        ];
+        const dayIndex = date.getDay();
+        return dayNames[dayIndex];
+    }
+
+    function handleWrite() {
+        set(ref(db, '/guide/1/countEvents'), count + 1)
+
+        writeEventData(1, count + 1, 'active',
+            // document.getElementById("date").value,
+            document.getElementById("date").value.split("-")[2],
+            `${dateMonthRussian()}`,
+            `${dateWeekDayRussian()}`,
             document.getElementById("timeFrom").value, document.getElementById("timeTo").value,
             document.getElementById("title").value, document.getElementById("smallDescription").value,
             document.getElementById("bigDescription").value, document.getElementById("whereMeet").value,
             document.getElementById("additionallyText").value, document.getElementById("city").value,
-            'Местный(Тематическая)',
+            complexity,
             document.getElementById("count").value,
-            document.getElementById("amount").value, "USD",
-            'place', 'pic1', 'pic2', 'pic3', 'pic4', 'pic5'
-            // document.getElementById("place").value,
-            // document.getElementById("picture1").value, document.getElementById("picture2").value,
-            // document.getElementById("picture3").value, document.getElementById("picture4").value,
-            // document.getElementById("picture5").value
+            document.getElementById("amount").value, currency,
+            'place', 'pic1',
+            'pic2', 'pic3', 'pic4', 'pic5'
         )
-        console.log('Success')
+    }
+    function handleComplexityChange(event) {
+        setComplexity(event.target.value);
+    }
+    function handleCurrencyChange(event) {
+        setCurrency(event.target.value);
     }
 
-    // const navigate = useNavigate()
     return (
         <div className={styles.container_all}>
             <section className={styles.wrapper_title}>
@@ -51,7 +84,7 @@ const EventCreat = () => {
                     <div className={styles.formBlockPart1}>
                         <label>
                             Дата: <input type="date" id="date" name="trip-start"
-                                         value="2023-05-24"
+                            // value="2023-05-24"
                                          min="2023-01-01" max="2023-12-31"/>
                         </label>
 
@@ -62,7 +95,6 @@ const EventCreat = () => {
                                    min="09:00" max="23:00" required/>
                         </label>
                     </div>
-
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Название:
                             <textarea className={styles.formCont} name="comment" cols="50" rows="3"
@@ -101,10 +133,11 @@ const EventCreat = () => {
                             </label>
 
                             <label htmlFor="uname">Сложность:
-                                <select name="complexity" id={"complexity"}>
-                                    <option value="Tourist" selected>Турист(Обзорная)</option>
-                                    <option value="Local">Местный(Тематическая)</option>
-                                    <option value="Guru">Гуру(Специальная)</option>
+                                <select name="complexity" id={"complexity"}
+                                        onChange={handleComplexityChange} value={complexity}> >
+                                    <option value="Турист (Обзорная)" selected> Турист (Обзорная)</option>
+                                    <option value="Местный (Тематическая)"> Местный (Тематическая)</option>
+                                    <option value="Гуру (Специальная)"> Гуру (Специальная)</option>
                                 </select>
                             </label>
                         </div>
@@ -115,10 +148,14 @@ const EventCreat = () => {
                         </label>
                         <label htmlFor="uname">Стоимость:
                             <input className={styles.smallInput} type="text" id="amount" name="name"/>
-                            <select className={styles.smallInput} name="day">
-                                <option value="Dollar" selected>USD</option>
-                                <option value="Euro">EUR</option>
-                                <option value="Shekel">ILS</option>
+                            <select className={styles.smallInput}
+                                    name="currency"
+                                    id={"currency"}
+                                    onChange={handleCurrencyChange} value={currency}
+                            >
+                                <option value="USD" selected>USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="ILS">ILS</option>
                             </select>
                         </label>
                     </div>
@@ -134,30 +171,14 @@ const EventCreat = () => {
                     </div>
                     <div className={styles.formBlock}>
                         <label className={styles.formName} htmlFor="uname">Загрузка фото:</label>
-
-
-                        <section className={styles.inputPictures}>
-                            <span className={styles.bigBox} id={"picture1"}>+</span>
-                            <span className={styles.box} id={"picture2"} onClick={() => {
-                            }}
-                            >+</span>
-                            <span className={styles.box} id={"picture3"} onClick={() => {
-                            }}>+</span>
-                            <span className={styles.box} id={"picture4"} onClick={() => {
-                            }}>+</span>
-                            <span className={styles.box} id={"picture5"} onClick={() => {
-                            }}>+</span>
-                        </section>
+                        <PicAdd/>
                     </div>
                 </div>
             </form>
             <section className={styles.preview_item_var2}>
                 <CardPost handleWrite={handleWrite}/>
             </section>
-            {/*<button onClick={() => {handleWrite()}}>Test*/}
-            {/*</button>*/}
         </div>
-
     )
         ;
 };

@@ -27,10 +27,12 @@ const ViewEvent = () => {
                 </section>
                 <div className={style.partWithAllContent}>
                     <Gallery/>
-                    <ContentView/>
-                    <button className={style.btnPosition2}
-                            onClick={() => navigate(`/${singUp}`)}>Пойду
-                    </button>
+                    {/*<div className={style.footer}>*/}
+                        <ContentView/>
+                        <button className={style.btnPosition2}
+                                onClick={() => navigate(`/${singUp}`)}>Пойду
+                        </button>
+                    {/*</div>*/}
                 </div>
 
             </div>

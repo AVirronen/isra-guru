@@ -4,7 +4,7 @@ import HatIcon from "../../../../icons/HatIcon";
 import CardInfo from "../cardInfo/CardInfo";
 import {db} from "../../../../firebase/firebase-config";
 import {guideId, idsContentView} from "../../../../utils/constants";
-import {onValue, set} from "firebase/database";
+import {onValue} from "firebase/database";
 import {ref} from "firebase/database";
 
 
@@ -13,12 +13,13 @@ const ContentView = () => {
     useEffect(() => {
         // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
         async function add() {
-            idsContentView.forEach((item)=>{
-                onValue(ref(db, `/guide/1/event/12/${item}`), (snapshot) => {
+            idsContentView.forEach((item) => {
+                onValue(ref(db, `/guide/1/event/1/${item}`), (snapshot) => {
                     document.getElementById(`${item}`).innerHTML = snapshot.val()
                 })
             })
         }
+
         add()
     })
 
@@ -32,7 +33,6 @@ const ContentView = () => {
     //         // updateDate(postElement, data)
     //     })
     // }
-
 
 
     return (
@@ -51,8 +51,8 @@ const ContentView = () => {
             <section className={style.content} id={"bigDescription"}>
                 <p></p>
             </section>
-            <span className={style.limeMiddle}></span>
             <section className={style.whereWeMeet}>
+                <span className={style.limeMiddle}></span>
                 <h2>Где встречаемся?</h2>
                 <p className={style.content__place} id={"whereMeet"}></p>
                 <div className={style.infoBlock}>
@@ -69,7 +69,6 @@ const ContentView = () => {
                          alt="Map"/>
                 </div>
                 <p className={style.lineEnd}></p>
-
             </section>
             <div className={style.cardInfo__Var2}>
                 <CardInfo/>

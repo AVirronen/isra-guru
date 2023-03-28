@@ -1,15 +1,13 @@
 .allgallery {
     position: absolute;
-    top: 160px;
-    left: 160px;
     display: flex;
     width: 350px;
     height: 410px;
     margin: 0;
-
+    flex-direction: row;
 }
 
-.allgallery img{
+.allgallery img {
     margin: 0;
 }
 
@@ -25,18 +23,15 @@
     padding: 1px;
 }
 
-.smallPhoto{
-    top: 360px;
-    /*top: 496px;*/
-    /*left: 212px;*/
-    left: -40px;
+.smallPhoto {
+    top: 496px;
+    right: 190px;
     width: 55px;
     height: 55px;
-    box-shadow: 0 3px 6px #00000029;
+    /*box-shadow: 0 3px 6px #00000029;*/
     opacity: 1;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     position: relative;
     padding: 10px;
 
