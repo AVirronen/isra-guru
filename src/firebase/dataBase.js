@@ -67,3 +67,6 @@ export function writeEventData(guideId, countEvents, status, number, month, week
 }
 
 
+
+
+

@@ -19,12 +19,6 @@ const MainEventList = () => {
     }, [db]);
 
 
-    // const eventArray = Array.from({ length: count }, (_, index) => (
-    //     <Event key={index} count={count}/>
-    // ));
-
-
-
     return (
         <div className={style.mainEventList}>
             <div className={style.top}>
@@ -41,15 +35,11 @@ const MainEventList = () => {
             </div>
 
             <div className={style.content}>
-                {[...Array(count)].map((_, i) => <Event key={i+1}/>)}
+                {[...Array(count)].map((_, i) => <Event key={i}/>)}
                 {/*{eventArray}*/}
                 {/*<Event/>*/}
                 {/*<Event/>*/}
                 {/*<Event/>*/}
-                {/*открываются: */}
-                {/*<ActiveEvents/>*/}
-                {/*<PastEvents/>*/}
-                {/*<DraftEvents/>*/}
             </div>
         </div>
     );

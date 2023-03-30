@@ -6,7 +6,7 @@ import WatchIcon from "../../../icons/WatchIcon";
 import ShekelIcon from "../../../icons/ShekelIcon";
 import UsersIcon from "../../../icons/UsersIcon";
 import {useNavigate} from "react-router-dom";
-import {filterLevel, filterPlace, guideInfo, idsContentView, viewEvent} from "../../../utils/constants";
+import {guideInfo, idsContentView, viewEvent} from "../../../utils/constants";
 import {onValue, ref} from "firebase/database";
 import {db, storage} from "../../../firebase/firebase-config";
 import {getDownloadURL, ref as storageRef, Reference} from "firebase/storage";
@@ -26,9 +26,19 @@ const Card = () => {
                     document.getElementById(`${item}`).innerHTML = snapshot.val()
                 })
             })
+
             onValue(ref(db, `/guide/1/name`), (snapshot) => {
                 document.getElementById('name').innerHTML = snapshot.val();
             });
+
+            onValue(ref(db, `/guide/1/event/1/count/countsPlan`), (snapshot) => {
+                document.getElementById('count/countsPlan').innerHTML = snapshot.val();
+            });
+
+            onValue(ref(db, `/guide/1/event/1/count/countsGo`), (snapshot) => {
+                document.getElementById('count/countsGo').innerHTML = snapshot.val();
+            });
+
             const url = await getDownloadURL(imageRef);
             setImage(url);
             console.log(image + " success");
@@ -38,30 +48,21 @@ const Card = () => {
         add()
     })
 
-    // function diff() {
-    //     const countsPlanRef = db.ref('count/countsPlan')
-    //     const countsGoRef = db.ref('count/countsGo')
-
-        //
-        //
-        //
-        // Promise.all([countsPlanRef.once('value'), countsGoRef.once('value')])
-        //     .then(snapshots => {
-        //         // const diffSpan = document.getElementById('diff-span')
-        //         const value1 = snapshots[0].val()
-        //         const value2 = snapshots[1].val()
-        //         const dif = value1 - value2
-        //         // console.log("Difference: ", dif)
-        //         // diffSpan.textContent = dif
-        //         document.getElementById('res').innerHTML = dif;
-        //
-        //     })
-        //     .catch(error => {
-        //         console.error('Error:', error)
-        //     })
-
+    // const diff = () => {
+    //
+    //     const ref1 = ref(db, 'count/countsPlan')
+    //     const ref2 = ref(db, 'count/countsGo')
+    //
+    //     ref1.once('countsPlan', function (snapshot) {
+    //         let value1 = snapshot.val();
+    //         ref2.once('countsGo', function (snapshot) {
+    //             let value2 = snapshot.val();
+    //             let difference = value2 - value1;
+    //             console.log("=========================================")
+    //             console.log(difference);
+    //         })
+    //     })
     // }
-
     return (
         <div className={styles.card__container}>
             <img
@@ -117,13 +118,14 @@ const Card = () => {
                     </li>
                     <li className={styles.price__container_item}>
                         <i className={styles.price__container_icon}><ShekelIcon/></i>
-                        <p className={styles.price__container_description}><span id={"price/amount"}></span> <span
-                            id={"price/currency"}></span></p>
+                        <p className={styles.price__container_description}><span id={"price/amount"}></span>
+                            <span
+                                id={"price/currency"}></span></p>
                     </li>
                     <li className={styles.price__container_item}>
                         <i className={styles.price__container_icon}><UsersIcon/></i>
-                        <p className={styles.price__container_description}>Осталось <span
-                            id={"diff-span"}></span> мест</p>
+                        <p className={styles.price__container_description}>Осталось <span id={"count/countsGo"}></span> мест  из <span
+                            id="count/countsPlan"></span></p>
                     </li>
                     <li>
                         <button className={styles.price__container_btn}

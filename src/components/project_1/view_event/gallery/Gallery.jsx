@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useState } from 'react';
 import Picture from "./Picture";
 import style from './gallery.module.css'
@@ -8,15 +6,15 @@ import { getDownloadURL, ref as storageRef } from "firebase/storage";
 import { db, storage } from "../../../../firebase/firebase-config";
 import { onValue, ref } from "firebase/database";
 
-const Gallery = () => {
+const Gallery = (props) => {
     const [images, setImages] = useState([]);
 
     const imagePaths = [
-        '/images/1/image_1_main',
-        '/images/1/image_1_1',
-        '/images/1/image_1_2',
-        '/images/1/image_1_3',
-        '/images/1/image_1_4'
+        `/images/${props.id}/image_1_main`,
+        `/images/${props.id}/image_1_1`,
+        `/images/${props.id}/image_1_2`,
+        `/images/${props.id}/image_1_3`,
+        `/images/${props.id}/image_1_4`
     ];
 
     useEffect(() => {

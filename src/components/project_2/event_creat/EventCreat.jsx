@@ -45,10 +45,10 @@ const EventCreat = () => {
         return dayNames[dayIndex];
     }
 
-    function handleWrite() {
+    function handleWrite(status) {
         set(ref(db, '/guide/1/countEvents'), count + 1)
 
-        writeEventData(1, count + 1, 'active',
+        writeEventData(1, count + 1, `${status}`,
             // document.getElementById("date").value,
             document.getElementById("date").value.split("-")[2],
             `${dateMonthRussian()}`,
@@ -144,8 +144,8 @@ const EventCreat = () => {
                         </div>
                     </div>
                     <div className={styles.blockPriceEct}>
-                        <label htmlFor="uname">Кол-во участников:
-                            <input type="text" id="count" name="name"/>
+                        <label htmlFor="uname" id={"count/countsPlan"}>Кол-во участников:
+                            <input type="text"  name="name" id={"count/countsPlan"}/>
                         </label>
                         <label htmlFor="uname">Стоимость:
                             <input className={styles.smallInput} type="text" id="amount" name="name"/>

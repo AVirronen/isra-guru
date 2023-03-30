@@ -54,8 +54,10 @@ class App extends Component {
                                 </div>
                             </div>}/>
 
-                        <Route path={`${viewEvent}`} element={<ViewEvent/>}/>
-                        <Route path={`${singUp}`} element={<SignUp/>}/>
+                        {/*<Route path={`${viewEvent}`} element={<ViewEvent/>}/>*/}
+                    <Route path={`${viewEvent}`} element={<ViewEvent prop1={1}/>}/>
+
+                    <Route path={`${singUp}`} element={<SignUp/>}/>
                         <Route path={`${payment}`} element={<Payment/>}/>
                         <Route path={`${thankYou}`} element={<ThankYou/>}/>
                         <Route path={`${guideInfo}`} element={<GuideInfo/>}/>

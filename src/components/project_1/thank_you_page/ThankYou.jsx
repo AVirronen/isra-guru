@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import styles from './ThankYou.module.scss'
 import styleB from './button/Buttton.module.scss';
 
@@ -9,11 +9,6 @@ import UsersIcon from "../../../icons/UsersIcon";
 import QrCodeIcon from "../../../icons/QrCodeIcon";
 import Button from "./button/Button";
 import Sidebar from "../layout/Sidebar";
-import style from "../view_event/cardInfo/cardInfo.module.css";
-import {idsContentView} from "../../../utils/constants";
-import {onValue, ref} from "firebase/database";
-import {db} from "../../../firebase/firebase-config";
-import {getDownloadURL} from "firebase/storage";
 
 const ThankYou = () => {
     const download = () => {
@@ -28,23 +23,6 @@ const ThankYou = () => {
     }
 
 
-    useEffect(() => {
-
-        // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
-        async function add() {
-            idsContentView.forEach((item) => {
-                onValue(ref(db, `/guide/1/event/1/${item}`), (snapshot) => {
-                    document.getElementById(`${item}`).innerHTML = snapshot.val()
-                })
-            })
-            onValue(ref(db, `/guide/1/name`), (snapshot) => {
-                document.getElementById('name').innerHTML = snapshot.val();
-            });
-
-        }
-
-        add()
-    })
 
     return (
         <div style={{width: '100%', display: 'flex', flexDirection:'row', height: '100vh'}}>
@@ -58,16 +36,17 @@ const ThankYou = () => {
                         <div className={styles.left__ticket_container}>
 
                             <section className={styles.head__section}>
-                                <h1 id={"title"}></h1>
+                                <h1>Тель-Авив. С чего все начиналось и кто во всем
+                                    виноват?</h1>
                             </section>
 
 
                             <section className={styles.info__section}>
 
                                 <div className={styles.day__item}>
-                                    <i className={styles.day__item_number} id={"data/number"}></i>
+                                    <i className={styles.day__item_number}>03</i>
                                     <p className={styles.day__item_description}>
-                                        <span id={"data/month"}></span><span id={"data/weekDay"}></span>
+                                        <span>сентября</span><span>воскресенье</span>
                                     </p>
                                 </div>
 
@@ -75,13 +54,12 @@ const ThankYou = () => {
 								
 								<span className={styles.price__item}>
 									<i className={styles.price__item_icon}><GeoIcon/></i>
-									<p className={styles.price__item_description} id={"city"}></p>
+									<p className={styles.price__item_description}>Тель Авив Яффо</p>
 								</span>
 
                                     <span className={styles.watch__item}>
 									<i className={styles.watch__item_icon}><WatchIcon/></i>
-									<p className={styles.watch__item_description}><span id={"timeFrom"}> - </span> <span id={"timeTo"}></span></p>
-
+									<p className={styles.watch__item_description}>16.00 - 20.00 (4 часа)</p>
 								</span>
 
                                 </div>
@@ -91,7 +69,7 @@ const ThankYou = () => {
                             <section className={styles.guide__section}>
                                 <div className={styles.description_block}>
                                     <span className={styles.description_block_desc}>Ваш гид:</span>
-                                    <span className={styles.description_block_name} id={"name"}></span>
+                                    <span className={styles.description_block_name}>Святослав Волк</span>
                                 </div>
                                 <div className={styles.price__item}>
                                     <i className={styles.price__item_icon}><UsersIcon/></i>

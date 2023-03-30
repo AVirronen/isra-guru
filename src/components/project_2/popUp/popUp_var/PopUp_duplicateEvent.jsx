@@ -1,5 +1,7 @@
 import React from 'react';
 import style from "../popUp.module.css";
+import {ref, update} from "firebase/database";
+import {db} from "../../../../firebase/firebase-config";
 
 const PopUpDupIcateEvent = (props) => {
     return (
@@ -15,6 +17,7 @@ const PopUpDupIcateEvent = (props) => {
                 <div className={style.footer}>
                     <span className={style.cancelling} onClick={()=>props.close()}>Отмена</span>
                     <button onClick={()=> {
+                        // update(ref(db, `guide/1/${props.idEvent}/status`), { status: "active" })
                         props.close()
                     }}>Дублировать</button>
                 </div>

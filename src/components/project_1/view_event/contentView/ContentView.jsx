@@ -8,13 +8,13 @@ import {onValue} from "firebase/database";
 import {ref} from "firebase/database";
 
 
-const ContentView = () => {
+const ContentView = (props) => {
 
     useEffect(() => {
         // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
         async function add() {
             idsContentView.forEach((item) => {
-                onValue(ref(db, `/guide/1/event/1/${item}`), (snapshot) => {
+                onValue(ref(db, `/guide/1/event/${props.id}/${item}`), (snapshot) => {
                     document.getElementById(`${item}`).innerHTML = snapshot.val()
                 })
             })

@@ -17,8 +17,10 @@ const Event = (props) => {
     const handleClose = () => setOpen(false);
 
 
+    // 1) взять кол-во из countEvent и для всех [1, countEvent] выдавать значение
+    // const countAbb = [1, count]
+    // count.Abb.forEach(
     const idEvent = 1;
-    // должно использоваться:
     // const idEvent = props.key
 
 

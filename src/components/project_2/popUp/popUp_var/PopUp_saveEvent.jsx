@@ -1,6 +1,8 @@
 import React from 'react';
 import style from "../popUp.module.css";
 import {useNavigate} from "react-router-dom";
+import {ref, update} from "firebase/database";
+import {db} from "../../../../firebase/firebase-config";
 
 const PopUpSaveEvent = (props) => {
     const navigate = useNavigate()
@@ -20,7 +22,10 @@ const PopUpSaveEvent = (props) => {
                     без изменений.</p>
                 <div className={style.footer}>
                     <span className={style.cancelling} onClick={()=>props.close()}>Отмена</span>
-                    <button onClick={()=>props.close()}>Cохранить</button>
+                    <button onClick={()=> {
+                        update(ref(db, `guide/1/${props.idEvent}/status`), { status: "active" })
+                        props.close()
+                    }}>Cохранить</button>
                 </div>
             </section>
         </div>
