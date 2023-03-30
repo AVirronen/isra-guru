@@ -14,7 +14,11 @@ const PopUpDeleteEvent = (props) => {
                     уведомления и возвращены деньги. Мероприятие будет перенесено в раздел “Прошедшие”</p>
                 <div className={style.footer}>
                     <span className={style.cancelling} onClick={()=>props.close()}>Отмена</span>
-                    <button onClick={()=>props.close()}>Удалить</button>
+                    <button onClick={()=> {
+
+
+                        props.close()
+                    }}>Удалить</button>
                 </div>
             </section>
         </div>

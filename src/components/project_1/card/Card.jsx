@@ -1,22 +1,48 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Styles.module.scss'
 import HatIcon from "../../../icons/HatIcon";
 import GeoIcon from "../../../icons/GeoIcon";
 import WatchIcon from "../../../icons/WatchIcon";
 import ShekelIcon from "../../../icons/ShekelIcon";
 import UsersIcon from "../../../icons/UsersIcon";
-import ViewEvent from "../view_event/ViewEvent";
 import {useNavigate} from "react-router-dom";
-import {filterLevel, filterPlace, guideInfo, viewEvent} from "../../../utils/constants";
+import {filterLevel, filterPlace, guideInfo, idsContentView, viewEvent} from "../../../utils/constants";
+import {onValue, ref} from "firebase/database";
+import {db, storage} from "../../../firebase/firebase-config";
+import { getDownloadURL, ref as storageRef, Reference } from "firebase/storage";
 const Card = () => {
-	const navigate=useNavigate()
+	const navigate=useNavigate();
+	const [image, setImage] = useState('');
+
+	const imageRef: Reference = storageRef(storage, '/images/1/image_1_1');
+
+	useEffect(() => {
+
+		// здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
+		async function add() {
+			idsContentView.forEach((item) => {
+				onValue(ref(db, `/guide/1/event/1/${item}`), (snapshot) => {
+					document.getElementById(`${item}`).innerHTML = snapshot.val()
+				})
+			})
+			onValue(ref(db, `/guide/1/name`), (snapshot) => {
+				document.getElementById('name').innerHTML = snapshot.val();
+			});
+			const url = await getDownloadURL(imageRef);
+			setImage(url);
+			console.log(image + " success");
+			setImage(url);
+		}
+
+		add()
+	})
 
 	return (
 		<div className={styles.card__container}>
 			<img
-				width={200}
-				height={200}
-				src="https://cdn.i24news.tv/uploads/6e/08/92/1b/b7/f8/5f/f4/ab/45/0d/45/9c/43/de/0d/6e08921bb7f85ff4ab450d459c43de0d.jpg?width=1000"
+				width={250}
+				height={250}
+				src={image}
 				alt="Tel Aviv"
 			draggable={false}
 			/>
@@ -24,22 +50,19 @@ const Card = () => {
 			<div className={styles.content}>
 				
 				<div className={styles.question__container}>
-					<h2 className={styles.question__container_title}>Тель-Авив. С чего все начиналось и кто во всем виноват?</h2>
-					<p className={styles.question__container_description}>Друзья, приглашаю Вас прогуляться по вечернему Яффо со
-						всеми его мифами и
-						легендами, с царями и богами, крестоносцами и мусульманами, с египтянами, евреями, греками и даже
-						русскими.</p>
+					<h2 className={styles.question__container_title} id={"title"}></h2>
+					<p className={styles.question__container_description} id={"smallDescription"}></p>
 					<div className={styles.level__container}>
 						<i className={styles.level__container_icon}><HatIcon/></i>
-						<p className={styles.level__container_description}>Уровень сложности материала: турист (обзорная).</p>
+						<p className={styles.level__container_description}>Уровень сложности материала: <span id={"complexity"}></span></p>
 					</div>
 				</div>
 				
 				<div className={styles.day__container}>
 					<div className={styles.info__container}>
-						<i className={styles.info__container_number}>03</i>
+						<i className={styles.info__container_number} id={"data/number"}></i>
 						<p className={styles.info__container_description}>
-							<span>сентября</span><span>воскресенье</span>
+							<span id={"data/month"}></span><span id={"data/weekDay"}></span>
 						</p>
 					</div>
 					
@@ -51,7 +74,7 @@ const Card = () => {
 						     alt=""/>
 						<div className={styles.guide__description_block}>
 							<p className={styles.guide__description_block_desc}>Ваш гид:</p>
-							<p className={styles.guide__description_block_desc}>Святослав Brzęczyszczykiewicz</p>
+							<p className={styles.guide__description_block_desc} id={"name"}></p>
 						</div>
 					</div>
 				</div>
@@ -59,19 +82,19 @@ const Card = () => {
 				<ul className={styles.price__container}>
 					<li className={styles.price__container_item}>
 						<i className={styles.price__container_icon}><GeoIcon /></i>
-						<p className={styles.price__container_description}>Тель Авив Яффо</p>
+						<p className={styles.price__container_description} id={"city"}></p>
 					</li>
 					<li className={styles.price__container_item}>
 						<i className={styles.price__container_icon}><WatchIcon /></i>
-						<p className={styles.price__container_description}>16.00 - 20.00 (4 часа)</p>
+						<p className={styles.price__container_description}> <span id={"timeFrom"}></span> - <span id={"timeTo"}></span></p>
 					</li>
 					<li className={styles.price__container_item}>
 						<i className={styles.price__container_icon}><ShekelIcon /></i>
-						<p className={styles.price__container_description}>150 (≈$36)</p>
+						<p className={styles.price__container_description}> <span  id={"price/amount"}></span> <span id={"price/currency"}></span></p>
 					</li>
 					<li className={styles.price__container_item}>
 						<i className={styles.price__container_icon}><UsersIcon /></i>
-						<p className={styles.price__container_description}>Осталось 5 мест</p>
+						<p className={styles.price__container_description}>Осталось <span id={"count/countsPlan"}></span> мест</p>
 					</li>
 					<li>
 						<button className={styles.price__container_btn}

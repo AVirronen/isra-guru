@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './events.module.css'
 import Delete from "../../../icons/Delete";
 import Copy from "../../../icons/Copy";
@@ -6,21 +6,60 @@ import Edit from "../../../icons/Edit";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import PopUp from "../popUp/PopUp";
+import {off, onValue, ref} from "firebase/database";
+import {db} from "../../../firebase/firebase-config";
 
 
-const Event = () => {
+const Event = (props) => {
     const [modal, changeModal] = React.useState('')
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+
+    // 1) взять кол-во из countEvent и для всех [1, countEvent] выдавать значение
+    // const countAbb = [1, count]
+    // count.Abb.forEach(
+    const idEvent = 1;
+    // const idEvent = props.key
+
+
+    useEffect(() => {
+        async function add() {
+            const idsEvent = ["data/number", "data/month", "data/year", "title", "price/amount", "price/currency",
+                "count/countsGo", "count/countsPlan"]
+            idsEvent.forEach((item) => {
+                onValue(ref(db, `/guide/1/event/${idEvent}/${item}`), (snapshot) => {
+                    document.getElementById(`${item}`).innerHTML = snapshot.val()
+                })
+            })
+        }
+
+        add()
+    }, [])
+
+
     return (
         <div>
             <div className={style.events}>
-                <p className={style.dateEvents}>22 Июня 2020</p>
-                <p className={style.dateDesc}>Тель Авив. С чего начиналось и кто во всем виноват.</p>
-                <p className={style.dateCost}>35 NIS</p>
-                <p className={style.datePeople}>24/30</p>
+                <div className={style.dateEvents}>
+                    <p id={"data/number"}></p>
+                    &nbsp;
+                    <p id={"data/month"}></p>
+                    &nbsp;
+                    <p id={"data/year"}></p>
+                </div>
+                <p className={style.dateDesc} id={"title"}></p>
+                <div className={style.dateCost}>
+                    <p id={"price/amount"}></p>
+                    &nbsp;
+                    <p id={"price/currency"}></p>
+                </div>
+                <div className={style.datePeople}>
+                    <p id={"count/countsGo"}></p>
+                    <p>/</p>
+                    <p id={"count/countsPlan"}></p>
+                </div>
                 <div className={style.iconsEvents}>
                     <div onClick={() => {
                         handleOpen()
@@ -30,7 +69,7 @@ const Event = () => {
                         handleOpen()
                         changeModal('save')
                     }}><Edit/></div>
-                    <div onClick={()=>{
+                    <div onClick={() => {
                         handleOpen()
                         changeModal('delete')
                     }
@@ -44,7 +83,7 @@ const Event = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box>
-                    <PopUp modal={modal} close={handleClose}/>
+                    <PopUp modal={modal} close={handleClose} idEvent={idEvent}/>
                 </Box>
             </Modal>
         </div>

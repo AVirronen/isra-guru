@@ -11,15 +11,31 @@
     text-align: left;
 }
 .events .dateEvents{
-    width: 10%
+    display: flex;
+    flex-direction: row;
+    width: 10%;
+    /*justify-content: space-between;*/
+}
+.events .dateEvents p{
+    margin-right: 2px;
 }
 
 .events .dateDesc{
     width: 50%;
 }
 
+.events .dateCost{
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    /*width: 100%;*/
+}
+
 .events .datePeople{
     margin-right: 80px;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
 }
 
 .iconsEvents{

@@ -52,13 +52,13 @@ const EventCreat = () => {
             // document.getElementById("date").value,
             document.getElementById("date").value.split("-")[2],
             `${dateMonthRussian()}`,
-            `${dateWeekDayRussian()}`,
+            `${dateWeekDayRussian()}`, new Date(document.getElementById("date").value).getFullYear(),
             document.getElementById("timeFrom").value, document.getElementById("timeTo").value,
             document.getElementById("title").value, document.getElementById("smallDescription").value,
             document.getElementById("bigDescription").value, document.getElementById("whereMeet").value,
             document.getElementById("additionallyText").value, document.getElementById("city").value,
             complexity,
-            document.getElementById("count").value,
+            document.getElementById("count").value, 0,
             document.getElementById("amount").value, currency,
             'place', 'pic1',
             'pic2', 'pic3', 'pic4', 'pic5'
@@ -84,7 +84,7 @@ const EventCreat = () => {
                     <div className={styles.formBlockPart1}>
                         <label>
                             Дата: <input type="date" id="date" name="trip-start"
-                            // value="2023-05-24"
+                                         // value="2023-05-24"
                                          min="2023-01-01" max="2023-12-31"/>
                         </label>
 
@@ -95,6 +95,7 @@ const EventCreat = () => {
                                    min="09:00" max="23:00" required/>
                         </label>
                     </div>
+
                     <div className={styles.formBlock}>
                         <p className={styles.formName}>Название:
                             <textarea className={styles.formCont} name="comment" cols="50" rows="3"

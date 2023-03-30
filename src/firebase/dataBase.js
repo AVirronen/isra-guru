@@ -15,16 +15,16 @@ export function writeGuideData(guideId, name, aboutMe, iCan, contact) {
         //
         // }
     })
-        .then((e)=>console.log('Success' + e))
-        .catch((error)=>console.log(error.message))
+        .then((e) => console.log('Success' + e))
+        .catch((error) => console.log(error.message))
 }
 
-writeGuideData(guideId, name,  aboutMe, iCan, contact)
+writeGuideData(guideId, name, aboutMe, iCan, contact)
 
-export function writeEventData(guideId, countEvents, status, number,month, weekDay,
+export function writeEventData(guideId, countEvents, status, number, month, weekDay, year,
                                timeFrom, timeTo, title, smallDescription,
                                bigDescription, whereMeet, additionallyText, city,
-                               complexity, counts, amount, currency, place, picture1, picture2,
+                               complexity, countsPlan, countsGo, amount, currency, place, picture1, picture2,
                                picture3, picture4, picture5) {
     update(ref(db, 'guide/' + guideId + '/event/' + countEvents), {
         // set(ref(db, 'guide/' + guideId + '/event/' + countEvents), {
@@ -33,7 +33,8 @@ export function writeEventData(guideId, countEvents, status, number,month, weekD
         data: {
             number: number,
             month: month,
-            weekDay: weekDay
+            weekDay: weekDay,
+            year: year
         },
         timeFrom: timeFrom,
         timeTo: timeTo,
@@ -44,7 +45,10 @@ export function writeEventData(guideId, countEvents, status, number,month, weekD
         additionallyText: additionallyText,
         city: city,
         complexity: complexity,
-        counts: counts,
+        count: {
+            countsPlan: countsPlan,
+            countsGo: countsGo,
+        },
         price: {
             amount: amount,
             currency: currency
@@ -58,7 +62,8 @@ export function writeEventData(guideId, countEvents, status, number,month, weekD
             picture5: picture5
         }
     })
-        .then((e)=>console.log('Success ' + e))
-        .catch((error)=>console.log(error.message))
+        .then((e) => console.log('Success ' + e))
+        .catch((error) => console.log(error.message))
 }
+
 

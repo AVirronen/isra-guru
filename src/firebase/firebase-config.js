@@ -1,6 +1,7 @@
 import {initializeApp} from "firebase/app";
 import {createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword} from "firebase/auth";
 import {getDatabase} from "firebase/database";
+import {getStorage} from "firebase/storage";
 
 
 const firebaseConfig = {
@@ -20,21 +21,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app)
 export const db = getDatabase(app);
 
-
-// вторая попытка
-// export var database = firebase.database()
-// const ref = database.ref('guide/' + guideId + '/name');
-// ref.on('value', function (snapshot) {
-//     console.log(snapshot.val())
-// })
-// ref.set({
-//         name: 'TestSet'
-//     }
-// )
-// ref.update({
-//         name: 'TestUpdate'
-//     }
-// )
+export const storage = getStorage(app);
 
 
 export const createUser = async (email, password) => {

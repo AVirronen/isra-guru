@@ -1,8 +1,30 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import style from './mainEventList.module.css'
 import Event from "../../event/Event";
+import {off, onValue, ref} from "firebase/database";
+import {db} from "../../../../firebase/firebase-config";
 
 const MainEventList = () => {
+    const [count, setCount] = useState(0)
+
+    useEffect(() => {
+        const countRef = ref(db, '/guide/1/countEvents');
+        onValue(countRef, (snapshot) => {
+            const countValue = snapshot.val();
+            setCount(countValue);
+        });
+        return () => {
+            off(countRef);
+        };
+    }, [db]);
+
+
+    const eventArray = Array.from({ length: count }, (_, index) => (
+        <Event key={index} count={count}/>
+    ));
+
+
+
     return (
         <div className={style.mainEventList}>
             <div className={style.top}>
@@ -12,16 +34,18 @@ const MainEventList = () => {
                     <button>Черновики</button>
                 </div>
                 <div className={style.topR}>
-                    <p>1-8 из 8</p>
+                    <p>1-1 из 1</p>
                     <button className={style.prev}>&#x27E8;</button>
                     <button className={style.next}>&#x27E9;</button>
                 </div>
             </div>
 
             <div className={style.content}>
-                <Event/>
-                <Event/>
-                <Event/>
+                {[...Array(count)].map((_, i) => <Event key={i} id={i + 1} />)}
+                {/*{eventArray}*/}
+                {/*<Event/>*/}
+                {/*<Event/>*/}
+                {/*<Event/>*/}
                 {/*открываются: */}
                 {/*<ActiveEvents/>*/}
                 {/*<PastEvents/>*/}

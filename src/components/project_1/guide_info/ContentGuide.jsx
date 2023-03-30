@@ -56,8 +56,8 @@ const ContentGuide = () => {
                         <h2 className={style.tour}>Ближайшие экскурсии</h2>
                         <div className={style.cardList}>
                             <CardGuide/>
-                            <CardGuide/>
-                            <CardGuide/>
+                            {/*<CardGuide/>*/}
+                            {/*<CardGuide/>*/}
                         </div>
                     </div>
                     <div className={style.content}>
@@ -71,10 +71,7 @@ const ContentGuide = () => {
                             </div>
                             <div>
                                 <h2 className={style.connectWithMe}>Связаться со мной</h2>
-                                <p>Телефон: </p>
-                                <p id="contact">
-                                    {/*Телефон: 972 55 555 55 55*/}
-                                </p>
+                                <p>Телефон: <span id="contact"></span></p>
                                 <p>Соцсети и мессенджеры</p>
                                 <span className={style.messegers}>
                             <img className={style.messegerIMG} src={fb} alt={'messenger photo'}/>

@@ -23,17 +23,6 @@ const ContentView = () => {
         add()
     })
 
-    // const fillContent = (link) =>{
-    //     // let data=0
-    //     const contentEventFill = ref(db, 'guide/' + guideId + '/event/' + 12 + `/${link}`);
-    //     return onValue(contentEventFill, (snapshot) => {
-    //         const data = snapshot.val()
-    //         // set(contentEventFill,{
-    //         // })
-    //         // updateDate(postElement, data)
-    //     })
-    // }
-
 
     return (
         <div>
@@ -62,7 +51,7 @@ const ContentView = () => {
                     </div>
                     <div className={style.content__place___complexity}>
                         <i><HatIcon/></i>
-                        <p id={"complexity"}>Уровень сложности материала: .</p>
+                        <p>Уровень сложности материала: <span  id={"complexity"}></span></p>
                     </div>
                     <img className={style.mapCard}
                          src="https://i.ebayimg.com/images/g/j9wAAOSw2rNhHlJx/s-l1600.jpg"

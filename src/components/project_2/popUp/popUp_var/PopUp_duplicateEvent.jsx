@@ -14,7 +14,9 @@ const PopUpDupIcateEvent = (props) => {
                     без изменений.</p>
                 <div className={style.footer}>
                     <span className={style.cancelling} onClick={()=>props.close()}>Отмена</span>
-                    <button onClick={()=>props.close()}>Дублировать</button>
+                    <button onClick={()=> {
+                        props.close()
+                    }}>Дублировать</button>
                 </div>
             </section>
         </div>
