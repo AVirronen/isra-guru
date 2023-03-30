@@ -28,49 +28,49 @@ import ErrorPage from "./components/authorization/ErrorPage";
 import Register from "./components/authorization/Register";
 import EventCreat from "./components/project_2/event_creat/EventCreat";
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Routes>
-                    <Route path={`/`} element=<ListEvents/>/>
+const App = (props) => {
 
-                        <Route path={`${filterLevel}`} element={
-                            <div className={style.mainListEvents}>
-                                <div className={style.navigation}>
-                                    <Navigation/>
-                                </div>
-                                <div className={style.filters}>
-                                    <Level/>
-                                </div>
-                            </div>}/>
-                        <Route path={`${filterPlace}`} element={
-                            <div className={style.mainListEvents}>
-                                <div className={style.navigation}>
-                                    <Navigation/>
-                                </div>
-                                <div className={style.filters}>
-                                    <Place/>
-                                </div>
-                            </div>}/>
+    return (
+        <div>
+            <Routes>
+                <Route path={`/`} element=<ListEvents/>/>
 
-                        {/*<Route path={`${viewEvent}`} element={<ViewEvent/>}/>*/}
-                    <Route path={`${viewEvent}`} element={<ViewEvent prop1={1}/>}/>
+                <Route path={`${filterLevel}`} element={
+                    <div className={style.mainListEvents}>
+                        <div className={style.navigation}>
+                            <Navigation/>
+                        </div>
+                        <div className={style.filters}>
+                            <Level/>
+                        </div>
+                    </div>}/>
+                <Route path={`${filterPlace}`} element={
+                    <div className={style.mainListEvents}>
+                        <div className={style.navigation}>
+                            <Navigation/>
+                        </div>
+                        <div className={style.filters}>
+                            <Place/>
+                        </div>
+                    </div>}/>
 
-                    <Route path={`${singUp}`} element={<SignUp/>}/>
-                        <Route path={`${payment}`} element={<Payment/>}/>
-                        <Route path={`${thankYou}`} element={<ThankYou/>}/>
-                        <Route path={`${guideInfo}`} element={<GuideInfo/>}/>
-                        <Route path={`${eventList}`} element={<EventList/>}/>
-                        <Route path={`${eventCreate}`} element={<EventCreat/>}/>
+                {/*<Route path={`${viewEvent}`} element={<ViewEvent/>}/>*/}
+                <Route path={`${viewEvent}`} element={<ViewEvent prop1={props.prop1}/>}/>
 
-                        <Route path={`${authorization}`} element={<Authorization/>}/>
-                        <Route path={`${error}`} element={<ErrorPage/>}/>
-                        <Route path={`${register}`} element={<Register/>}/>
-                </Routes>
-            </div>
+                <Route path={`${singUp}`} element={<SignUp/>}/>
+                <Route path={`${payment}`} element={<Payment/>}/>
+                <Route path={`${thankYou}`} element={<ThankYou/>}/>
+                <Route path={`${guideInfo}`} element={<GuideInfo/>}/>
+                <Route path={`${eventList}`} element={<EventList/>}/>
+                <Route path={`${eventCreate}`} element={<EventCreat/>}/>
+
+                <Route path={`${authorization}`} element={<Authorization/>}/>
+                <Route path={`${error}`} element={<ErrorPage/>}/>
+                <Route path={`${register}`} element={<Register/>}/>
+            </Routes>
+        </div>
     );
-    }
-    }
 
-    export default App;
+}
+
+export default App;

@@ -9,7 +9,7 @@ const PopUp = (props) => {
             case 'save':
                 return <PopUp_saveEvent close={props.close} idEvent={props.idEvent}/>
             case 'duplicate':
-                return <PopUp_duplicateEvent close={props.close} idEvent={props.idEvent}/>
+                return <PopUp_duplicateEvent close={props.close} idEvent={props.idEvent} handleWrite={props.handleWrite}/>
             case 'delete':
                 return <PopUp_deleteEvent close={props.close} idEvent={props.idEvent}/>
         }

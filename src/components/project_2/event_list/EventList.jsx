@@ -5,7 +5,6 @@ import MainEventList from "./mainEventList/MainEventList";
 import {useNavigate} from "react-router-dom";
 import {endSession, getSession, isLoggedIn} from "../../../firebase/auth-service";
 
-
 const EventList = () => {
     let navigate = useNavigate();
 
@@ -19,7 +18,6 @@ const EventList = () => {
         let session = getSession();
         setEmail(session.email);
 
-        // console.log("Your access token is: " + session.accessToken);
     }, [navigate]);
 
     const onLogout = () => {

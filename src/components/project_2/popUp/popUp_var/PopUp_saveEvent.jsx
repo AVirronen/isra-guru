@@ -17,13 +17,13 @@ const PopUpSaveEvent = (props) => {
                         // navigate(`/${eventList}`)}
                     >&#10006;</span>
                 </div>
-                <p>После нажатия кнопки “Дублировать” будет создана копия данного мероприятия, доступная для
-                    редактирования. Информации по участникам скопирована не будет. Оригинальное мероприятие останется
-                    без изменений.</p>
+                <p>После нажатия кнопки “Сохранить” данное мероприятие будет сохранено без изменений и
+                    опубликовано.
+                    Мероприятие будет перенесено в раздел “Активные”.</p>
                 <div className={style.footer}>
                     <span className={style.cancelling} onClick={()=>props.close()}>Отмена</span>
                     <button onClick={()=> {
-                        update(ref(db, `guide/1/${props.idEvent}/status`), { status: "active" })
+                        update(ref(db, `guide/1/event/${props.idEvent}`), { status: "active" })
                         props.close()
                     }}>Cохранить</button>
                 </div>

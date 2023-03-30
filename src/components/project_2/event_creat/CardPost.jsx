@@ -15,7 +15,9 @@ const CardPost = (props) => {
                     <div className={styles.preview_info_allDescription}>
                         <i><Eye/></i>
                         {/*<p onClick={()=>{navigate(`/${viewEvent}`)}}>Предпросмотр</p>*/}
-                        <p onClick={()=>{navigate(`/${viewEvent}?prop1=1`)}}>Предпросмотр</p>
+                        <p onClick={()=>{
+                            // props.handleWrite('draft')
+                            navigate(`/${viewEvent}?prop1=${props.id}`)}}>Предпросмотр</p>
                     </div>
                     <div className={styles.preview_info_allDescription}>
                         <i><Copy/></i>

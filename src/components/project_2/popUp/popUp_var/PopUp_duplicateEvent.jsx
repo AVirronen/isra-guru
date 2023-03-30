@@ -1,28 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import style from "../popUp.module.css";
 import {ref, update} from "firebase/database";
 import {db} from "../../../../firebase/firebase-config";
 
+
 const PopUpDupIcateEvent = (props) => {
-    return (
+    // const user = useContext(UserContext);
+        return (
+
         <div className={style.windowBG}>
             <section className={style.content}>
                 <div className={style.title}>
                     <h2 className={style.titleText}>Дублировать событие</h2>
-                    <span className={style.titleCross} onClick={()=>props.close()}>&#10006;</span>
+                    <span className={style.titleCross} onClick={() => props.close()}>&#10006;</span>
                 </div>
                 <p>После нажатия кнопки “Дублировать” будет создана копия данного мероприятия, доступная для
-                    редактирования. Информации по участникам скопирована не будет. Оригинальное мероприятие останется
+                    редактирования. Информации по участникам скопирована не будет. Оригинальное мероприятие
+                    останется
                     без изменений.</p>
                 <div className={style.footer}>
-                    <span className={style.cancelling} onClick={()=>props.close()}>Отмена</span>
-                    <button onClick={()=> {
+                    <span className={style.cancelling} onClick={() => props.close()}>Отмена</span>
+                    <button onClick={() => {
+                        // props.handleWrite("draft")
                         // update(ref(db, `guide/1/${props.idEvent}/status`), { status: "active" })
+                        // value.handleWrite("draft")
+                        // user.handleWriteDub("draft")
                         props.close()
-                    }}>Дублировать</button>
+                    }}>Дублировать
+                    </button>
                 </div>
             </section>
         </div>
+
+
     );
 };
 

@@ -6,8 +6,9 @@ import Edit from "../../../icons/Edit";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import PopUp from "../popUp/PopUp";
-import {off, onValue, ref} from "firebase/database";
+import {off, onValue, ref, set} from "firebase/database";
 import {db} from "../../../firebase/firebase-config";
+import {writeEventData} from "../../../firebase/dataBase";
 
 
 const Event = (props) => {
@@ -16,12 +17,8 @@ const Event = (props) => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-
-    // 1) взять кол-во из countEvent и для всех [1, countEvent] выдавать значение
-    // const countAbb = [1, count]
-    // count.Abb.forEach(
-    const idEvent = 1;
-    // const idEvent = props.key
+    // const idEvent = 1;
+    const idEvent = props.id
 
 
     useEffect(() => {
@@ -29,14 +26,14 @@ const Event = (props) => {
             const idsEvent = ["data/number", "data/month", "data/year", "title", "price/amount", "price/currency",
                 "count/countsGo", "count/countsPlan"]
             idsEvent.forEach((item) => {
-                onValue(ref(db, `/guide/1/event/${idEvent}/${item}`), (snapshot) => {
+                onValue(ref(db, `/guide/1/event/${props.id}/${item}`), (snapshot) => {
                     document.getElementById(`${item}`).innerHTML = snapshot.val()
                 })
             })
         }
-
         add()
     }, [])
+
 
 
     return (
@@ -83,7 +80,9 @@ const Event = (props) => {
                 aria-describedby="modal-modal-description"
             >
                 <Box>
-                    <PopUp modal={modal} close={handleClose} idEvent={idEvent}/>
+                    <PopUp modal={modal} close={handleClose} idEvent={idEvent}
+                           // handleWrite={handleWrite}
+                    />
                 </Box>
             </Modal>
         </div>

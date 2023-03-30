@@ -3,7 +3,7 @@ import Gallery from "./gallery/Gallery";
 import ContentView from "./contentView/ContentView";
 import style from "./viewEvent.module.css"
 
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {guideInfo, singUp} from "../../../utils/constants";
 import {getDownloadURL, ref as storageRef, Reference} from "firebase/storage";
 import {db, storage} from "../../../firebase/firebase-config";
@@ -13,6 +13,8 @@ import {onValue, ref} from "firebase/database";
 const ViewEvent = (props) => {
     const navigate = useNavigate()
 
+    // const location = useLocation()
+    // const prop1 = new URLSearchParams(location.search).get('prop1');
 
     useEffect(() => {
         async function add() {

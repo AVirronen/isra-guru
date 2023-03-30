@@ -10,11 +10,11 @@ const Gallery = (props) => {
     const [images, setImages] = useState([]);
 
     const imagePaths = [
-        `/images/${props.id}/image_1_main`,
-        `/images/${props.id}/image_1_1`,
-        `/images/${props.id}/image_1_2`,
-        `/images/${props.id}/image_1_3`,
-        `/images/${props.id}/image_1_4`
+        `/images/${props.id}/image_${props.id}_main`,
+        `/images/${props.id}/image_${props.id}_1`,
+        `/images/${props.id}/image_${props.id}_2`,
+        `/images/${props.id}/image_${props.id}_3`,
+        `/images/${props.id}/image_${props.id}_4`
     ];
 
     useEffect(() => {
