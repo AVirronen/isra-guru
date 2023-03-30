@@ -19,9 +19,9 @@ const MainEventList = () => {
     }, [db]);
 
 
-    const eventArray = Array.from({ length: count }, (_, index) => (
-        <Event key={index} count={count}/>
-    ));
+    // const eventArray = Array.from({ length: count }, (_, index) => (
+    //     <Event key={index} count={count}/>
+    // ));
 
 
 
@@ -41,7 +41,7 @@ const MainEventList = () => {
             </div>
 
             <div className={style.content}>
-                {[...Array(count)].map((_, i) => <Event key={i} id={i + 1} />)}
+                {[...Array(count)].map((_, i) => <Event key={i+1}/>)}
                 {/*{eventArray}*/}
                 {/*<Event/>*/}
                 {/*<Event/>*/}
