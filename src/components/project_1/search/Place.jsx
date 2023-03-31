@@ -1,26 +1,60 @@
-import React, {useState, useRef} from 'react';
+import React, {useState} from 'react';
 import style from "./search.module.css";
+import 'firebase/database';
+import {ref, query, orderByChild, equalTo} from 'firebase/database';
 import {db} from "../../../firebase/firebase-config";
-import {ref} from "firebase/storage";
+
 
 const Place = () => {
-    const [place, setPlace] = useState(0);
-    const [filteredItems, setFilteredItems] = useState([]);
-    const cityRef = useRef();
+    const [cityItems, setCityItems] = useState({});
+
 
     function onButtonClick(event) {
         const cityFilter = event.target.textContent;
-        cityRef.current = ref(db,'guide').orderByChild('city').equalTo(cityFilter);
-        cityRef.current.once('value', (snapshot) => {
-            const items = [];
-            snapshot.forEach((childSnapshot) => {
-                items.push({id: childSnapshot.key, ...childSnapshot.val()});
-            });
-            setFilteredItems(items);
+        const eventsRef = ref(db, 'guide/1/event');
+
+        const cityQuery = query(
+            eventsRef,
+            orderByChild('city'),
+            equalTo(cityFilter)
+        )
+
+        const items = [];
+        cityQuery.on('child_added', (snapshot) => {
+            const id = snapshot.key;
+            const data = snapshot.val();
+            if (data.city === cityFilter) {
+                items.push({id, ...data});
+                setCityItems(prevState => ({
+                    ...prevState,
+                    [cityFilter]: items
+                }));
+            }
         }, (error) => {
             console.log("Ошибка при получении данных:", error);
-        });
+        })
     }
+
+    // return cityQuery()
+    // const eventsRef = firebase.db().ref('guide/event')
+    // const eventsRef = db.ref('guide/event') //error
+    // const eventsRef = ref(getDatabase(), 'guide/event');
+    // const cityQuery = query(orderByChild('city'), equalTo(cityFilter), ref(getDatabase(), 'guide/event'));
+    // const cityQuery = query(eventsRef, orderByChild('city'), equalTo(cityFilter));
+    // const cityQuery = eventsRef.orderByChild('city').equalTo(cityFilter);
+    // cityQuery.once('value', (snapshot) => {
+    //     const items = [];
+    //     snapshot.forEach((childSnapshot) => {
+    //         items.push({id: childSnapshot.key, ...childSnapshot.val()});
+    //     });
+    //     setCityItems(prevState => ({
+    //         ...prevState,
+    //         [cityFilter]: items
+    //     }));
+    // }, (error) => {
+    //     console.log("Ошибка при получении данных:", error);
+    // }).then(e => {console.log("Ошибка при получении данных:")} );
+    // }
 
     return (
         <div>
@@ -51,13 +85,16 @@ const Place = () => {
                 </div>
                 <div className={style.triangle}></div>
             </div>
-            {filteredItems.length > 0 && (
-                <ul>
-                    {filteredItems.map((item) => (
-                        <li key={item.id}>{`${item.name} (${item.city})`}</li>
-                    ))}
-                </ul>
-            )}
+            {Object.entries(cityItems).map(([city, items]) => (
+                <div key={city}>
+                    <h2>{city}</h2>
+                    <ul>
+                        {items.map((item) => (
+                            <li key={item.id}>{`${item.name} (${item.city})`}</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
     );
 };

@@ -2,7 +2,8 @@
 .events{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    /*justify-content: space-between;*/
+    /*justify-content: space-around;*/
     border-bottom: 1px solid var(--unnamed-color-d8d8d9);
 
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
@@ -13,7 +14,10 @@
 .events .dateEvents{
     display: flex;
     flex-direction: row;
-    width: 10%;
+    /*width: 10%;*/
+    width: 180px;
+    margin-left: 13px;
+
     /*justify-content: space-between;*/
 }
 .events .dateEvents p{
@@ -21,7 +25,8 @@
 }
 
 .events .dateDesc{
-    width: 50%;
+    /*width: 50%;*/
+    width: 550px;
 }
 
 .events .dateCost{
@@ -29,10 +34,11 @@
     flex-direction: row;
     /*justify-content: space-between;*/
     /*width: 100%;*/
+    width: 100px;
 }
 
 .events .datePeople{
-    margin-right: 80px;
+    margin-right: 180px;
     display: flex;
     flex-direction: row;
     /*justify-content: space-between;*/
@@ -47,7 +53,7 @@
 
 .iconsEvents>div{
     width: 18px;
-    margin: 8px;
+    margin: 7px;
     cursor: pointer;
 }
 

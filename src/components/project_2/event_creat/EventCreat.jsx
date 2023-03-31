@@ -1,16 +1,26 @@
-import React, {useEffect, useState} from 'react';
-import styles from './EventCreat.module.scss'
-import CardPost from "./CardPost";
-import {writeEventData} from "../../../firebase/dataBase";
-import {ref, set, onValue, off} from "firebase/database";
-import {db} from "../../../firebase/firebase-config";
-import PicAdd from "./PicAdd/PicAdd";
-
+import React, { useEffect, useState } from 'react';
+import styles from './EventCreat.module.scss';
+import CardPost from './CardPost';
+import { writeEventData } from '../../../firebase/dataBase';
+import { ref, set, onValue, off } from 'firebase/database';
+import { db } from '../../../firebase/firebase-config';
+import PicAdd from './PicAdd/PicAdd';
 
 const EventCreat = () => {
-    const [count, setCount] = useState(1)
-    const [complexity, setComplexity] = useState('')
-    const [currency, setCurrency] = useState('')
+    const [count, setCount] = useState(1);
+    const [complexity, setComplexity] = useState('');
+    const [currency, setCurrency] = useState('');
+    const [dateValue, setDateValue] = useState('');
+    const [timeFrom, setTimeFrom] = useState('');
+    const [timeTo, setTimeTo] = useState('');
+    const [title, setTitle] = useState('');
+    const [smallDescription, setSmallDescription] = useState('');
+    const [bigDescription, setBigDescription] = useState('');
+    const [whereMeet, setWhereMeet] = useState('');
+    const [additionallyText, setAdditionallyText] = useState('');
+    const [city, setCity] = useState('');
+    const [countValue, setCountValue] = useState('');
+    const [amount, setAmount] = useState('');
 
     useEffect(() => {
         const countRef = ref(db, '/guide/1/countEvents');
@@ -24,43 +34,28 @@ const EventCreat = () => {
     }, [db]);
 
     function dateMonthRussian() {
-        const dateValue = document.getElementById("date").value;
         const date = new Date(dateValue);
-        const monthNames = [
-            "Январь", "Февраль", "Март", "Апрель",
-            "Май", "Июнь", "Июль", "Август",
-            "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
-        ];
+        const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август',
+            'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
         const monthIndex = date.getMonth();
         return monthNames[monthIndex];
     }
 
     function dateWeekDayRussian() {
-        const dateValue = document.getElementById("date").value; // Получение значения элемента input
-        const date = new Date(dateValue); // Создание объекта Date из полученного значения
-        const dayNames = [
-            "Воскресенье", "Понедельник", "Вторник", "Среда",
-            "Четверг", "Пятница", "Суббота"
-        ];
+        const date = new Date(dateValue);
+        const dayNames = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
         const dayIndex = date.getDay();
         return dayNames[dayIndex];
     }
 
     function handleWrite(status) {
-        set(ref(db, '/guide/1/countEvents'), count + 1)
+        set(ref(db, '/guide/1/countEvents'), count + 1);
 
-        writeEventData(1, count + 1, `${status}`,
-            // document.getElementById("date").value,
-            document.getElementById("date").value.split("-")[2],
-            `${dateMonthRussian()}`,
-            `${dateWeekDayRussian()}`, new Date(document.getElementById("date").value).getFullYear(),
-            document.getElementById("timeFrom").value, document.getElementById("timeTo").value,
-            document.getElementById("title").value, document.getElementById("smallDescription").value,
-            document.getElementById("bigDescription").value, document.getElementById("whereMeet").value,
-            document.getElementById("additionallyText").value, document.getElementById("city").value,
-            complexity,
-            document.getElementById("count").value, 0,
-            document.getElementById("amount").value, currency,
+        writeEventData(1,count + 1,`${status}`,
+            dateValue.split('-')[2], `${dateMonthRussian()}`,
+            `${dateWeekDayRussian()}`, new Date(dateValue).getFullYear(),
+            timeFrom, timeTo, title, smallDescription, bigDescription, whereMeet, additionallyText,
+            city, complexity, countValue, 0, amount, currency,
             'place', 'pic1',
             'pic2', 'pic3', 'pic4', 'pic5'
         )
@@ -75,67 +70,67 @@ const EventCreat = () => {
     }
 
     return (
-        // <UserContext.Provider value={{handleWriteDub: handleWrite}}>
-
             <div className={styles.container_all}>
                 <section className={styles.wrapper_title}>
                     <h1>Создать новое событие</h1>
                 </section>
                 <section className={styles.preview_item_var1}>
-                    <CardPost/>
+                    <CardPost handleWrite={handleWrite} id={count + 1}/>
                 </section>
                 <form className={styles.allForm}>
                     <div className={styles.content}>
                         <div className={styles.formBlockPart1}>
                             <label>
                                 Дата: <input type="date" id="date" name="trip-start"
-                                // value="2023-05-24"
-                                             min="2023-01-01" max="2023-12-31"/>
+                                             min="2023-01-01" max="2023-12-31"
+                            onChange={(e)=>setDateValue(e.target.value)}
+                            />
                             </label>
 
                             <label htmlFor="appt">Время:
                                 <input type="time" id="timeFrom" name="appt"
-                                       min="09:00" max="23:00" required/>
+                                       min="09:00" max="23:00" required onChange={(e)=>setTimeFrom(e.target.value)}/>
                                 <input type="time" id="timeTo" name="appt"
-                                       min="09:00" max="23:00" required/>
+                                       min="09:00" max="23:00" required onChange={(e)=>setTimeTo(e.target.value)}/>
                             </label>
                         </div>
 
                         <div className={styles.formBlock}>
                             <p className={styles.formName}>Название:
                                 <textarea className={styles.formCont} name="comment" cols="50" rows="3"
-                                          maxLength="64" id={"title"}></textarea></p>
+                                          maxLength="64" id={"title"} onChange={(e)=>setTitle(e.target.value)}
+                                ></textarea></p>
                         </div>
 
                         <div className={styles.formBlock}>
                             <p className={styles.formName}>Короткое описание:
                                 <textarea className={styles.formCont} id={"smallDescription"} name="comment" cols="50"
-                                          rows="5"
+                                          rows="5" onChange={(e)=>setSmallDescription(e.target.value)}
                                           maxLength="180"></textarea></p>
                         </div>
 
                         <div className={styles.formBlock}>
                             <p className={styles.formName}>Полное описание:
                                 <textarea className={styles.formCont} id={"bigDescription"} name="comment" cols="50"
-                                          rows="20"
+                                          rows="20" onChange={(e)=>setBigDescription(e.target.value)}
                                           maxLength="1300"></textarea></p>
                         </div>
 
                         <div className={styles.formBlock}>
                             <p className={styles.formName}>Где встречаемся:
                                 <textarea className={styles.formCont} id={"whereMeet"} name="comment" cols="50" rows="4"
-                                          maxLength="180"></textarea></p>
+                                          maxLength="180" onChange={(e)=>setWhereMeet(e.target.value)}></textarea></p>
                         </div>
 
                         <div className={styles.formBlock}>
                             <p className={styles.formName}>Дополнительно:
                                 <textarea className={styles.formCont} id={"additionallyText"} name="comment" cols="50"
-                                          rows="3"
+                                          rows="3" onChange={(e)=>setAdditionallyText(e.target.value)}
                                           maxLength="64"></textarea></p>
 
                             <div className={styles.blockCityEct}>
                                 <label htmlFor="uname">Город:
-                                    <input type="text" id="city" name="name"/>
+                                    <input type="text" id="city" name="name" onChange={(e)=>setCity(e.target.value)}/>
                                 </label>
 
                                 <label htmlFor="uname">Сложность:
@@ -148,12 +143,16 @@ const EventCreat = () => {
                                 </label>
                             </div>
                         </div>
+
+
                         <div className={styles.blockPriceEct}>
                             <label htmlFor="uname">Кол-во участников:
-                                <input type="text" id="count" name="name"/>
+                                <input type="text" id="count" name="name" onChange={(e)=>setCountValue(e.target.value)}/>
                             </label>
                             <label htmlFor="uname">Стоимость:
-                                <input className={styles.smallInput} type="text" id="amount" name="name"/>
+                                <input className={styles.smallInput} type="text" id="amount" name="name"
+                                onChange={(e)=>{setAmount(e.target.value)}}
+                                />
                                 <select className={styles.smallInput}
                                         name="currency"
                                         id={"currency"}
@@ -166,7 +165,8 @@ const EventCreat = () => {
                             </label>
                         </div>
                         <div className={styles.formBlock}>
-                            <label className={styles.formName} htmlFor="uname" id={"place"}>Место встречи:</label>
+                            <label className={styles.formName} htmlFor="uname" id={"place"}
+                            >Место встречи:</label>
                             <img
                                 width={200}
                                 height={200}
@@ -185,9 +185,7 @@ const EventCreat = () => {
                 <section className={styles.preview_item_var2}>
                     <CardPost handleWrite={handleWrite} id={count + 1}/>
                 </section>
-
             </div>
-        // </UserContext.Provider>
     )
         ;
 };

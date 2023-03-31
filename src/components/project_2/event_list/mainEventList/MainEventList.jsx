@@ -35,10 +35,7 @@ const MainEventList = () => {
             </div>
 
             <div className={style.content}>
-                {[...Array(count)].map((_, i) => <Event id={count}/>)}
-                {/*<Event/>*/}
-                {/*<Event/>*/}
-                {/*<Event/>*/}
+                {[...Array(count)].map((_, i) => <Event id={i+1}/>)}
             </div>
         </div>
     );

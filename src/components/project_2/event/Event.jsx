@@ -6,20 +6,19 @@ import Edit from "../../../icons/Edit";
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import PopUp from "../popUp/PopUp";
-import {off, onValue, ref, set} from "firebase/database";
+import {onValue, ref} from "firebase/database";
 import {db} from "../../../firebase/firebase-config";
-import {writeEventData} from "../../../firebase/dataBase";
 
 
 const Event = (props) => {
-    const [modal, changeModal] = React.useState('')
-    const [open, setOpen] = React.useState(false);
+    const [modal, setModal] = useState('');
+    const [open, setOpen] = useState(false);
+    const [data, setData] = useState({});
+
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
-    // const idEvent = 1;
     const idEvent = props.id
-
 
     useEffect(() => {
         async function add() {
@@ -27,48 +26,47 @@ const Event = (props) => {
                 "count/countsGo", "count/countsPlan"]
             idsEvent.forEach((item) => {
                 onValue(ref(db, `/guide/1/event/${props.id}/${item}`), (snapshot) => {
-                    document.getElementById(`${item}`).innerHTML = snapshot.val()
+                    setData(prevData => ({...prevData, [item]: snapshot.val()}))
                 })
             })
         }
+
         add()
     }, [])
-
-
 
     return (
         <div>
             <div className={style.events}>
                 <div className={style.dateEvents}>
-                    <p id={"data/number"}></p>
+                    <p>{data["data/number"]}</p>
                     &nbsp;
-                    <p id={"data/month"}></p>
+                    <p>{data["data/month"]}</p>
                     &nbsp;
-                    <p id={"data/year"}></p>
+                    <p>{data["data/year"]}</p>
                 </div>
-                <p className={style.dateDesc} id={"title"}></p>
+                <p className={style.dateDesc}>{data["title"]}</p>
                 <div className={style.dateCost}>
-                    <p id={"price/amount"}></p>
+                    <p>{data["price/amount"]}</p>
                     &nbsp;
-                    <p id={"price/currency"}></p>
+                    <p>{data["price/currency"]}</p>
                 </div>
                 <div className={style.datePeople}>
-                    <p id={"count/countsGo"}></p>
+                    <p>{data["count/countsGo"]}</p>
                     <p>/</p>
-                    <p id={"count/countsPlan"}></p>
+                    <p>{data["count/countsPlan"]}</p>
                 </div>
                 <div className={style.iconsEvents}>
                     <div onClick={() => {
                         handleOpen()
-                        changeModal('duplicate')
+                        setModal('duplicate')
                     }}><Copy/></div>
                     <div onClick={() => {
                         handleOpen()
-                        changeModal('save')
+                        setModal('save')
                     }}><Edit/></div>
                     <div onClick={() => {
                         handleOpen()
-                        changeModal('delete')
+                        setModal('delete')
                     }
                     }><Delete/></div>
                 </div>
@@ -81,7 +79,6 @@ const Event = (props) => {
             >
                 <Box>
                     <PopUp modal={modal} close={handleClose} idEvent={idEvent}
-                           // handleWrite={handleWrite}
                     />
                 </Box>
             </Modal>
@@ -90,4 +87,3 @@ const Event = (props) => {
 }
 
 export default Event;
-
