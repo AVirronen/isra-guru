@@ -28,7 +28,7 @@ const ListEvents = () => {
                 </div>
                 <div className={style.filters}>
                     <div className={style.cards}>
-                        {[...Array(count)].map((_, i) => <Card key={i} id={i + 1}/>)}
+                        {[...Array(count)].map((_, i) => <Card id={i + 1}/>)}
                         <h2>
                             <Link to={`/${authorization}`}>Login</Link>
                             <div></div>

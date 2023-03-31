@@ -1,4 +1,4 @@
-.card__container {
+  .card__container {
   margin-top: 56px;
   //position: absolute;
   display: flex;
@@ -17,7 +17,7 @@
 .question__container {
   display: grid;
   grid-template-rows: min-content min-content min-content;
-  width: 450px;
+  width: 550px;
 
   &_title {
     font-weight: 900;

@@ -1,5 +1,5 @@
 import './App.css';
-import React, {Component} from "react";
+import React from "react";
 import {Route, Routes} from "react-router-dom";
 import {
     authorization, error, eventCreate,
@@ -22,8 +22,8 @@ import Navigation from "./components/project_1/list_events/navigation/Navigation
 import Level from "./components/project_1/search/Level";
 import Place from "./components/project_1/search/Place";
 import EventList from "./components/project_2/event_list/EventList";
-import Authorization from "./components/authorization/Authorization";
 import ListEvents from "./components/project_1/list_events/ListEvents";
+import Authorization from "./components/authorization/Authorization";
 import ErrorPage from "./components/authorization/ErrorPage";
 import Register from "./components/authorization/Register";
 import EventCreat from "./components/project_2/event_creat/EventCreat";
@@ -57,9 +57,9 @@ const App = (props) => {
                 {/*<Route path={`${viewEvent}`} element={<ViewEvent/>}/>*/}
                 <Route path={`${viewEvent}`} element={<ViewEvent prop1={props.prop1}/>}/>
 
-                <Route path={`${singUp}`} element={<SignUp/>}/>
-                <Route path={`${payment}`} element={<Payment/>}/>
-                <Route path={`${thankYou}`} element={<ThankYou/>}/>
+                <Route path={`${singUp}`} element={<SignUp prop1={props.prop1}/>}/>
+                <Route path={`${payment}`} element={<Payment prop1={props.prop1} prop2={props.count}/>}/>
+                <Route path={`${thankYou}`} element={<ThankYou prop1={props.prop1} prop2={props.count}/>}/>
                 <Route path={`${guideInfo}`} element={<GuideInfo/>}/>
                 <Route path={`${eventList}`} element={<EventList/>}/>
                 <Route path={`${eventCreate}`} element={<EventCreat/>}/>

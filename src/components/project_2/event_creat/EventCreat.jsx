@@ -35,8 +35,8 @@ const EventCreat = () => {
 
     function dateMonthRussian() {
         const date = new Date(dateValue);
-        const monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август',
-            'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+        const monthNames = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа',
+            'Сентября', 'Октября', 'Ноября', 'Декабря'];
         const monthIndex = date.getMonth();
         return monthNames[monthIndex];
     }

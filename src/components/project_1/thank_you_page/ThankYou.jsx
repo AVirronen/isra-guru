@@ -1,16 +1,43 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './ThankYou.module.scss'
 import styleB from './button/Buttton.module.scss';
-
-// import TicketIcon from "../../../assets/icons/TicketIcon";
 import GeoIcon from "../../../icons/GeoIcon";
 import WatchIcon from "../../../icons//WatchIcon";
 import UsersIcon from "../../../icons/UsersIcon";
 import QrCodeIcon from "../../../icons/QrCodeIcon";
 import Button from "./button/Button";
 import Sidebar from "../layout/Sidebar";
+import {idsContentView} from "../../../utils/constants";
+import {onValue, ref} from "firebase/database";
+import {db} from "../../../firebase/firebase-config";
+import {Link} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 const ThankYou = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('event');
+    const count = urlParams.get('count');
+
+    const navigate = useNavigate()
+
+    useEffect(() => {
+
+        // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
+        async function add() {
+            idsContentView.forEach((item) => {
+                onValue(ref(db, `/guide/1/event/${id}/${item}`), (snapshot) => {
+                    document.getElementById(`${item}`).innerHTML = snapshot.val()
+                })
+            })
+            onValue(ref(db, `/guide/1/name`), (snapshot) => {
+                document.getElementById('name').innerHTML = snapshot.val();
+            });
+
+        }
+
+        add()
+    })
+
     const download = () => {
         // в texts должен быть контент!!!
         const texts = ["line 1", "line 2", "line 3"]
@@ -36,30 +63,29 @@ const ThankYou = () => {
                         <div className={styles.left__ticket_container}>
 
                             <section className={styles.head__section}>
-                                <h1>Тель-Авив. С чего все начиналось и кто во всем
-                                    виноват?</h1>
+                                <h1 id={"title"}></h1>
                             </section>
 
 
                             <section className={styles.info__section}>
 
                                 <div className={styles.day__item}>
-                                    <i className={styles.day__item_number}>03</i>
+                                    <i className={styles.day__item_number} id={"data/number"}></i>
                                     <p className={styles.day__item_description}>
-                                        <span>сентября</span><span>воскресенье</span>
+                                        <span id={"data/month"}></span><span id={"data/weekDay"}></span>
                                     </p>
                                 </div>
 
                                 <div className={styles.description__container}>
-								
+
 								<span className={styles.price__item}>
 									<i className={styles.price__item_icon}><GeoIcon/></i>
-									<p className={styles.price__item_description}>Тель Авив Яффо</p>
+									<p className={styles.price__item_description} id={"city"}></p>
 								</span>
 
                                     <span className={styles.watch__item}>
 									<i className={styles.watch__item_icon}><WatchIcon/></i>
-									<p className={styles.watch__item_description}>16.00 - 20.00 (4 часа)</p>
+									<p className={styles.watch__item_description}><span id={"timeFrom"}> - </span> <span id={"timeTo"}></span></p>
 								</span>
 
                                 </div>
@@ -69,11 +95,11 @@ const ThankYou = () => {
                             <section className={styles.guide__section}>
                                 <div className={styles.description_block}>
                                     <span className={styles.description_block_desc}>Ваш гид:</span>
-                                    <span className={styles.description_block_name}>Святослав Волк</span>
+                                    <span className={styles.description_block_name} id={"name"}></span>
                                 </div>
                                 <div className={styles.price__item}>
                                     <i className={styles.price__item_icon}><UsersIcon/></i>
-                                    <span className={styles.price__item_description}>1 человек</span>
+                                    <span className={styles.price__item_description}>{count} человек</span>
                                 </div>
                             </section>
                         </div>
@@ -91,6 +117,10 @@ const ThankYou = () => {
                         {/*}}*/}
                         {/*>Сохранить</Button>*/}
                         <Button bg={'light'}>Поделиться в FB</Button>
+
+                        <button className={styleB.dark_button_home}
+                        onClick={()=>{navigate(`/`)}}
+                        >Home</button>
                     </div>
                 </div>
             </div>

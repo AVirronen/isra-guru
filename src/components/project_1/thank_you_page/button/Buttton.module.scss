@@ -6,8 +6,19 @@
   width: 245px;
   border-radius: 25px;
   font-size: 18px;
-  margin-top: 50px;
   cursor: pointer;
+}
+
+.dark_button_home{
+  background-color: #2B2D2F;
+  color: #f3f3f3;
+  border: none;
+  height: 60px;
+  width: 245px;
+  border-radius: 25px;
+  font-size: 18px;
+  cursor: pointer;
+  margin-left: 50px;
 }
 
 .light_button {
@@ -18,6 +29,5 @@
   width: 245px;
   border-radius: 25px;
   font-size: 18px;
-  margin-top: 50px;
   cursor: pointer;
 }

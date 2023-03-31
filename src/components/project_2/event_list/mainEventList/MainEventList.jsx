@@ -13,9 +13,9 @@ const MainEventList = () => {
             const countValue = snapshot.val();
             setCount(countValue);
         });
-        return () => {
-            off(countRef);
-        };
+        // return () => {
+        //     off(countRef);
+        // };
     }, [db]);
 
 

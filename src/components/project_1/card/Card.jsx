@@ -18,7 +18,7 @@ const Card = (props) => {
 	const navigate = useNavigate();
 	const [image, setImage] = useState('');
 
-	const imageRef: Reference = storageRef(storage, '/images/1/image_1_1');
+	const imageRef: Reference = storageRef(storage, `/images/${props.id}/image_${props.id}_main`);
 
 	useEffect(() => {
 		async function add() {
@@ -62,10 +62,7 @@ const Card = (props) => {
 				});
 			});
 
-
 			const url = await getDownloadURL(imageRef);
-			setImage(url);
-			console.log(image + " success");
 			setImage(url);
 		}
 
@@ -136,12 +133,12 @@ const Card = (props) => {
 					</li>
 					<li className={styles.price__container_item}>
 						<i className={styles.price__container_icon}><UsersIcon/></i>
-						<p className={styles.price__container_description}>Осталось <span id={"count/countsGo"}>{content.countsGo}</span> мест  из <span
+						<p className={styles.price__container_description}>Занято <span id={"count/countsGo"}>{content.countsGo}</span> мест  из <span
 							id="count/countsPlan">{content.countsPlan}</span></p>
 					</li>
 					<li>
 						<button className={styles.price__container_btn}
-								onClick={() => navigate(`/${viewEvent}`)}>Подробнее
+								onClick={() => navigate(`/${viewEvent}?event=${props.id}`)}>Подробнее
 						</button>
 					</li>
 				</ul>
