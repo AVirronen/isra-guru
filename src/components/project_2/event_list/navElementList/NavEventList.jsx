@@ -15,11 +15,12 @@ const NavEventList = (props) => {
                 <div className={style.wrapSearch}>
                     <div className={style.iconSearch2}><SearchGrey/></div>
                     <input className={style.search} type={"search"} placeholder={"Поиск"}
-                           onKeyDown={(e) => {
-                               if (e.key === 'Enter') {
-                                   props.setSearchFilter(e.target.value);
-                               }
-                           }}
+                           // onKeyDown={(e) => {
+                           //     if (e.key === 'Enter') {
+                           //         props.setSearchFilter(e.target.value);
+                           //     }
+                           // }}
+                        onChange={(e)=>{props.setSearchFilter(e.target.value)}}
                     />
                 </div>
                 <input type={"date"} id={"startDate2"} onChange={(e) => props.setDateStartFilter(e.target.value)}/>

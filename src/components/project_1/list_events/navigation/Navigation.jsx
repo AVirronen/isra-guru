@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import style from './navigation.module.css'
 import SearchIcon from "../../../../icons/SearchIcon";
 import {Link, useNavigate} from "react-router-dom";
@@ -6,14 +6,15 @@ import {filterLevel, filterPlace, singUp} from "../../../../utils/constants";
 
 
 const Navigation = (props) => {
-    //получаем даты, место, уровень из Search
-    const [dateFrom, setDateFrom] = React.useState('2023-03-13')
-    const [dateTo, setDateTo] = React.useState('2023-03-14')
-    const [place, setPlace] = React.useState('Тель Авив Яффо')
-    const [level, setLevel] = React.useState('Местный')
+    const [dateFrom, setDateFrom] = useState('')
+    // const [dateTo, setDateTo] = useState('2023-03-14')
+    const [place, setPlace] = useState('Тель Авив Яффо')
+    const [level, setLevel] = useState('Местный')
 
-    const [countP, setCountP] = React.useState(1)
-    const [countL, setCountL] = React.useState(1)
+    // const [searchFilter, setSearchFilter] = useState('')
+
+    const [countP, setCountP] = useState(1)
+    const [countL, setCountL] = useState(1)
 
     const navigate = useNavigate()
 
@@ -47,7 +48,14 @@ const Navigation = (props) => {
                     <p>Поиск</p>
                     <div className={style.inpSearch}>
                         <div className={style.iconSearch}><SearchIcon/></div>
-                        <input type={'search'} placeholder={'Название, гид, другое'}/>
+                        <input type={'search'} placeholder={'Название, другое'}
+                               onKeyDown={(e) => {
+                                   if (e.key === 'Enter') {
+                                       props.setSearchFilter(e.target.value);
+                                   }
+                               }}
+                               onChange={(e)=>{props.setSearchFilter(e.target.value);}}
+                        />
                     </div>
                 </div>
                 <div className={style.dateFilter}>
@@ -55,11 +63,11 @@ const Navigation = (props) => {
                     <div className={style.dates}>
                         <input type={"date"} id={"startDate"}
                             // value={dateFrom}
-                               onChange={(value) => setDateFrom(value)}/>
+                               onChange={(event) => props.setDateFrom(event.target.value)}/>
                         {/*почему мин не работает??*/}
                         <input type={"date"} min={dateFrom} id={"startDate"}
                             // value={dateTo}
-                               onChange={(value) => setDateTo(value)}/>
+                               onChange={(event) => props.setDateTo(event.target.value)}/>
                     </div>
                 </div>
                 <div className={style.placeFilter}>

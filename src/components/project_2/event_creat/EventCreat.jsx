@@ -5,10 +5,10 @@ import {writeEventData} from '../../../firebase/dataBase';
 import {ref, set, onValue, off} from 'firebase/database';
 import {db} from '../../../firebase/firebase-config';
 import PicAdd from './PicAdd/PicAdd';
-import {idsContentView} from "../../../utils/constants";
 
 const EventCreat = () => {
     const [count, setCount] = useState(1);
+    const [lang, setLang] = useState('');
     const [complexity, setComplexity] = useState('');
     const [currency, setCurrency] = useState('');
     const [dateValue, setDateValue] = useState('');
@@ -34,11 +34,12 @@ const EventCreat = () => {
         });
 
         const idsContentView2 = ["dataValue", "timeFrom", "timeTo", "title", "smallDescription", "bigDescription",
-            "whereMeet", "additionallyText", "city", "complexity", "countValue", "price/amount", "price/currency"]
+            "whereMeet", "additionallyText", "city", "complexity", "countValue", "price/amount", "price/currency", "lang"]
         async function add() {
             idsContentView2.forEach((item) => {
                 onValue(ref(db, `/guide/1/event/${id}/${item}`), (snapshot) => {
                     if (item === "title") setTitle(snapshot.val());
+                    else if (item === "lang") setLang(snapshot.val());
                     else if (item === "dataValue") setDateValue(snapshot.val());
                     else if (item === "timeFrom") setTimeFrom(snapshot.val());
                     else if (item === "timeTo") setTimeTo(snapshot.val());
@@ -95,7 +96,7 @@ const EventCreat = () => {
             dateValue,
             dateValue.split('-')[2], `${dateMonthRussian()}`,
             `${dateWeekDayRussian()}`, new Date(dateValue).getFullYear(),
-            timeFrom, timeTo, title, smallDescription, bigDescription, whereMeet, additionallyText,
+            timeFrom, timeTo, title, lang, smallDescription, bigDescription, whereMeet, additionallyText,
             city, complexity, countValue, 0, amount, currency,
             'place', 'pic1',
             'pic2', 'pic3', 'pic4', 'pic5'
@@ -108,6 +109,10 @@ const EventCreat = () => {
 
     function handleCurrencyChange(event) {
         setCurrency(event.target.value);
+    }
+
+    function handleLangChange(event) {
+        setLang(event.target.value);
     }
 
     return (
@@ -201,6 +206,7 @@ const EventCreat = () => {
                     </div>
 
 
+
                     <div className={styles.blockPriceEct}>
                         <label htmlFor="uname">Кол-во участников:
                             <input type="text" id="count" name="name" onChange={(e) => setCountValue(e.target.value)}
@@ -225,22 +231,23 @@ const EventCreat = () => {
                             </select>
                         </label>
                     </div>
-                    {/*<div className={styles.formBlock}>*/}
-                    {/*    <label className={styles.formName} htmlFor="uname" id={"place"}*/}
-                    {/*    >Место встречи:</label>*/}
-                    {/*    <img*/}
-                    {/*        width={200}*/}
-                    {/*        height={200}*/}
-                    {/*        src="https://cdn.i24news.tv/uploads/6e/08/92/1b/b7/f8/5f/f4/ab/45/0d/45/9c/43/de/0d/6e08921bb7f85ff4ab450d459c43de0d.jpg?width=1000"*/}
-                    {/*        alt="Tel Aviv"*/}
-                    {/*        draggable={false}*/}
-                    {/*    />*/}
-                    {/*</div>*/}
                     <div className={styles.formBlock}>
                         <label className={styles.formName} htmlFor="uname">Загрузка фото:</label>
                         <PicAdd id={count + 1}/>
                         {/*<PicAdd id={2}/>*/}
                     </div>
+                    {/*//================*/}
+                    <div className={styles.lang}>
+                        <label htmlFor="uname">Язык:
+                            <select name="lang" id={"lang"}
+                                    onChange={handleLangChange} value={lang}>
+                                <option value="RU" selected> RU </option>
+                                <option value="EN"> EN </option>
+                                <option value="FR"> FR </option>
+                            </select>
+                        </label>
+                    </div>
+                    {/*//================*/}
                 </div>
             </form>
             <section className={styles.preview_item_var2}>

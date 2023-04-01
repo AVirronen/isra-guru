@@ -219,7 +219,17 @@ textarea {
   margin: 0;
 }
 
+.lang{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 150px;
+  left: 110px;
+}
 
+.lang select{
+  margin-left: 10px;
+}
 
 input[type="file"] {
   position: absolute;
