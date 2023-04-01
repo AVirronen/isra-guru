@@ -64,7 +64,9 @@ export const contact = "972 55 555 55 55"
 
 
 export const idsContentView = ["data/month", "data/number", "data/weekDay", "timeFrom", "timeTo", "title", "smallDescription", "bigDescription",
-    "whereMeet", "additionallyText", "city", "complexity", "counts", "price/amount", "price/currency",
+    "whereMeet", "additionallyText", "city", "complexity", "counts",
+    "count/countsPlan",
+    "price/amount", "price/currency",
     "place", "photo/picture1", "photo/picture2","photo/picture3","photo/picture4","photo/picture5",]
 
 

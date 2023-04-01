@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 import style from "./listEvents.module.css";
 import Navigation from "./navigation/Navigation";
 import {authorization, register} from "../../../utils/constants";
-import {equalTo, off, onValue, orderByChild, query, ref} from "firebase/database";
+import {equalTo, onValue, orderByChild, query, ref} from "firebase/database";
 import {db} from "../../../firebase/firebase-config";
 
 
@@ -14,7 +14,7 @@ const ListEvents = () => {
         const [dateFrom, setDateFrom] = useState('')
         const [dateTo, setDateTo] = useState('')
         const [searchFilter, setSearchFilter] = useState('')
-
+        const [selectedLang, setSelectedLang] = useState('')
 
         useEffect(() => {
             const eventsRef = ref(db, '/guide/1/event');
@@ -36,18 +36,22 @@ const ListEvents = () => {
                                 else if ((dateFrom !== '' && event.data.dataFull >= dateFrom) ||
                                     (dateTo !== '' && event.data.dataFull <= dateTo)) {
                                     return true;
-                                }
-                                else {
+                                } else {
                                     return false;
                                 }
                             } else if (searchFilter !== '') {
-                                console.log(`Filter: search term "${searchFilter}" found in event "${event.title}"`);
                                 const isInSearchTitle = event.title.toLowerCase().includes(searchFilter.toLowerCase());
                                 // const isInSearchName = event.name && event.name.toLowerCase().includes(searchFilter.toLowerCase());
                                 const isInSearchCity = event.city.toLowerCase().includes(searchFilter.toLowerCase());
                                 const isInSearchSmallDescription = event.smallDescription.toLowerCase().includes(searchFilter.toLowerCase());
                                 return isInSearchTitle || isInSearchCity || isInSearchSmallDescription
-                            } else {
+                            }
+                            else if (selectedLang !== '') {
+                                if (selectedLang==='all' || event.lang === selectedLang){
+                                    return true
+                                }
+                            }
+                            else {
                                 return true;
                             }
                         });
@@ -56,13 +60,14 @@ const ListEvents = () => {
                     setCards([]);
                 }
             });
-        }, [dateFrom, dateTo, searchFilter]);
+        }, [dateFrom, dateTo, searchFilter, selectedLang]);
 
 
         return (
             <div className={style.mainListEvents}>
                 <div className={style.navigation}>
-                    <Navigation setDateFrom={setDateFrom} setDateTo={setDateTo} setSearchFilter={setSearchFilter}/>
+                    <Navigation setDateFrom={setDateFrom} setDateTo={setDateTo}
+                                setSearchFilter={setSearchFilter} setSelectedLang={setSelectedLang}/>
                 </div>
                 <div className={style.filters}>
                     <div className={style.cards}>

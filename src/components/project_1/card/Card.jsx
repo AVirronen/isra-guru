@@ -135,7 +135,7 @@ const Card = (props) => {
                     <li className={styles.price__container_item}>
                         <i className={styles.price__container_icon}><WatchIcon/></i>
                         <p className={styles.price__container_description}><span
-                            id={"timeFrom"}>{content.timeTo}</span> - <span
+                            id={"timeFrom"}>{content.timeFrom}</span> - <span
                             id={"timeTo"}>{content.timeTo}</span></p>
                     </li>
 

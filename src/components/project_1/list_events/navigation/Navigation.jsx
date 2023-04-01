@@ -11,10 +11,11 @@ const Navigation = (props) => {
     const [place, setPlace] = useState('Тель Авив Яффо')
     const [level, setLevel] = useState('Местный')
 
-    // const [searchFilter, setSearchFilter] = useState('')
-
     const [countP, setCountP] = useState(1)
     const [countL, setCountL] = useState(1)
+
+    const [selectedLang, setSelectedLang] = useState("all");
+
 
     const navigate = useNavigate()
 
@@ -81,10 +82,38 @@ const Navigation = (props) => {
                 <div className={style.langFilter}>
                     <p>Язык</p>
                     <div className={style.lang}>
-                        <button value={"all"}>Все</button>
-                        <button value={"rus"}>RU</button>
-                        <button value={"en"}>EN</button>
-                        <button value={"fr"}>FR</button>
+                        <button
+                            value={"all"}
+                            onClick={(e) => {
+                                props.setSelectedLang(e.target.value);
+                                setSelectedLang(e.target.value);
+                            }}
+                            className={selectedLang === "all" ? style.active : ""}
+                        >Все</button>
+                        <button
+                            value={"RU"}
+                            onClick={(e) => {
+                                props.setSelectedLang(e.target.value);
+                                setSelectedLang(e.target.value);
+                            }}
+                            className={selectedLang === "RU" ? style.active : ""}
+                        >RU</button>
+                        <button
+                            value={"EN"}
+                            onClick={(e) => {
+                                props.setSelectedLang(e.target.value);
+                                setSelectedLang(e.target.value);
+                            }}
+                            className={selectedLang === "EN" ? style.active : ""}
+                        >EN</button>
+                        <button
+                            value={"FR"}
+                            onClick={(e) => {
+                                props.setSelectedLang(e.target.value);
+                                setSelectedLang(e.target.value);
+                            }}
+                            className={selectedLang === "FR" ? style.active : ""}
+                        >FR</button>
                     </div>
                 </div>
             </div>

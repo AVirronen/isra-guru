@@ -1,3 +1,4 @@
+
 /*.navigation{*/
 /*    margin: 24px 45px 0 45px;*/
 /*}*/
@@ -143,20 +144,24 @@
 .langFilter .lang {
     display: flex;
     flex-direction: row;
-
     border-bottom: 1px solid #F8F8F8;
     /*margin: 10px 10px 0 0;*/
 }
 
 .langFilter .lang button{
     /*height: 18px;*/
-    width: 25%;
+    /*width: 25%;*/
     color: #B2B3B4;
     font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
     letter-spacing: var(--unnamed-character-spacing-0);
 }
 
-.langFilter .lang button:hover{
-    background-color: #EBDFCD;
-    color: #2B2D2F;
+/*.langFilter .lang button:hover{*/
+/*    background-color: #EBDFCD;*/
+/*    color: #2B2D2F;*/
+/*}*/
+
+.langFilter .lang button.active {
+    background-color: #ebdfcd;
+    color: #2b2d2f;
 }

@@ -197,7 +197,7 @@ const EventCreat = () => {
                             <label htmlFor="uname">Сложность:
                                 <select name="complexity" id={"complexity"}
                                         onChange={handleComplexityChange} value={complexity}> >
-                                    <option value="Турист (Обзорная экскурсия)" selected> Турист (Обзорная)</option>
+                                    <option value="Турист (Обзорная экскурсия)"> Турист (Обзорная)</option>
                                     <option value="Местный (Тематическая экскурсия)"> Местный (Тематическая)</option>
                                     <option value="Гуру (Специальная экскурсия)"> Гуру (Специальная)</option>
                                 </select>
@@ -225,7 +225,7 @@ const EventCreat = () => {
                                     id={"currency"}
                                     onChange={handleCurrencyChange} value={currency}
                             >
-                                <option value="USD" selected>USD</option>
+                                <option value="USD">USD</option>
                                 <option value="EUR">EUR</option>
                                 <option value="ILS">ILS</option>
                             </select>
@@ -241,7 +241,7 @@ const EventCreat = () => {
                         <label htmlFor="uname">Язык:
                             <select name="lang" id={"lang"}
                                     onChange={handleLangChange} value={lang}>
-                                <option value="RU" selected> RU </option>
+                                <option value="RU"> RU </option>
                                 <option value="EN"> EN </option>
                                 <option value="FR"> FR </option>
                             </select>

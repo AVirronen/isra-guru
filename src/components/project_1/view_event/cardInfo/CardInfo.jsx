@@ -27,14 +27,6 @@ const CardInfo = (props) => {
                 updateView(snapshot, item);
             })
         });
-
-        // getDownloadURL(imageRef).then((url) => {
-        //     setImage(url);
-        // });
-
-        return () => {
-            // do any cleanup here
-        };
     }, []);
 
     const [viewData, setViewData] = useState({
@@ -46,7 +38,7 @@ const CardInfo = (props) => {
         "timeTo": "",
         "price/amount": "",
         "price/currency": "",
-        "count/constPlan": "",
+        "count/countsPlan": "",
     });
 
     return (
@@ -65,7 +57,7 @@ const CardInfo = (props) => {
                         </li>
                         <li>
                             <i><WatchIcon/></i>
-                            <p className={style.infoCard__timeText}><span id="timeFrom"> - </span> <span id="timeTo">{viewData["timeTo"]}</span></p>
+                            <p className={style.infoCard__timeText}>{viewData["timeFrom"]}<span id="timeFrom"> - </span> <span id="timeTo">{viewData["timeTo"]}</span></p>
                         </li>
                     </div>
                     <div>
@@ -75,7 +67,7 @@ const CardInfo = (props) => {
                         </li>
                         <li>
                             <i><UsersIcon/></i>
-                            <p>Осталось <span id={"count/constPlan"}>{viewData["count/constPlan"]}</span> мест</p>
+                            <p>Осталось <span>{viewData["count/countsPlan"]}</span> мест</p>
                         </li>
                     </div>
                 </ul>

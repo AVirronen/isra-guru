@@ -104,10 +104,12 @@
   }
 
   .guide__description_block {
+    margin-top: 5px;
     margin-left: 12px;
 
     &:nth-child(1) {
       font-size: 10px;
+      margin: 0;
     }
 
     &:nth-child(2) {
@@ -116,6 +118,9 @@
   }
 }
 
+  .guide__description_block p {
+    margin: 2px;
+  }
 .price__container {
   list-style: none;
   margin-top: 0;
