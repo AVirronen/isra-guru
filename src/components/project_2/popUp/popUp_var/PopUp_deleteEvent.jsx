@@ -19,6 +19,7 @@ const PopUpDeleteEvent = (props) => {
                     <button onClick={()=> {
                         // update(ref(db, `guide/1/${props.idEvent}/status`), { status: "deleted" })
                         update(ref(db, `guide/1/event/${props.idEvent}/`), { status: "delete" })
+                        props.handleActiveClick("active")
                         props.close()
                     }}>Удалить</button>
                 </div>

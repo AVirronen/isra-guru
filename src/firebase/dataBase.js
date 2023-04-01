@@ -21,7 +21,9 @@ export function writeGuideData(guideId, name, aboutMe, iCan, contact) {
 
 writeGuideData(guideId, name, aboutMe, iCan, contact)
 
-export function writeEventData(guideId, countEvents, status, number, month, weekDay, year,
+export function writeEventData(guideId, countEvents, status,
+                               dataFull,
+                               number, month, weekDay, year,
                                timeFrom, timeTo, title, smallDescription,
                                bigDescription, whereMeet, additionallyText, city,
                                complexity, countsPlan, countsGo, amount, currency, place, picture1, picture2,
@@ -31,6 +33,7 @@ export function writeEventData(guideId, countEvents, status, number, month, week
         eventId: countEvents,
         status: status,
         data: {
+            dataFull: dataFull,
             number: number,
             month: month,
             weekDay: weekDay,

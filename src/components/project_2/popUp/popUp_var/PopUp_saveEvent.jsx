@@ -25,6 +25,7 @@ const PopUpSaveEvent = (props) => {
                     <button onClick={()=> {
                         update(ref(db, `guide/1/event/${props.idEvent}`), { status: "active" })
                         props.close()
+                        props.handleActiveClick("active")
                     }}>Cохранить</button>
                 </div>
             </section>

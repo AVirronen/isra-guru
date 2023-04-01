@@ -10,6 +10,12 @@ const EventList = () => {
 
     let [email, setEmail] = useState("");
 
+    const [dateStartFilter, setDateStartFilter] = useState();
+    const [dateEndFilter, setDateEndFilter] = useState();
+
+    const [searchFilter, setSearchFilter] = useState('');
+
+
     useEffect(() => {
         if (!isLoggedIn()) {
             navigate(`/`);
@@ -26,8 +32,15 @@ const EventList = () => {
     }
     return (
         <div className={style.eventList}>
-            <NavEventList/>
-            <MainEventList/>
+            <NavEventList
+                setDateStartFilter={setDateStartFilter}
+                setDateEndFilter={setDateEndFilter}
+                setSearchFilter={setSearchFilter}
+            />
+            <MainEventList
+                dateStartFilter={dateStartFilter}
+                dateEndFilter={dateEndFilter}
+                searchFilter={searchFilter}/>
             <button onClick={onLogout} className={style.btnCreate}>
                 Log out
             </button>

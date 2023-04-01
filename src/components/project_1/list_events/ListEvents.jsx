@@ -9,6 +9,7 @@ import {db} from "../../../firebase/firebase-config";
 
 
 const ListEvents = () => {
+
         const [count, setCount] = useState(0)
         useEffect(() => {
             const countRef = ref(db, '/guide/1/countEvents');
@@ -29,6 +30,8 @@ const ListEvents = () => {
                 <div className={style.filters}>
                     <div className={style.cards}>
                         {[...Array(count)].map((_, i) => <Card id={i + 1}/>)}
+                        {/*{items.map((_, i) => <Card id={i + 1}/>)}*/}
+
                         <h2>
                             <Link to={`/${authorization}`}>Login</Link>
                             <div></div>
@@ -37,6 +40,7 @@ const ListEvents = () => {
                     </div>
                 </div>
             </div>
+
         )
     }
 ;

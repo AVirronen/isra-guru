@@ -61,9 +61,9 @@ const ContentView = (props) => {
                         <i><HatIcon/></i>
                         <p>Уровень сложности материала: <span id={"complexity"}>{complexity}</span></p>
                     </div>
-                    <img className={style.mapCard}
-                         src="https://i.ebayimg.com/images/g/j9wAAOSw2rNhHlJx/s-l1600.jpg"
-                         alt="Map"/>
+                    {/*<img className={style.mapCard}*/}
+                    {/*     src="https://i.ebayimg.com/images/g/j9wAAOSw2rNhHlJx/s-l1600.jpg"*/}
+                    {/*     alt="Map"/>*/}
                 </div>
                 <p className={style.lineEnd}></p>
             </section>

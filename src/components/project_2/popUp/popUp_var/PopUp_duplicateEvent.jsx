@@ -2,9 +2,14 @@ import React, { useContext } from 'react';
 import style from "../popUp.module.css";
 import {ref, update} from "firebase/database";
 import {db} from "../../../../firebase/firebase-config";
+import {useNavigate} from "react-router-dom";
+import {eventCreate, viewEvent} from "../../../../utils/constants";
+import eventCreat from "../../event_creat/EventCreat";
 
 
 const PopUpDupIcateEvent = (props) => {
+    const navigate = useNavigate()
+
     // const user = useContext(UserContext);
         return (
 
@@ -21,11 +26,13 @@ const PopUpDupIcateEvent = (props) => {
                 <div className={style.footer}>
                     <span className={style.cancelling} onClick={() => props.close()}>Отмена</span>
                     <button onClick={() => {
+                        props.handleActiveClick("active")
+                        navigate(`/${eventCreate}?event=${props.idEvent}`)
                         // props.handleWrite("draft")
                         // update(ref(db, `guide/1/${props.idEvent}/status`), { status: "active" })
                         // value.handleWrite("draft")
                         // user.handleWriteDub("draft")
-                        props.close()
+                        // props.close()
                     }}>Дублировать
                     </button>
                 </div>

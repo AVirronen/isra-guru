@@ -5,7 +5,7 @@ import {Link, useNavigate} from "react-router-dom";
 import {filterLevel, filterPlace, singUp} from "../../../../utils/constants";
 
 
-const Navigation = () => {
+const Navigation = (props) => {
     //получаем даты, место, уровень из Search
     const [dateFrom, setDateFrom] = React.useState('2023-03-13')
     const [dateTo, setDateTo] = React.useState('2023-03-14')

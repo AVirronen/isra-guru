@@ -7,11 +7,17 @@ const PopUp = (props) => {
      const changeModal = (modal) => {
         switch (modal) {
             case 'save':
-                return <PopUp_saveEvent close={props.close} idEvent={props.idEvent}/>
+                return <PopUp_saveEvent close={props.close} idEvent={props.idEvent}
+                                        handleActiveClick={props.handleActiveClick}
+                />
             case 'duplicate':
-                return <PopUp_duplicateEvent close={props.close} idEvent={props.idEvent} handleWrite={props.handleWrite}/>
+                return <PopUp_duplicateEvent close={props.close} idEvent={props.idEvent} handleWrite={props.handleWrite}
+                                             handleActiveClick={props.handleActiveClick}
+                />
             case 'delete':
-                return <PopUp_deleteEvent close={props.close} idEvent={props.idEvent}/>
+                return <PopUp_deleteEvent close={props.close} idEvent={props.idEvent}
+                                          handleActiveClick={props.handleActiveClick}
+                />
         }
     }
     return (changeModal(props.modal));

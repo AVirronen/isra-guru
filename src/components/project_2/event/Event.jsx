@@ -58,14 +58,17 @@ const Event = (props) => {
                 <div className={style.iconsEvents}>
                     <div onClick={() => {
                         handleOpen()
+                        // props.handleActiveClick("active")
                         setModal('duplicate')
                     }}><Copy/></div>
                     <div onClick={() => {
                         handleOpen()
+                        // props.handleActiveClick("active")
                         setModal('save')
                     }}><Edit/></div>
                     <div onClick={() => {
                         handleOpen()
+                        // props.handleActiveClick("active")
                         setModal('delete')
                     }
                     }><Delete/></div>
@@ -79,6 +82,7 @@ const Event = (props) => {
             >
                 <Box>
                     <PopUp modal={modal} close={handleClose} idEvent={idEvent}
+                           handleActiveClick={props.handleActiveClick}
                     />
                 </Box>
             </Modal>

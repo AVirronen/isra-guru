@@ -67,7 +67,6 @@
     width: 61%;
     padding: 3% 2.5%;
 }
-
 .variantsBox button{
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/36px var(--unnamed-font-family-merriweather);
     letter-spacing: var(--unnamed-character-spacing-0);
@@ -152,4 +151,30 @@
     background-color: black;
     width: 30%;
     height: 30%;
+}
+
+.arrayCities{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 200px;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    top: 400px;
+    width: 400px;
+}
+.arrayCities h2{
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.arrayCities li{
+    height: 250px;
+}
+.arrayCities ul{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: -10px;
 }

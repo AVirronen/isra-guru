@@ -26,7 +26,7 @@
 
 .events .dateDesc{
     /*width: 50%;*/
-    width: 550px;
+    width: 700px;
 }
 
 .events .dateCost{
@@ -38,7 +38,8 @@
 }
 
 .events .datePeople{
-    margin-right: 250px;
+    /*margin-right: 250px;*/
+    width: 300px;
     display: flex;
     flex-direction: row;
     /*justify-content: space-between;*/
