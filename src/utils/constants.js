@@ -5,9 +5,6 @@ import Rectangle19 from '../img/Rectangle12.png'
 import Rectangle20 from '../img/Rectangle12.png'
 import Whatsapp from '../img/Whatsapp.svg'
 import Facebok from '../img/Facebook.svg'
-import {db} from "../firebase/firebase-config";
-import {onValue, ref} from "firebase/database";
-import {useEffect} from "react";
 
 export const gallery = [Rectangle12, Rectangle17, Rectangle18, Rectangle19, Rectangle20]
 
@@ -15,7 +12,6 @@ export const fb = Facebok
 export const wu = Whatsapp
 
 
-// export const listEvents = 'listEvents'
 export const filterLevel = 'filterLevel'
 export const filterPlace = 'filterPlace'
 export const viewEvent = 'viewEvent'
@@ -47,37 +43,11 @@ export const iCan = "Также в индивидуальном порядке �
 export const contact = "972 55 555 55 55"
 
 
-// export const guideCollection = [guideNameRef, aboutMeRef, iCanRef, contactRef]
-// export const idsContentGuide = ["nameGuide", "aboutMe", "iCan", "contact"]
-// export const guideNameRef = ref(db, '/guide/' + guideId + '/name');
-
-// export const guideNameRef = ref(db, 'guide/1/name');
-// export const aboutMeRef = ref(db, 'guide/1/aboutMe');
-// export const iCanRef = ref(db, 'guide/1/iCan');
-// export const contactRef = ref(db, 'guide/1/contact');
-
-
-// export const guideNameRef = ref(db, '/guide/' + guideId + '/name');
-// export const aboutMeRef = ref(db, '/guide/' + guideId + '/aboutMe');
-// export const iCanRef = ref(db, '/guide/' + guideId + '/iCan');
-// export const contactRef = ref(db, '/guide/' + guideId + '/contact');
-
-
 export const idsContentView = ["data/month", "data/number", "data/weekDay", "timeFrom", "timeTo", "title", "smallDescription", "bigDescription",
     "whereMeet", "additionallyText", "city", "complexity", "counts",
-    "count/countsPlan",
+    "count/countsPlan","count/countsGo",
     "price/amount", "price/currency",
     "place", "photo/picture1", "photo/picture2","photo/picture3","photo/picture4","photo/picture5",]
 
 
 
-// useEffect(() => {
-//     // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
-//     async function add() {
-//         idsContentView.forEach((item)=>{
-//         onValue(ref(db, `/guide/1/event/12/${item}`), (snapshot) => {
-//             document.getElementById(`${item}`).innerHTML = snapshot.val()
-//         })
-//         })
-//     }
-//     add()

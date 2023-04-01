@@ -87,7 +87,7 @@ const Card = (props) => {
                 width={250}
                 height={250}
                 src={image}
-                alt="Tel Aviv"
+                alt="img"
                 draggable={false}
             />
 
@@ -151,16 +151,9 @@ const Card = (props) => {
                             // <p className={styles.loading}>Loading...</p>
                         )}
                     </li>
-                    {/*<li className={styles.price__container_item}>*/}
-                    {/*	<i className={styles.price__container_icon}><ShekelIcon/></i>*/}
-                    {/*	/!*заменить price!!!!!!*!/*/}
-                    {/*	<p className={styles.price__container_description}><span id={"price/amount"}>{content.amount}</span>*/}
-                    {/*		<span*/}
-                    {/*			id={"price/currency"}>{content.currency}</span></p>*/}
-                    {/*</li>*/}
                     <li className={styles.price__container_item}>
                         <i className={styles.price__container_icon}><UsersIcon/></i>
-                        <p className={styles.price__container_description}>Занято <span
+                        <p className={styles.price__container_description_user}>Занято <span
                             id={"count/countsGo"}>{content.countsGo}</span> мест из <span
                             id="count/countsPlan">{content.countsPlan}</span></p>
                     </li>

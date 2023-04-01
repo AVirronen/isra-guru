@@ -2,7 +2,7 @@ import React from 'react';
 
 const UsersIcon = () => {
 	return (
-		<svg width="22" height="22" viewBox="0 -8 72 72" id="Layer_1" data-name="Layer 1">
+		<svg width="20" height="20" viewBox="0 -8 72 72" id="Layer_1" data-name="Layer 1">
 			<defs>
 				{/*<style>.cls-1{fill:#010002;}</style>*/}
 			</defs>

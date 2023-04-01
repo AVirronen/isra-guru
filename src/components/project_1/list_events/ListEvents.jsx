@@ -29,16 +29,15 @@ const ListEvents = () => {
                             ...events[id],
                         }))
                         .filter((event) => {
-                            if (dateFrom !== '' || dateTo !== '') {
-                                if (dateFrom !== '' && dateTo !== '' && event.data.dataFull >= dateFrom &&
-                                    event.data.dataFull <= dateTo)
-                                    return true;
-                                else if ((dateFrom !== '' && event.data.dataFull >= dateFrom) ||
-                                    (dateTo !== '' && event.data.dataFull <= dateTo)) {
-                                    return true;
-                                } else {
-                                    return false;
-                                }
+                            if(dateFrom && dateTo) {
+                                return event.data.dataFull >= dateFrom
+                                    && event.data.dataFull <= dateTo
+                            }
+                            else if (dateFrom){
+                                return event.data.dataFull >= dateFrom
+                            }
+                            else if (dateTo){
+                                return event.data.dataFull <= dateTo
                             } else if (searchFilter !== '') {
                                 const isInSearchTitle = event.title.toLowerCase().includes(searchFilter.toLowerCase());
                                 // const isInSearchName = event.name && event.name.toLowerCase().includes(searchFilter.toLowerCase());

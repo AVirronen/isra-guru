@@ -10,6 +10,7 @@ import { onValue, ref } from "firebase/database";
 import { db, storage } from "../../../../firebase/firebase-config";
 import { useNavigate } from "react-router-dom";
 import { getDownloadURL, ref as storageRef } from "firebase/storage";
+import styles from "../../card/Styles.module.scss";
 
 const CardInfo = (props) => {
     // const navigate = useNavigate();
@@ -39,6 +40,7 @@ const CardInfo = (props) => {
         "price/amount": "",
         "price/currency": "",
         "count/countsPlan": "",
+        "count/countsGo": ""
     });
 
     return (
@@ -67,7 +69,9 @@ const CardInfo = (props) => {
                         </li>
                         <li>
                             <i><UsersIcon/></i>
-                            <p>Осталось <span>{viewData["count/countsPlan"]}</span> мест</p>
+                            <p>Занято <span id={"count/countsGo"}>{viewData["count/countsGo"]}</span> мест из <span
+                                id="count/countsPlan">{viewData["count/countsPlan"]}</span></p>
+                            {/*<p>Осталось <span>{viewData["count/countsPlan"]}</span> мест</p>*/}
                         </li>
                     </div>
                 </ul>
