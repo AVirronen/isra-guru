@@ -1,0 +1,262 @@
+.container_all {
+  height: 1500px;
+  width: 100%;
+  background: #F8F8F8;
+  //margin-bottom: 120px;
+  margin-right: 0;
+}
+
+input {
+  background: #F8F8F8;
+  border: #2B2D2F solid 1px;
+}
+
+select {
+  background: #F8F8F8;
+  margin-right: 5px;
+}
+
+body {
+  background: #F8F8F8;
+  margin: 0;
+  //height: 1500px;
+}
+
+textarea {
+  background: #F8F8F8;
+}
+
+.content {
+  height: 200px;
+  width: 985px;
+}
+
+.wrapper_title {
+  font-size: 24px/28px;
+  font-weight: normal;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 37px;
+  left: 140px;
+  width: 995px;
+  height: 35px;
+  border-bottom: #D8D8D9 solid 1px;
+}
+
+.wrapper_title h1 {
+  //display: flex;
+  //flex-direction: row;
+  text-align: left;
+  font: normal normal bold 24px/28px Ubuntu;
+  letter-spacing: 0;
+  color: #2B2D2F;
+  margin: 0;
+  border-bottom: 6px solid var(--unnamed-color-f0856b);
+  width: 287px;
+  height: 30px;
+  align-items: center;
+}
+
+.allForm {
+  //width: 700px;
+  top: 140px;
+  left: 140px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 1200px;
+  margin: 0;
+  width: 800px;
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-2b2d2f);
+  text-align: right;
+  font: normal normal bold 16px/18px Ubuntu;
+}
+
+.allForm label {
+  padding-right: 10px;
+}
+
+.allForm form {
+  margin: 0;
+}
+
+.formName {
+  left: 0;
+  width: 158px;
+  text-align: right;
+  margin: 0;
+}
+
+.formCont {
+  display: flex;
+  flex-direction: row;
+  width: 425px;
+  left: 165px;
+  text-align: left;
+  position: relative;
+  padding: 5px;
+  margin-top: -25px;
+  margin-bottom: 20px;
+}
+
+.formBlock {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  width: 800px;
+}
+
+.formBlockPart1 {
+  left: 125px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 20px;
+  width: 800px;
+}
+
+.formBlockPart1 label {
+  padding-right: 125px;
+}
+
+.formBlockPart1 input {
+  margin-right: 10px;
+}
+
+.blockCityEct {
+  left: -47px;
+  margin-top: 70px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.blockCityEct label {
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.blockCityEct input {
+  margin-left: 10px;
+}
+
+.blockPriceEct {
+  left: 15px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.blockPriceEct input {
+  margin-left: 10px;
+}
+
+.smallInput {
+  width: 70px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.inputPictures {
+  display: flex;
+  flex-direction: row;
+}
+
+.bigBox {
+  height: 155px;
+  width: 155px;
+  border: #D8D8D9 solid 2px;
+  color: #D8D8D9;
+  text-align: center;
+  justify-items: center;
+  margin: 5px;
+  cursor: pointer;
+
+  //margin-right: 10px;
+}
+
+
+.box {
+  height: 55px;
+  width: 55px;
+  border: #D8D8D9 solid 2px;
+  color: #D8D8D9;
+  text-align: center;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.preview_item_var1 {
+  top: 60px;
+  left: 140px;
+  width: 1000px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  border-bottom: #D8D8D9 solid 1px;
+  border-top: #D8D8D9 solid 1px;
+
+}
+
+.preview_item_var2 {
+  top: 0;
+  left: 140px;
+  width: 1000px;
+  height: 100px;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border-top: #D8D8D9 solid 1px;
+  border-bottom: #D8D8D9 solid 1px;
+  margin: 0;
+}
+
+.lang{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 150px;
+  left: 110px;
+}
+
+.lang select{
+  margin-left: 10px;
+}
+
+input[type="file"] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+.bigBoxSpan{
+  height: 155px;
+  width: 165px;
+  border: 0;
+  color: #D8D8D9;
+  text-align: center;
+  //margin: 5px;
+  cursor: pointer;
+  //padding-right: 5px;
+
+}
+
+.boxSpan{
+  height: 55px;
+  width: 65px;
+  //padding-left: -10px;
+  border: 0;
+  color: #D8D8D9;
+  text-align: center;
+  justify-self: center;
+  //margin: 5px;
+  cursor: pointer;
+}

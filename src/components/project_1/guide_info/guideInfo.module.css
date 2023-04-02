@@ -24,6 +24,7 @@ body {
     left: 152px;
     width: 350px;
     height: 350px;
+    z-index: 70;
 }
 
 .sidebar {
@@ -64,8 +65,10 @@ body {
 
 .titlebg {
     top: 0;
-    left: 543px;
-    width: 823px;
+    /*left: 543px;*/
+    /*width: 823px;*/
+    left: 30%;
+    width: 80%;
     height: 290px;
     opacity: 1;
     background: #F8F8F8 0 0 no-repeat padding-box;

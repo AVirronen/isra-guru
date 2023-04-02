@@ -1,0 +1,162 @@
+body {
+    width: 100%;
+    height: auto;
+    /*height: 1767px;*/
+    margin: 0;
+    padding: 0;
+
+}
+
+.viewEventBackground {
+    top: 0px;
+    left: 0px;
+    width: 1366px;
+    height: auto;
+    /*height: 100%;*/
+    background: #F8F8F8 0% 0% no-repeat padding-box;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+}
+
+.sidebar {
+    top: 0px;
+    left: 0px;
+    width: 239px;
+    background: #2B2D2F 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    opacity: 1;
+    height: 1767px;
+
+}
+
+.viewEventBackground .guide {
+    cursor: pointer;
+}
+
+
+.guideIcon {
+    top: 55px;
+    left: 268px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 1;
+    display: flex;
+    position: absolute;
+}
+
+.yourGuide {
+    top: 45px;
+    left: 330px;
+    width: 47px;
+    height: 13px;
+    text-align: left;
+    font: normal normal normal 10px/13px Merriweather;
+    letter-spacing: 0;
+    color: #2B2D2F;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+}
+
+.guideName {
+    top: 55px;
+    left: 330px;
+    width: 72px;
+    height: 18px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 14px/18px Merriweather;
+    color: #2B2D2F;
+    opacity: 1;
+    position: absolute;
+    display: flex;
+}
+
+.viewEventBackground button {
+    border: none;
+    color: #f3f3f3;
+    height: 50px;
+    width: 220px;
+    background-color: #2B2D2F;
+    border-radius: 25px;
+    font-size: 18px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.viewEventBackground section {
+    margin: 0;
+}
+
+.btnPosition1 {
+    margin: 0;
+    padding: 0;
+    left: 1063px;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.galleryView {
+    position: absolute;
+    display: flex;
+}
+
+.btnPosition2 {
+    top: 1480px;
+    /*top: 1380px;*/
+    left: 440px;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    display: flex;
+    cursor: pointer;
+    z-index: 50;
+
+}
+.btnPosition2 button{
+    position: relative;
+}
+
+
+.footer{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    top: 200px;
+}
+
+.viewEventBackground button, .btnPosition1 {
+    cursor: pointer;
+}
+
+.allgallery {
+    position: absolute;
+    top: 160px;
+    left: 160px;
+    display: flex;
+    width: 350px;
+    height: 410px;
+    flex-direction: row;
+    margin: 0;
+
+}
+
+.allgallery img {
+    margin: 0;
+}
+
+.partWithAllContent{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+}

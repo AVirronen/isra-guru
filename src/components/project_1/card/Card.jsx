@@ -84,8 +84,8 @@ const Card = (props) => {
     return (
         <div className={styles.card__container}>
             <img
-                width={250}
-                height={250}
+                width={"250px"}
+                height={"250px"}
                 src={image}
                 alt="img"
                 draggable={false}

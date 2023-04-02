@@ -1,0 +1,72 @@
+.mainEventList{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top{
+    height: 50px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    border-top: 1px solid var(--unnamed-color-d8d8d9);
+    border-bottom: 1px solid var(--unnamed-color-d8d8d9);
+}
+
+.top .topL, .topR{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.top button{
+    border: 6px solid transparent;
+    /*border: 1px solid transparent;*/
+    /*border-radius: 0;*/
+
+    background: none;
+}
+
+.top .topL{
+    width: 70%;
+}
+
+.top .topL button{
+    width: 100%;
+    text-align: left;
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+}
+
+.top .topL button:hover{
+    border-bottom: 6px solid var(--unnamed-color-f0856b);
+    color: var(--unnamed-color-f0856b);
+    /*border-radius: 0px;*/
+    /*height: 56px;*/
+}
+
+.top .topL button:active,.top .topL button.activeButton {
+    border-bottom: 6px solid var(--unnamed-color-f0856b);
+    color: var(--unnamed-color-f0856b);
+}
+
+.topR{
+    width: 15%;
+}
+
+.topR p{
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-18) Ubuntu;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+}
+
+.topR button{
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-18)/22px Font Awesome 5 Pro;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: center;
+}

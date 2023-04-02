@@ -1,0 +1,35 @@
+{
+  "guide": {
+    "guideId": "",
+    "name": "",
+    "aboutMe": "",
+    "iCan": "",
+    "contact": "",
+    "event": {
+      "eventId": "",
+      "data": "",
+      "timeFrom": "",
+      "timeTo": "",
+      "title": "",
+      "smallDescription": "",
+      "bigDescription": "",
+      "whereMeet": "",
+      "additionallyText": "",
+      "city": "",
+      "complexity": "",
+      "counts": "",
+      "price": {
+        "amount": "",
+        "currency": ""
+      },
+      "place": "",
+      "photo": {
+        "picture1": "",
+        "picture2": "",
+        "picture3": "",
+        "picture4": "",
+        "picture5": ""
+      }
+    }
+  }
+}

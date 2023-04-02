@@ -1,0 +1,200 @@
+.allContext {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 630px;
+    left: 635px;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+
+    width: 651px;
+    height: 145px;
+    opacity: 1;
+    position: absolute;
+}
+
+.contentTitle {
+    top: 150px;
+    left: 1px;
+    margin: 0;
+    padding: 0;
+    /*top: 50px;*/
+    right: 562px;
+    width: 573px;
+    height: 80px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+    font: normal normal 900 32px/40px Merriweather;
+    opacity: 1;
+    position: relative;
+}
+
+.contentTitle__T {
+    margin: 0;
+    padding: 0;
+    top: 81px;
+    right: 50px;
+    width: 116px;
+    height: 145px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 98px/145px Stalinist One;
+    color: #2B2D2F;
+    opacity: 1;
+    position: relative;
+}
+
+.invite {
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 220px;
+    width: 630px;
+    height: 79px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: italic normal 900 18px/27px Merriweather;
+    color: #2B2D2F;
+    opacity: 1;
+    position: relative;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+
+
+}
+
+.content {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    top: 524px;
+    left: 628px;
+    width: 630px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 18px/27px Merriweather;
+    color: #2B2D2F;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.whereWeMeet {
+    top: 600px;
+    left: 628px;
+    width: 630px;
+    opacity: 1;
+    position: relative;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*border-top: 2px solid #00000029;*/
+}
+
+.content__place {
+    top: 1230px;
+    left: 635px;
+    width: 630px;
+    height: 90px;
+    /*margin: 10px;*/
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    font: normal normal normal 18px/27px Merriweather;
+    color: #2B2D2F;
+}
+
+.content__place___infoBlock {
+    top: 1435px;
+    left: 400px;
+    width: 489px;
+    height: 18px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+    font: italic normal normal 14px/18px Merriweather;
+    opacity: 1;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.infoBlock {
+    margin-top: 50px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    /*padding: 0;*/
+}
+
+.infoBlock p {
+    margin: 0;
+    padding-left: 10px;
+
+}
+
+.content__place___complexity {
+    top: 1464px;
+    left: 400px;
+    width: 630px;
+    height: 18px;
+    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-18) var(--unnamed-font-family-merriweather);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    text-align: left;
+    color: #2B2D2F;
+    padding-bottom: 50px;
+    /*border-bottom: solid #707070 2px;*/
+    display: inline-flex;
+}
+
+.mapCard {
+    top: 10px;
+    right: 760px;
+    /*left: 152px;*/
+    width: 350px;
+    height: 250px;
+    box-shadow: 0 3px 6px #00000029;
+    position: absolute;
+    margin-bottom: 0;
+}
+
+.cardInfo__Var1 {
+    top: 384px;
+    left: 635px;
+    position: absolute;
+}
+
+.cardInfo__Var2 {
+    top: 700px;
+    left: 269px;
+    position: relative;
+}
+
+cardInfo__Var2 button{
+    margin-top: 0;
+    position: relative;
+    top: 700px;
+}
+
+
+
+.lineEnd {
+    width: 1000px;
+    height: 0;
+    border: 1px solid #00000029;
+    opacity: 1;
+    right: -10px;
+    position: absolute;
+}
+
+.limeMiddle{
+    /*left: 150px;*/
+    /*right: 0px;*/
+    top: -30px;
+    width: 1000px;
+    height: 0;
+    right: 0px;
+    border: 1px solid #00000029;
+    opacity: 1;
+    position: absolute;
+}
+

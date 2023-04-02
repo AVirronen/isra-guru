@@ -1,0 +1,61 @@
+.form {
+  margin-top: 75px;
+}
+.btn {
+  border: none;
+  color: #f3f3f3;
+  height: 50px;
+  width: 220px;
+  background-color: #2B2D2F;
+  border-radius: 25px;
+  font-size: 18px;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 18.5px;
+}
+.form__description {}
+
+.count__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 358px;
+  height: 25.5px;
+  font-size: 16px;
+  margin-top: 18.5px;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.count__btn {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.form__description {
+  margin-top: 19px;
+  margin-left: 48px;
+  width: 135px;
+  font-size: 10px;
+  color: #B2B3B4;
+
+  &_link {
+    border-bottom: 1px solid #B2B3B4;
+    cursor: pointer;
+  }
+}

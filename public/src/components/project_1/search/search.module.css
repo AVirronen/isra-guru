@@ -1,0 +1,180 @@
+.filters {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    /*height: 124px;*/
+    height: 402px;
+    box-shadow: 0px 3px 6px #00000029;
+
+}
+
+/*Level*/
+.levelBox1{
+    background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;
+    display: flex;
+    justify-content: right;
+}
+
+.levelF .filters .levelBox1{
+    width: 67%;
+    /*background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;*/
+    /*box-shadow: 0px 3px 6px #00000029;*/
+    /*height: 100%;*/
+    /*display: flex;*/
+    /*justify-content: right;*/
+}
+
+.levelP .filters .levelBox1{
+    width: 68%;
+}
+
+.levelTitle{
+    font: normal normal 900 24px/31px Merriweather;
+    letter-spacing: 0px;
+    color: #2B2D2F;
+    text-align: left;
+
+    margin-top: 5%;
+    width: 17%;
+}
+
+.levelP .levelTitle{
+    margin-right: 10%;
+}
+
+.variantsBox{
+    background: var(--unnamed-color-f8f8f8) 0% 0% no-repeat padding-box;
+
+}
+
+.levelF .filters .variantsBox{
+    /*background: var(--unnamed-color-f8f8f8) 0% 0% no-repeat padding-box;*/
+    padding-top: 3%;
+    padding-left: 2.5%;
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    /*padding-top: 3%;*/
+    /*padding-left: 2.5%;*/
+}
+
+.levelP .filters .variantsBox{
+    display: flex;
+    flex-direction: row;
+
+    /*justify-content: space-between;*/
+    /*почему то не работает???*/
+    width: 61%;
+    padding: 3% 2.5%;
+}
+.variantsBox button{
+    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/36px var(--unnamed-font-family-merriweather);
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+
+    line-height: 28px;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    background-color: #F8F8F8;
+    border: none;
+    height: 28px;
+    width: 100%;
+
+    cursor: pointer;
+}
+
+.levelF .variantsBox :hover{
+/*.levelF .variantsBox :focus{*/
+    background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;
+}
+
+.cites button:hover{
+/*.cites button:focus{*/
+/*.cites button:active{*/
+    background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;
+    /*transition: background;*/
+}
+
+.cityDescription{
+    margin-left: 5.5%;
+}
+.cityDescription p{
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-2b2d2f);
+    text-align: left;
+    margin: 0;
+}
+
+.cityDescription :first-child{
+    font: var(--unnamed-font-style-normal) normal bold var(--unnamed-font-size-18)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
+}
+.cityDescription :last-child{
+    font: var(--unnamed-font-style-italic) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-27) var(--unnamed-font-family-merriweather);
+}
+
+.triangle{
+    width: 0;
+    height: 0;
+    border-left: 14px solid transparent;
+    border-right: 14px solid transparent;
+    border-bottom: 12px solid #F8F8F8;
+    /*-402-12*/
+    margin-top: -414px;
+}
+.levelF .triangle{
+    margin-left: 74%;
+}
+
+.levelP .triangle{
+    margin-left: 59%;
+}
+
+
+/*Data*/
+.levelD .filters{
+    display: flex;
+    flex-direction: row;
+}
+
+.levelD .filters .months{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.levelD .filters .months > div {
+    background-color: black;
+    width: 30%;
+    height: 30%;
+}
+
+.arrayCities{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-left: 200px;
+    margin-bottom: 0;
+    margin-top: 0;
+    position: relative;
+    top: 400px;
+    width: 400px;
+}
+.arrayCities h2{
+    margin-top: 30px;
+    margin-bottom: 0;
+}
+
+.arrayCities li{
+    height: 250px;
+}
+.arrayCities ul{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+    margin-top: -10px;
+}

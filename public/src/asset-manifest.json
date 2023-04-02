@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.20387320.css",
+    "main.js": "/static/js/main.5e63bade.js",
+    "static/media/Rectangle12.png": "/static/media/Rectangle12.944532ca79147ab1f11e.png",
+    "static/media/Whatsapp.svg": "/static/media/Whatsapp.d886a41f15e5d8cf1a413bf924af5d27.svg",
+    "static/media/Facebook.svg": "/static/media/Facebook.fcafcebda19377702b35a3ab22740cd6.svg",
+    "index.html": "/index.html",
+    "main.20387320.css.map": "/static/css/main.20387320.css.map",
+    "main.5e63bade.js.map": "/static/js/main.5e63bade.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.20387320.css",
+    "static/js/main.5e63bade.js"
+  ]
+}

@@ -8,8 +8,8 @@ import {filterLevel, filterPlace, singUp} from "../../../../utils/constants";
 const Navigation = (props) => {
     const [dateFrom, setDateFrom] = useState('')
     // const [dateTo, setDateTo] = useState('2023-03-14')
-    const [place, setPlace] = useState('Тель Авив Яффо')
-    const [level, setLevel] = useState('Местный')
+    const [place, setPlace] = useState('Место...')
+    const [level, setLevel] = useState('Уровень...')
 
     const [countP, setCountP] = useState(1)
     const [countL, setCountL] = useState(1)
