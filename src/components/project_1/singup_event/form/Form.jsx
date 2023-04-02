@@ -3,7 +3,6 @@ import styles from './Form.module.scss'
 import Input from "../../thank_you_page/fields/Input";
 import {payment} from "../../../../utils/constants";
 import {useNavigate} from "react-router-dom";
-// import {ref, update} from "firebase/storage";
 import {db} from "../../../../firebase/firebase-config";
 import {onValue, ref, update} from "firebase/database";
 
@@ -63,9 +62,6 @@ const Form = (props) => {
 		else {
 			console.log('no place')
 		}
-		// ref(db, `/guide/1/event/${props.id}/count`).update({
-		// 	countsGo: newCount // update the countsGo field with the new value
-		// })
 		navigate(`/${payment}?event=${props.id}&count=${count}`)
 	}
 

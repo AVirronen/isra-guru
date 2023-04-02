@@ -18,8 +18,6 @@ const MainEventList = (props) => {
         });
     }, [db]);
 
-    // если вне указанных дат => статус прошедший
-
     const handleActiveClick = (status) => {
         setActiveButton(status);
 

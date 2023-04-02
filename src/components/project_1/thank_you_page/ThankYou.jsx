@@ -10,7 +10,6 @@ import Sidebar from "../layout/Sidebar";
 import {idsContentView} from "../../../utils/constants";
 import {onValue, ref} from "firebase/database";
 import {db} from "../../../firebase/firebase-config";
-import {Link} from "@mui/material";
 import {useNavigate} from "react-router-dom";
 
 const ThankYou = () => {
@@ -22,7 +21,6 @@ const ThankYou = () => {
 
     useEffect(() => {
 
-        // здесь в idsContentView не все корректно!!!!! + надо добавить вообще id и пр
         async function add() {
             idsContentView.forEach((item) => {
                 onValue(ref(db, `/guide/1/event/${id}/${item}`), (snapshot) => {
@@ -112,10 +110,6 @@ const ThankYou = () => {
                         <button className={styleB.dark_button} onClick={()=> {download()}}>
                             Сохранить
                         </button>
-                        {/*<Button bg={'dark'} onClick={()=>{*/}
-                        {/*    endDownload("ticket.txt","This is the content of my file :)");*/}
-                        {/*}}*/}
-                        {/*>Сохранить</Button>*/}
                         <Button bg={'light'}>Поделиться в FB</Button>
 
                         <button className={styleB.dark_button_home}

@@ -7,22 +7,15 @@ import UsersIcon from "../../../../icons/UsersIcon";
 import React, { useEffect, useState } from 'react';
 import { idsContentView } from "../../../../utils/constants";
 import { onValue, ref } from "firebase/database";
-import { db, storage } from "../../../../firebase/firebase-config";
-import { useNavigate } from "react-router-dom";
-import { getDownloadURL, ref as storageRef } from "firebase/storage";
-import styles from "../../card/Styles.module.scss";
+import { db} from "../../../../firebase/firebase-config";
 
 const CardInfo = (props) => {
-    // const navigate = useNavigate();
-    // const [image, setImage] = useState('');
-    // const imageRef = storageRef(storage, `/images/${props.id}/image_${props.id}_1`);
 
     useEffect(() => {
         const updateView = (snapshot, key) => {
             setViewData((prevState) => ({ ...prevState, [key]: snapshot.val() }));
         };
 
-        // const viewData = {};
         idsContentView.forEach((item) => {
             onValue(ref(db, `/guide/1/event/${props.id}/${item}`), (snapshot) => {
                 updateView(snapshot, item);
@@ -71,7 +64,6 @@ const CardInfo = (props) => {
                             <i><UsersIcon/></i>
                             <p>Занято <span id={"count/countsGo"}>{viewData["count/countsGo"]}</span> мест из <span
                                 id="count/countsPlan">{viewData["count/countsPlan"]}</span></p>
-                            {/*<p>Осталось <span>{viewData["count/countsPlan"]}</span> мест</p>*/}
                         </li>
                     </div>
                 </ul>

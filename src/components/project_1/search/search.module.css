@@ -4,24 +4,19 @@
     margin-top: 0;
     /*height: 124px;*/
     height: 402px;
-    box-shadow: 0px 3px 6px #00000029;
+    box-shadow: 0 3px 6px #00000029;
 
 }
 
 /*Level*/
 .levelBox1{
-    background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;
+    background: var(--unnamed-color-ebdfcd) 0 0% no-repeat padding-box;
     display: flex;
     justify-content: right;
 }
 
 .levelF .filters .levelBox1{
     width: 67%;
-    /*background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;*/
-    /*box-shadow: 0px 3px 6px #00000029;*/
-    /*height: 100%;*/
-    /*display: flex;*/
-    /*justify-content: right;*/
 }
 
 .levelP .filters .levelBox1{
@@ -30,7 +25,7 @@
 
 .levelTitle{
     font: normal normal 900 24px/31px Merriweather;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     color: #2B2D2F;
     text-align: left;
 
@@ -43,27 +38,21 @@
 }
 
 .variantsBox{
-    background: var(--unnamed-color-f8f8f8) 0% 0% no-repeat padding-box;
+    background: var(--unnamed-color-f8f8f8) 0 0% no-repeat padding-box;
 
 }
 
 .levelF .filters .variantsBox{
-    /*background: var(--unnamed-color-f8f8f8) 0% 0% no-repeat padding-box;*/
     padding-top: 3%;
     padding-left: 2.5%;
     display: flex;
     flex-direction: column;
     width: 33%;
-    /*padding-top: 3%;*/
-    /*padding-left: 2.5%;*/
 }
 
 .levelP .filters .variantsBox{
     display: flex;
     flex-direction: row;
-
-    /*justify-content: space-between;*/
-    /*почему то не работает???*/
     width: 61%;
     padding: 3% 2.5%;
 }
@@ -86,15 +75,11 @@
 }
 
 .levelF .variantsBox :hover{
-/*.levelF .variantsBox :focus{*/
-    background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;
+    background: var(--unnamed-color-ebdfcd) 0 0% no-repeat padding-box;
 }
 
 .cites button:hover{
-/*.cites button:focus{*/
-/*.cites button:active{*/
-    background: var(--unnamed-color-ebdfcd) 0% 0% no-repeat padding-box;
-    /*transition: background;*/
+    background: var(--unnamed-color-ebdfcd) 0 0% no-repeat padding-box;
 }
 
 .cityDescription{

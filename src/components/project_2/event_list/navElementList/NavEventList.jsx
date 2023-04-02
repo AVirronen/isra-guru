@@ -3,7 +3,6 @@ import style from './navElementList.module.css'
 import SearchGrey from "../../../../icons/SearchGrey";
 import {useNavigate} from "react-router-dom";
 import {eventCreate} from "../../../../utils/constants";
-import {useStore} from "react-redux";
 
 const NavEventList = (props) => {
     const navigate = useNavigate()
@@ -24,7 +23,6 @@ const NavEventList = (props) => {
                     />
                 </div>
                 <input type={"date"} id={"startDate2"} onChange={(e) => props.setDateStartFilter(e.target.value)}/>
-                {/*placeholder={${value}} value={'Июнь 23'}/>*/}
                 <input type={"date"} id={"endDate2"} onChange={(e) => props.setDateEndFilter(e.target.value)}/>
             </div>
             <button onClick={() => {

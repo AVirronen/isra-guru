@@ -2,9 +2,6 @@ import React, { useEffect, useState } from 'react';
 import styles from './Styles.module.scss';
 import { useNavigate } from 'react-router-dom';
 import {
-    filterLevel,
-    filterPlace,
-    guideInfo,
     idsContentView,
     viewEvent,
 } from '../../../../utils/constants';

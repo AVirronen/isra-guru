@@ -65,8 +65,6 @@ body {
 
 .titlebg {
     top: 0;
-    /*left: 543px;*/
-    /*width: 823px;*/
     left: 30%;
     width: 80%;
     height: 290px;
@@ -129,7 +127,6 @@ body {
 }
 
 .cardList {
-    /*margin-top: 737px;*/
     margin-left: 200px;
     position: relative;
     display: flex;

@@ -1,15 +1,14 @@
 import React, {useState} from 'react';
 import style from './navigation.module.css'
 import SearchIcon from "../../../../icons/SearchIcon";
-import {Link, useNavigate} from "react-router-dom";
-import {filterLevel, filterPlace, singUp} from "../../../../utils/constants";
+import {useNavigate} from "react-router-dom";
+import {filterLevel, filterPlace} from "../../../../utils/constants";
 
 
 const Navigation = (props) => {
-    const [dateFrom, setDateFrom] = useState('')
-    // const [dateTo, setDateTo] = useState('2023-03-14')
-    const [place, setPlace] = useState('Место...')
-    const [level, setLevel] = useState('Уровень...')
+    const dateFrom = ''
+    const place = 'Место...'
+    const level = 'Уровень...'
 
     const [countP, setCountP] = useState(1)
     const [countL, setCountL] = useState(1)

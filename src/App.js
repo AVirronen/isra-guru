@@ -54,7 +54,6 @@ const App = (props) => {
                         </div>
                     </div>}/>
 
-                {/*<Route path={`${viewEvent}`} element={<ViewEvent/>}/>*/}
                 <Route path={`${viewEvent}`} element={<ViewEvent prop1={props.prop1}/>}/>
 
                 <Route path={`${singUp}`} element={<SignUp prop1={props.prop1}/>}/>

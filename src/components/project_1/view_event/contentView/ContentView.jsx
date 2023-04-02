@@ -3,7 +3,7 @@ import style from './contentView.module.css'
 import HatIcon from "../../../../icons/HatIcon";
 import CardInfo from "../cardInfo/CardInfo";
 import {db} from "../../../../firebase/firebase-config";
-import {guideId, idsContentView} from "../../../../utils/constants";
+import {idsContentView} from "../../../../utils/constants";
 import {onValue} from "firebase/database";
 import {ref} from "firebase/database";
 

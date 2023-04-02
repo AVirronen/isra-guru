@@ -1,29 +1,27 @@
 body {
     width: 100%;
     height: auto;
-    /*height: 1767px;*/
     margin: 0;
     padding: 0;
 
 }
 
 .viewEventBackground {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 1366px;
     height: auto;
-    /*height: 100%;*/
-    background: #F8F8F8 0% 0% no-repeat padding-box;
+    background: #F8F8F8 0 0 no-repeat padding-box;
     opacity: 1;
     position: absolute;
     display: flex;
 }
 
 .sidebar {
-    top: 0px;
-    left: 0px;
+    top: 0;
+    left: 0;
     width: 239px;
-    background: #2B2D2F 0% 0% no-repeat padding-box;
+    background: #2B2D2F 0 0 no-repeat padding-box;
     border: 1px solid #707070;
     opacity: 1;
     height: 1767px;
@@ -110,7 +108,6 @@ body {
 
 .btnPosition2 {
     top: 1480px;
-    /*top: 1380px;*/
     left: 440px;
     position: relative;
     margin: 0;

@@ -234,9 +234,7 @@ const EventCreat = () => {
                     <div className={styles.formBlock}>
                         <label className={styles.formName} htmlFor="uname">Загрузка фото:</label>
                         <PicAdd id={count + 1}/>
-                        {/*<PicAdd id={2}/>*/}
                     </div>
-                    {/*//================*/}
                     <div className={styles.lang}>
                         <label htmlFor="uname">Язык:
                             <select name="lang" id={"lang"}
@@ -247,7 +245,6 @@ const EventCreat = () => {
                             </select>
                         </label>
                     </div>
-                    {/*//================*/}
                 </div>
             </form>
             <section className={styles.preview_item_var2}>

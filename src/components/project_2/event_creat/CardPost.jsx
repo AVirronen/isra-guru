@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './cardPost.module.css';
 import {eventList, viewEvent} from "../../../utils/constants";
 import {useNavigate} from "react-router-dom";
@@ -6,7 +6,6 @@ import Copy from "../../../icons/Copy";
 import Eye from "../../../icons/Eye";
 
 const CardPost = (props) => {
-    // const [count, setCount] = useState(0)
     const navigate = useNavigate()
 
     return (
@@ -14,7 +13,6 @@ const CardPost = (props) => {
                 <div className={styles.preview_info_all}>
                     <div className={styles.preview_info_allDescription}>
                         <i><Eye/></i>
-                        {/*<p onClick={()=>{navigate(`/${viewEvent}`)}}>Предпросмотр</p>*/}
                         <p onClick={()=>{
                             props.handleWrite('draft')
                             navigate(`/${viewEvent}?event=${props.id}`)}}

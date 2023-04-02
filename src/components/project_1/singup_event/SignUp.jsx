@@ -22,7 +22,6 @@ const SignUp = () => {
                         <i>Будьте внимательны при заполнении…</i>
                     </div>
                 </div>
-                {/*<Link to={'/thankyou'}>Go Thank You</Link>*/}
             </main>
 
         </div>

@@ -12,4 +12,3 @@ const Picture = (props) => {
 
 export default Picture;
 
-// src={require(`${props.picture}`)}

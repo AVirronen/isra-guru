@@ -3,10 +3,9 @@ import Gallery from "./gallery/Gallery";
 import ContentView from "./contentView/ContentView";
 import style from "./viewEvent.module.css"
 
-import {useLocation, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {guideInfo, singUp} from "../../../utils/constants";
-import {getDownloadURL, ref as storageRef, Reference} from "firebase/storage";
-import {db, storage} from "../../../firebase/firebase-config";
+import {db} from "../../../firebase/firebase-config";
 import {onValue, ref} from "firebase/database";
 
 

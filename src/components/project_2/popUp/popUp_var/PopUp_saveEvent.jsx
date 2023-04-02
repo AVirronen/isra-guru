@@ -1,12 +1,9 @@
 import React from 'react';
 import style from "../popUp.module.css";
-import {useNavigate} from "react-router-dom";
 import {ref, update} from "firebase/database";
 import {db} from "../../../../firebase/firebase-config";
 
 const PopUpSaveEvent = (props) => {
-    const navigate = useNavigate()
-
 
     return (
         <div className={style.windowBG}>
@@ -14,7 +11,6 @@ const PopUpSaveEvent = (props) => {
                 <div className={style.title}>
                     <h2 className={style.titleText}>Сохранить событие</h2>
                     <span className={style.titleCross} onClick={()=>props.close()}
-                        // navigate(`/${eventList}`)}
                     >&#10006;</span>
                 </div>
                 <p>После нажатия кнопки “Сохранить” данное мероприятие будет сохранено без изменений и

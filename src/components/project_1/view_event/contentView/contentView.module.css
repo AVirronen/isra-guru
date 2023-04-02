@@ -62,15 +62,9 @@
     color: #2B2D2F;
     opacity: 1;
     position: relative;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-
-
-}
+    }
 
 .content {
-    /*display: flex;*/
-    /*flex-direction: column;*/
     top: 524px;
     left: 628px;
     width: 630px;
@@ -88,9 +82,6 @@
     width: 630px;
     opacity: 1;
     position: relative;
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*border-top: 2px solid #00000029;*/
 }
 
 .content__place {
@@ -98,7 +89,6 @@
     left: 635px;
     width: 630px;
     height: 90px;
-    /*margin: 10px;*/
     letter-spacing: var(--unnamed-character-spacing-0);
     text-align: left;
     font: normal normal normal 18px/27px Merriweather;
@@ -123,7 +113,6 @@
     margin-top: 50px;
     margin-bottom: 0;
     padding-bottom: 0;
-    /*padding: 0;*/
 }
 
 .infoBlock p {
@@ -142,7 +131,6 @@
     text-align: left;
     color: #2B2D2F;
     padding-bottom: 50px;
-    /*border-bottom: solid #707070 2px;*/
     display: inline-flex;
 }
 
@@ -187,12 +175,10 @@ cardInfo__Var2 button{
 }
 
 .limeMiddle{
-    /*left: 150px;*/
-    /*right: 0px;*/
     top: -30px;
     width: 1000px;
     height: 0;
-    right: 0px;
+    right: 0;
     border: 1px solid #00000029;
     opacity: 1;
     position: absolute;

@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Picture from "./Picture";
 import style from './gallery.module.css'
-import { gallery } from "../../../../utils/constants";
 import { getDownloadURL, ref as storageRef } from "firebase/storage";
-import { db, storage } from "../../../../firebase/firebase-config";
-import { onValue, ref } from "firebase/database";
+import {storage } from "../../../../firebase/firebase-config";
 
 const Gallery = (props) => {
     const [images, setImages] = useState([]);

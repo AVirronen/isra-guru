@@ -3,7 +3,6 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-
     background: var(--unnamed-color-f8f8f8) 0 0 no-repeat padding-box;
     opacity: 1;
 }
@@ -16,11 +15,6 @@ body {
 .navigation{
     margin: 24px 45px 0 45px;
 }
-/*.mainListEvents .cards > div, */
-/*.mainListEvents .navigation{*/
-/*    margin: 24px 45px 0 45px;*/
-/*}*/
-
 .mainListEvents .cards > div{
     margin: 24px 0 0 0;
 }
