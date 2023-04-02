@@ -61,7 +61,7 @@ const Place = () => {
                         <div className={style.cites}>
                             <button onClick={onButtonClick}>Иерусалим</button>
                             <button onClick={onButtonClick}>Тель Авив</button>
-                            <button onClick={onButtonClick}>Кейсарий</button>
+                            <button onClick={onButtonClick}>Кейсария</button>
                             <button onClick={onButtonClick}>Хайфа</button>
                             <button onClick={onButtonClick}>Назарет</button>
                             <button onClick={onButtonClick}>Яффо</button>
